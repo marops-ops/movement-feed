@@ -1,0 +1,47 @@
+name: Generate Movement Feeds
+
+on:
+  schedule:
+    # Every 4 hours – adjust to taste
+    - cron: "0 */4 * * *"
+  workflow_dispatch:   # allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate-feeds:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout ────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Python setup ────────────────────────────────────────────────────
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      # ── 3. Install dependencies ────────────────────────────────────────────
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 lxml
+
+      # ── 4. Run scraper ─────────────────────────────────────────────────────
+      - name: Run feed scraper
+        env:
+          FEED_OUTPUT_DIR: docs   # GitHub Pages serves from /docs
+        run: |
+          python scraper.py
+
+      # ── 5. Commit & push feeds ─────────────────────────────────────────────
+      - name: Commit updated feeds
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/feed_google.xml docs/feed_meta.xml
+          git diff --staged --quiet || git commit -m "chore: update feeds [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git push
