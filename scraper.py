@@ -112,13 +112,30 @@ class Product:
     breadcrumbs: list           = field(default_factory=list)  # ["Bord","Møtebord"]
     product_type: str           = ""     # "Bord > Møtebord"
     google_category: str        = ""
-    custom_label_0: str         = ""     # Price tier
-    custom_label_1: str         = ""     # Stock detail
-    custom_label_2: str         = ""     # USPs (CO2, eco, etc.)
-    custom_label_3: str         = ""     # Sale / seasonal
-    custom_label_4: str         = ""     # Spare / dimensions
+    # Produktegenskaper
+    color: str                  = ""     # Hovedfarge
+    color_secondary: str        = ""     # Sekundærfarge
+    size: str                   = ""     # Bredde x Høyde x Dybde
+    weight: str                 = ""     # Vekt
+    attributes: dict            = field(default_factory=dict)
+
+    # Priser
+    price_currency: str         = CURRENCY
+    price_sale: str             = ""     # Tilbudspris eks mva
+    price_sale_incl: str        = ""     # Tilbudspris inkl mva
+
+    # Stock
+    quantity: str               = ""     # f.eks "100+ stk"
+
+    # Custom labels
+    custom_label_0: str         = ""
+    custom_label_1: str         = ""
+    custom_label_2: str         = ""
+    custom_label_3: str         = ""
+    custom_label_4: str         = ""
+
     shipping_price: str         = SHIPPING_PRICE
-    leaf_category: str          = ""     # Most specific breadcrumb node
+    leaf_category: str          = ""
 
 
 # ─── 1. SITEMAP DISCOVERY ─────────────────────────────────────────────────────
@@ -241,74 +258,6 @@ def _smart_title(raw_title: str, leaf_category: str) -> str:
     return f"{raw_title} - {leaf_category}"
 
 
-def _extract_price(soup: BeautifulSoup, ld: dict) -> tuple[float, str]:
-    """
-    Priority:
-      1. JSON-LD Product → priceWithoutVat custom property
-      2. JSON-LD Product → offers → price
-      3. DOM: [data-price-without-vat], .price-ex-vat, etc.
-    Returns (float_value, "1234.00 NOK")
-    """
-    # 1. JSON-LD Product
-    if "Product" in ld:
-        product_ld = ld["Product"]
-
-        # Check for custom priceWithoutVat field
-        for key in ("priceWithoutVat", "price_without_vat", "priceExVat"):
-            val = product_ld.get(key)
-            if val:
-                try:
-                    fval = float(str(val).replace(",", ".").replace(" ", ""))
-                    return fval, f"{fval:.2f} {CURRENCY}"
-                except ValueError:
-                    pass
-
-        # Standard offers price
-        offers = product_ld.get("offers", {})
-        if isinstance(offers, list):
-            offers = offers[0] if offers else {}
-        price_str = str(offers.get("price", "")).replace(",", ".").strip()
-        if price_str:
-            try:
-                fval = float(price_str)
-                return fval, f"{fval:.2f} {CURRENCY}"
-            except ValueError:
-                pass
-
-    # 2. DOM selectors (ex. VAT variants first, then fallback to incl.)
-    selectors = [
-        "[data-price-without-vat]",       # data attribute
-        ".price-without-vat",
-        ".price-ex-vat",
-        ".js-price-ex-vat",
-        ".product-price-ex",
-        ".price",                          # generic fallback
-    ]
-    for sel in selectors:
-        el = soup.select_one(sel)
-        if el:
-            raw = el.get("data-price-without-vat") or el.get_text(strip=True)
-            cleaned = re.sub(r"[^\d,\.]", "", raw).replace(",", ".")
-            if cleaned:
-                try:
-                    fval = float(cleaned)
-                    return fval, f"{fval:.2f} {CURRENCY}"
-                except ValueError:
-                    pass
-
-    # movement.as bekreftet selektorer
-    ex_el = soup.select_one(".sp__price.excluded")
-    incl_el = soup.select_one(".sp__price.included")
-    if ex_el:
-        raw = re.sub(r"[^\d]", "", ex_el.get_text(strip=True).replace(".", ""))
-        if raw:
-            return float(raw), f"{float(raw):.2f} {CURRENCY}"
-    if incl_el:
-        raw = re.sub(r"[^\d]", "", incl_el.get_text(strip=True).replace(".", ""))
-        if raw:
-            return float(raw), f"{float(raw):.2f} {CURRENCY}"
-    log.warning("Price not found")
-    return 0.0, ""
 
 
 def _extract_description(soup: BeautifulSoup) -> str:
@@ -496,6 +445,103 @@ def _extract_product_id(soup: BeautifulSoup, ld: dict, url: str) -> str:
     return ""
 
 
+
+
+def _parse_price_text(raw: str) -> float:
+    """Parser norske prisstrenger som 3.950 ,-eks mva til float."""
+    import re
+    cleaned = re.sub(r"[^\d,\.]", "", raw)
+    if not cleaned:
+        return 0.0
+    if "," in cleaned:
+        cleaned = cleaned.replace(".", "").replace(",", ".")
+    else:
+        cleaned = cleaned.replace(".", "")
+    try:
+        return float(cleaned)
+    except ValueError:
+        return 0.0
+
+
+def _extract_price(soup, ld: dict) -> tuple:
+    """
+    Henter eks. mva og inkl. mva fra movement.as.
+    Selektorer: .sp__price.excluded og .sp__price.included
+    Returns: (ex_val, ex_str, incl_val, incl_str)
+    """
+    ex_val, ex_str     = 0.0, ""
+    incl_val, incl_str = 0.0, ""
+
+    ex_el   = soup.select_one(".sp__price.excluded")
+    incl_el = soup.select_one(".sp__price.included")
+
+    if ex_el:
+        ex_val = _parse_price_text(ex_el.get_text(strip=True))
+        ex_str = f"{int(ex_val)} {CURRENCY}" if ex_val else ""
+    if incl_el:
+        incl_val = _parse_price_text(incl_el.get_text(strip=True))
+        incl_str = f"{int(incl_val)} {CURRENCY}" if incl_val else ""
+
+    if not ex_val and not incl_val:
+        log.warning("Price not found")
+
+    return ex_val, ex_str, incl_val, incl_str
+
+def _extract_attributes(soup: BeautifulSoup) -> dict:
+    """
+    Henter produktegenskaper fra .attributes-seksjonen.
+    Returnerer dict: {"Hovedfarge": "Sort", "Bredde": "180.00 cm", ...}
+    """
+    result = {}
+    attrs_el = soup.select_one(".attributes")
+    if not attrs_el:
+        return result
+    for name_el in attrs_el.find_all(class_="attributeName"):
+        key = name_el.get_text(strip=True).rstrip(":")
+        val_el = name_el.find_next_sibling()
+        if val_el:
+            result[key] = val_el.get_text(strip=True)
+    return result
+
+
+def _build_size(attrs: dict) -> str:
+    """Bygg size-streng fra dimensjoner."""
+    parts = []
+    for key in ["Bredde", "Høyde", "Dybde", "Sittehøyde", "Diameter"]:
+        if key in attrs:
+            parts.append(f"{key}: {attrs[key]}")
+    return " | ".join(parts)
+
+
+def _extract_quantity(soup: BeautifulSoup) -> str:
+    """Henter lagerstatus fra .sp__amount-info"""
+    el = soup.select_one(".sp__amount-info")
+    if el:
+        txt = el.get_text(strip=True)
+        # Normaliser: "100+ stk på lager" → "100+"
+        match = re.search(r"(\d+\+?)\s*stk", txt, re.IGNORECASE)
+        if match:
+            return match.group(1)
+        return txt
+    return ""
+
+
+def _extract_sale_price(soup: BeautifulSoup) -> tuple[float, str, float, str]:
+    """
+    Henter tilbudspris hvis den finnes.
+    Ser etter strøket/original pris ved siden av .sp__price.
+    Returns: (sale_ex_val, "990 NOK", sale_incl_val, "1238 NOK")
+    """
+    # Ser etter strøket pris (crossed out / original)
+    for selector in [".sp__price--original", ".sp__price.crossed",
+                     ".sp__price--was", ".price-original", ".price--sale"]:
+        el = soup.select_one(selector)
+        if el:
+            val = _parse_price_text(el.get_text(strip=True))
+            if val:
+                return val, f"{int(val)} {CURRENCY}", 0.0, ""
+    return 0.0, "", 0.0, ""
+
 # ─── Main Product Scrape ──────────────────────────────────────────────────────
 def scrape_product(url: str) -> Optional[Product]:
     """Scrape a single product page and return a Product dataclass."""
@@ -530,7 +576,7 @@ def scrape_product(url: str) -> Optional[Product]:
     p.title_seo = _smart_title(p.title_raw, p.leaf_category)
 
     # Price
-    p.price_value, p.price = _extract_price(soup, ld)
+    p.price_value, p.price, p.price_incl_value, p.price_incl = _extract_price(soup, ld)
 
     # Other fields
     p.availability    = _extract_availability(soup, ld)
@@ -538,12 +584,23 @@ def scrape_product(url: str) -> Optional[Product]:
     p.brand           = _extract_brand(soup, ld)
     p.image_main, p.images_extra = _extract_images(soup, ld)
 
-    # Custom Labels
-    p.custom_label_0 = _price_tier(p.price_value)
-    p.custom_label_1 = p.availability.replace("_", " ").title()
-    p.custom_label_2 = _extract_co2_label(soup)
-    p.custom_label_3 = "Brukt" if p.condition == "used" else "Nytt"
-    p.custom_label_4 = f"ID:{p.product_id}"
+    # Produktegenskaper
+    p.attributes     = _extract_attributes(soup)
+    p.color          = p.attributes.get("Hovedfarge", "")
+    p.color_secondary = p.attributes.get("Sekundærfarge", "")
+    p.size           = _build_size(p.attributes)
+    p.weight         = p.attributes.get("Vekt", "")
+    p.quantity       = _extract_quantity(soup)
+
+    # Sale price
+    p.price_sale_value, p.price_sale, _, _ = _extract_sale_price(soup)
+
+    # Custom labels — settes manuelt i GMC etter strategi
+    p.custom_label_0 = ""
+    p.custom_label_1 = ""
+    p.custom_label_2 = ""
+    p.custom_label_3 = ""
+    p.custom_label_4 = ""
 
     if not p.product_id:
         log.warning(f"No product ID found for {url}")
@@ -603,7 +660,6 @@ def build_google_feed(products: list[Product]) -> str:
         ET.SubElement(item, "{%s}id" % G).text                  = p.product_id
         ET.SubElement(item, "link").text                         = p.url
         ET.SubElement(item, "description").text                  = p.description
-        ET.SubElement(item, "{%s}price" % G).text               = p.price
         ET.SubElement(item, "{%s}availability" % G).text        = p.availability
         ET.SubElement(item, "{%s}condition" % G).text           = p.condition
         ET.SubElement(item, "{%s}identifier_exists" % G).text   = p.identifier_exists
@@ -617,6 +673,27 @@ def build_google_feed(products: list[Product]) -> str:
         for img in p.images_extra:
             ET.SubElement(item, "{%s}additional_image_link" % G).text = img
 
+        # Pris eks mva (standard) + inkl mva
+        ET.SubElement(item, "{%s}price" % G).text          = f"{int(p.price_value)} {CURRENCY}" if p.price_value else ""
+        ET.SubElement(item, "{%s}sale_price" % G).text     = f"{int(p.price_sale_value)} {CURRENCY}" if getattr(p, "price_sale_value", 0) else ""
+
+        # Currency som eget felt
+        ET.SubElement(item, "{%s}currency" % G).text = CURRENCY
+
+        # Inkl mva som egne felt
+        ET.SubElement(item, "price_incl_vat").text      = f"{int(p.price_incl_value)} {CURRENCY}" if getattr(p, "price_incl_value", 0) else ""
+        ET.SubElement(item, "sale_price_incl_vat").text = ""
+
+        # Produktegenskaper
+        if p.color:
+            ET.SubElement(item, "{%s}color" % G).text = p.color
+        if p.color_secondary:
+            ET.SubElement(item, "color_secondary").text = p.color_secondary
+        if p.size:
+            ET.SubElement(item, "{%s}size" % G).text = p.size
+        if p.quantity:
+            ET.SubElement(item, "quantity").text = p.quantity
+
         # Custom labels
         ET.SubElement(item, "{%s}custom_label_0" % G).text = p.custom_label_0
         ET.SubElement(item, "{%s}custom_label_1" % G).text = p.custom_label_1
@@ -627,7 +704,7 @@ def build_google_feed(products: list[Product]) -> str:
         # Shipping
         ship = ET.SubElement(item, "{%s}shipping" % G)
         ET.SubElement(ship, "{%s}country" % G).text = COUNTRY
-        ET.SubElement(ship, "{%s}price" % G).text   = p.shipping_price
+        ET.SubElement(ship, "{%s}price" % G).text   = p.shipping_price.replace('.00', '') if p.shipping_price else ''
 
     return _prettify(rss)
 
