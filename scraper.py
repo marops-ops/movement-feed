@@ -1,14 +1,17 @@
 """
-movement.as — Product Feed Scraper
-====================================
-Generates feed_google.xml (GMC) and feed_meta.xml (Meta Retail)
-from movement.as product pages.
+movement.as — Product Feed Scraper v2
+======================================
+Genererer feed_google.xml (GMC RSS 2.0) og feed_meta.xml (Meta Retail)
 
-Data hierarchy:
-  1. JSON-LD (BreadcrumbList, Product structured data)
-  2. og:image / meta tags
-  3. DOM fallbacks (breadcrumb nav, image slider, description tab)
-  4. URL-path fallback for breadcrumbs
+Datastruktur bekreftet fra live HTML:
+  Pris eks. mva : .sp__price.excluded
+  Pris inkl mva : .sp__price.included
+  Tilbudspris   : .sp__price--sale / .sp__price.sale (hvis tilbud)
+  Egenskaper    : .attributes → .attributeName + søsken
+  Lagerstatus   : .sp__amount-info
+  Bilder        : og:image (hoved) + .sp__image-gallery img (ekstra)
+  Breadcrumbs   : JSON-LD BreadcrumbList → DOM → URL-fallback
+  Brand         : .sp__brand
 
 Author: Amidays
 """
@@ -20,12 +23,12 @@ import re
 import time
 import random
 import logging
+import os
 from urllib.parse import urljoin, urlparse
 from xml.etree import ElementTree as ET
 from xml.dom import minidom
 from dataclasses import dataclass, field
 from typing import Optional
-import gzip
 
 # ─── Logging ──────────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -36,20 +39,14 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 # ─── Config ───────────────────────────────────────────────────────────────────
-BASE_URL        = "https://www.movement.as"
-SITEMAP_URL     = "https://www.movement.as/sitemap.xml"
-CURRENCY        = "NOK"
-COUNTRY         = "NO"
-SHIPPING_PRICE  = "1000.00 NOK"         # Default shipping; override per product if found
-CONDITION       = "used"                 # movement.as = used/pre-owned office furniture
-IDENTIFIER_EXISTS = "no"                 # Used goods → no GTIN/MPN
+BASE_URL       = "https://www.movement.as"
+SITEMAP_URL    = "https://www.movement.as/sitemap.xml"
+CURRENCY       = "NOK"
+COUNTRY        = "NO"
+CONDITION      = "used"
+IDENTIFIER_EXISTS = "no"
 
-# Price tier thresholds (ex. VAT, NOK) for custom_label_0
-PRICE_TIER_HIGH   = 10_000
-PRICE_TIER_MEDIUM = 3_000
-
-# Crawl politeness
-REQUEST_DELAY_MIN = 1.0   # seconds
+REQUEST_DELAY_MIN = 1.2
 REQUEST_DELAY_MAX = 3.0
 
 # ─── HTTP Session ─────────────────────────────────────────────────────────────
@@ -63,16 +60,11 @@ SESSION.headers.update({
     "Accept-Language": "nb-NO,nb;q=0.9,no;q=0.8,en;q=0.6",
     "Accept-Encoding": "gzip, deflate, br",
     "Connection":      "keep-alive",
-    "Upgrade-Insecure-Requests": "1",
-    "Sec-Fetch-Dest":  "document",
-    "Sec-Fetch-Mode":  "navigate",
-    "Sec-Fetch-Site":  "none",
-    "Cache-Control":   "max-age=0",
 })
 
 
 def _get(url: str, retries: int = 3) -> Optional[requests.Response]:
-    """GET with retry logic and politeness delay."""
+    """GET med retry og politeness-delay."""
     for attempt in range(retries):
         try:
             time.sleep(random.uniform(REQUEST_DELAY_MIN, REQUEST_DELAY_MAX))
@@ -80,16 +72,16 @@ def _get(url: str, retries: int = 3) -> Optional[requests.Response]:
             if r.status_code == 200:
                 return r
             elif r.status_code in (429, 503):
-                wait = 10 * (attempt + 1)
-                log.warning(f"Rate limited on {url}. Waiting {wait}s …")
+                wait = 15 * (attempt + 1)
+                log.warning(f"Rate limited. Venter {wait}s …")
                 time.sleep(wait)
             elif r.status_code == 403:
-                log.error(f"403 Forbidden: {url}. Check headers/IP.")
+                log.error(f"403 Forbidden: {url}")
                 return None
             else:
                 log.warning(f"HTTP {r.status_code} for {url}")
         except requests.RequestException as e:
-            log.error(f"Request error ({attempt+1}/{retries}) for {url}: {e}")
+            log.error(f"Request error ({attempt+1}/{retries}): {e}")
     return None
 
 
@@ -97,93 +89,123 @@ def _get(url: str, retries: int = 3) -> Optional[requests.Response]:
 @dataclass
 class Product:
     url: str
-    product_id: str             = ""
-    title_raw: str              = ""     # as found on page
-    title_seo: str              = ""     # Smart Title: may have category appended
-    description: str            = ""
-    price: str                  = ""     # "1234.00 NOK"
-    price_value: float          = 0.0
-    availability: str           = "in_stock"
-    condition: str              = CONDITION
-    identifier_exists: str      = IDENTIFIER_EXISTS
-    brand: str                  = ""
-    image_main: str             = ""
-    images_extra: list          = field(default_factory=list)
-    breadcrumbs: list           = field(default_factory=list)  # ["Bord","Møtebord"]
-    product_type: str           = ""     # "Bord > Møtebord"
-    google_category: str        = ""
-    # Produktegenskaper
-    color: str                  = ""     # Hovedfarge
-    color_secondary: str        = ""     # Sekundærfarge
-    size: str                   = ""     # Bredde x Høyde x Dybde
-    weight: str                 = ""     # Vekt
-    attributes: dict            = field(default_factory=dict)
 
-    # Priser
-    price_currency: str         = CURRENCY
-    price_sale: str             = ""     # Tilbudspris eks mva
-    price_sale_incl: str        = ""     # Tilbudspris inkl mva
+    # Identifikasjon
+    product_id: str     = ""
+    title_raw: str      = ""
+    title_seo: str      = ""
+    description: str    = ""
+    brand: str          = ""
 
-    # Stock
-    quantity: str               = ""     # f.eks "100+ stk"
+    # Breadcrumbs
+    breadcrumbs: list   = field(default_factory=list)
+    product_type: str   = ""
+    leaf_category: str  = ""
 
-    # Custom labels
-    custom_label_0: str         = ""
-    custom_label_1: str         = ""
-    custom_label_2: str         = ""
-    custom_label_3: str         = ""
-    custom_label_4: str         = ""
+    # Tilstand
+    condition: str            = CONDITION
+    identifier_exists: str    = IDENTIFIER_EXISTS
+    availability: str         = "in_stock"
 
-    shipping_price: str         = SHIPPING_PRICE
-    leaf_category: str          = ""
+    # Priser — eks. mva (standard / B2B)
+    price_ex: float     = 0.0   # Grunnpris eks mva
+    price_ex_str: str   = ""    # "790 NOK"
+    sale_ex: float      = 0.0   # Tilbudspris eks mva (0 = ingen tilbud)
+    sale_ex_str: str    = ""    # "590 NOK" (tomt hvis ingen tilbud)
+
+    # Priser — inkl. mva (B2C)
+    price_incl: float   = 0.0
+    price_incl_str: str = ""
+    sale_incl: float    = 0.0
+    sale_incl_str: str  = ""
+
+    # Bilder
+    image_main: str     = ""
+    images_extra: list  = field(default_factory=list)
+
+    # Produktegenskaper (fra .attributes)
+    attributes: dict    = field(default_factory=dict)
+    color: str          = ""    # Hovedfarge
+    color_secondary: str = ""   # Sekundærfarge
+    material: str       = ""    # Materiale
+
+    # Dimensjoner (cm, float)
+    width: float        = 0.0
+    height: float       = 0.0
+    depth: float        = 0.0
+    seat_height: float  = 0.0
+    diameter: float     = 0.0
+
+    # Beregnet fraktvekt
+    shipping_weight: float = 0.0   # kg, volum-metoden
+
+    # Lager
+    quantity: str       = ""
+
+    # Custom labels (settes manuelt i GMC)
+    custom_label_0: str = ""
+    custom_label_1: str = ""
+    custom_label_2: str = ""
+    custom_label_3: str = ""
+    custom_label_4: str = ""
 
 
-# ─── 1. SITEMAP DISCOVERY ─────────────────────────────────────────────────────
-def discover_product_urls(sitemap_url: str = SITEMAP_URL) -> list[str]:
+# ─── Helpers ──────────────────────────────────────────────────────────────────
+def _parse_price(raw: str) -> float:
     """
-    Walk the sitemap index → child sitemaps → product URLs.
-    Product pages on movement.as end with a numeric ID before .html
-    e.g. /bord/motebord/motebord-air-19462.html
+    Parser norske prisstrenger til float.
+    "3.950 ,-eks mva" → 3950.0
+    "988 ,-inkl mva"  → 988.0
     """
-    log.info(f"Fetching sitemap: {sitemap_url}")
-    product_urls = []
-    visited_sitemaps = set()
+    cleaned = re.sub(r"[^\d,\.]", "", raw)
+    if not cleaned:
+        return 0.0
+    # Norsk format: punktum = tusenskille, komma = desimal
+    if "," in cleaned:
+        cleaned = cleaned.replace(".", "").replace(",", ".")
+    else:
+        cleaned = cleaned.replace(".", "")
+    try:
+        return float(cleaned)
+    except ValueError:
+        return 0.0
 
-    def _parse_sitemap(url: str):
-        if url in visited_sitemaps:
-            return
-        visited_sitemaps.add(url)
-        resp = _get(url)
-        if not resp:
-            return
+
+def _fmt(value: float) -> str:
+    """Formater pris uten desimaler: 3950.0 → '3950 NOK'"""
+    if not value:
+        return ""
+    return f"{int(value)} {CURRENCY}"
+
+
+def _parse_dim(raw: str) -> float:
+    """Parser dimensjonsstreng: '180.00 cm' → 180.0"""
+    match = re.search(r"([\d,\.]+)", raw)
+    if match:
         try:
-            root = ET.fromstring(resp.content)
-        except ET.ParseError as e:
-            log.error(f"XML parse error on {url}: {e}")
-            return
-
-        ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-        # Sitemap index → recurse
-        for loc in root.findall(".//sm:sitemap/sm:loc", ns):
-            _parse_sitemap(loc.text.strip())
-        # URL entries → filter product pages
-        for loc in root.findall(".//sm:url/sm:loc", ns):
-            page_url = loc.text.strip()
-            # Product pages have a trailing numeric ID in the slug
-            if re.search(r'-\d{4,6}\.html$', page_url):
-                product_urls.append(page_url)
-
-    _parse_sitemap(sitemap_url)
-    log.info(f"Discovered {len(product_urls)} product URLs")
-    return list(dict.fromkeys(product_urls))   # deduplicate, preserve order
+            return float(match.group(1).replace(",", "."))
+        except ValueError:
+            pass
+    return 0.0
 
 
-# ─── 2. PAGE PARSING ──────────────────────────────────────────────────────────
+def _calc_shipping_weight(width: float, height: float, depth: float) -> float:
+    """
+    Volum-metoden for fraktvekt.
+    (B × H × D) / 1000 / 5 = fraktvekt i kg
+    Brukes kun hvis alle tre dimensjoner er tilgjengelige.
+    Hvis høyde mangler (f.eks. bordplate), bruk 10cm som estimat.
+    """
+    if not width or not depth:
+        return 0.0
+    h = height if height else 10.0  # estimat for flate gjenstander
+    volume_liters = (width * h * depth) / 1000
+    return round(volume_liters / 5, 1)
+
+
+# ─── Extraction Functions ─────────────────────────────────────────────────────
 def _extract_ld_json(soup: BeautifulSoup) -> dict:
-    """
-    Extract all JSON-LD blocks and merge into a single lookup dict keyed by @type.
-    Returns {"Product": {...}, "BreadcrumbList": {...}, ...}
-    """
+    """Henter alle JSON-LD blokker, returnerer dict keyed by @type."""
     result = {}
     for script in soup.find_all("script", type="application/ld+json"):
         try:
@@ -193,21 +215,14 @@ def _extract_ld_json(soup: BeautifulSoup) -> dict:
                     result[item.get("@type", "")] = item
             elif isinstance(data, dict):
                 t = data.get("@type", "")
-                if t == "@graph":
-                    for item in data.get("@graph", []):
-                        result[item.get("@type", "")] = item
-                else:
-                    result[t] = data
+                result[t] = data
         except (json.JSONDecodeError, AttributeError):
             pass
     return result
 
 
-def _extract_breadcrumbs(soup: BeautifulSoup, ld: dict, url: str) -> list[str]:
-    """
-    Priority: JSON-LD BreadcrumbList → DOM nav.breadcrumb → URL path fallback.
-    Returns list of breadcrumb names, e.g. ["Hjem", "Bord", "Møtebord"]
-    """
+def _extract_breadcrumbs(soup: BeautifulSoup, ld: dict, url: str) -> list:
+    """JSON-LD → DOM → URL-fallback. Returnerer liste uten 'Hjem'."""
     # 1. JSON-LD
     if "BreadcrumbList" in ld:
         items = sorted(
@@ -219,13 +234,8 @@ def _extract_breadcrumbs(soup: BeautifulSoup, ld: dict, url: str) -> list[str]:
         if crumbs:
             return crumbs
 
-    # 2. DOM: common breadcrumb selectors
-    for selector in [
-        "nav.breadcrumb ol li",
-        ".breadcrumb li",
-        "[itemtype*='BreadcrumbList'] [itemprop='name']",
-        ".breadcrumbs span",
-    ]:
+    # 2. DOM
+    for selector in [".breadcrumb li", "nav.breadcrumb ol li", "[itemtype*='BreadcrumbList'] [itemprop='name']"]:
         nodes = soup.select(selector)
         if nodes:
             crumbs = [n.get_text(strip=True) for n in nodes]
@@ -233,264 +243,59 @@ def _extract_breadcrumbs(soup: BeautifulSoup, ld: dict, url: str) -> list[str]:
             if crumbs:
                 return crumbs
 
-    # 3. URL path fallback
+    # 3. URL-fallback
     path = urlparse(url).path.strip("/")
-    parts = path.split("/")[:-1]   # drop the product slug itself
-    crumbs = [p.replace("-", " ").title() for p in parts if p]
-    log.debug(f"Breadcrumb fallback from URL: {crumbs}")
-    return crumbs
+    parts = path.split("/")[:-1]
+    return [p.replace("-", " ").title() for p in parts if p]
 
 
-def _build_product_type(breadcrumbs: list[str]) -> str:
-    """Map breadcrumb list to Google product_type string."""
-    return " > ".join(breadcrumbs) if breadcrumbs else ""
-
-
-def _smart_title(raw_title: str, leaf_category: str) -> str:
+def _extract_prices(soup: BeautifulSoup) -> tuple:
     """
-    If the leaf category keyword is not in the title, append it.
-    Case-insensitive check.
+    Henter alle fire prisvariantene fra movement.as.
+
+    Normal situasjon (ingen tilbud):
+      .sp__price.excluded = grunnpris eks mva  → price_ex
+      .sp__price.included = grunnpris inkl mva → price_incl
+      sale = 0 (ingen tilbud)
+
+    Ved tilbud viser movement.as sannsynligvis en ekstra .sp__price.sale
+    eller lignende klasse med tilbudsprisen.
+
+    Returns:
+      (price_ex, price_incl, sale_ex, sale_incl)
     """
-    if not leaf_category:
-        return raw_title
-    if leaf_category.lower() in raw_title.lower():
-        return raw_title
-    return f"{raw_title} - {leaf_category}"
+    price_ex = price_incl = sale_ex = sale_incl = 0.0
 
-
-
-
-def _extract_description(soup: BeautifulSoup) -> str:
-    """
-    Look for the 'Beskrivelse' tab content.
-    Common patterns on Nordic e-com platforms.
-    """
-    # Tab panel approach
-    for selector in [
-        "#tab-description",
-        "[data-tab='description']",
-        ".product-description",
-        ".tab-pane.active",
-        "[aria-label='Beskrivelse']",
-        ".product-details__description",
-    ]:
-        el = soup.select_one(selector)
-        if el:
-            return _clean_description(el.get_text(separator="\n", strip=True))
-
-    # Heading-based fallback: find "Beskrivelse" heading and take next sibling
-    for heading in soup.find_all(["h2", "h3", "h4"], string=re.compile(r"Beskrivelse", re.I)):
-        sibling = heading.find_next_sibling()
-        if sibling:
-            return _clean_description(sibling.get_text(separator="\n", strip=True))
-
-    # meta description as last resort
-    meta = soup.find("meta", {"name": "description"})
-    if meta:
-        return meta.get("content", "").strip()
-
-    return ""
-
-
-def _clean_description(text: str) -> str:
-    """Remove excessive whitespace/newlines while preserving readability."""
-    lines = [l.strip() for l in text.splitlines()]
-    lines = [l for l in lines if l]
-    return "\n".join(lines)[:5000]   # GMC description cap
-
-
-def _extract_images(soup: BeautifulSoup, ld: dict) -> tuple[str, list[str]]:
-    """
-    Main image: og:image (cleanest, no thumbnails).
-    Extra images: product gallery slider imgs.
-    Returns (main_url, [extra_url, ...])
-    """
-    # Main: og:image
-    main_img = ""
-    og = soup.find("meta", property="og:image")
-    if og:
-        main_img = og.get("content", "").strip()
-
-    # JSON-LD fallback
-    if not main_img and "Product" in ld:
-        img_ld = ld["Product"].get("image", "")
-        if isinstance(img_ld, list):
-            main_img = img_ld[0] if img_ld else ""
-        elif isinstance(img_ld, str):
-            main_img = img_ld
-
-    # Gallery: look for common slider patterns
-    extra_imgs = []
-    seen = {main_img}
-
-    gallery_selectors = [
-        ".product-images img",
-        ".product-gallery img",
-        ".slider img",
-        ".swiper-slide img",
-        "[data-gallery] img",
-        ".thumbnails img",
-        ".product-image-gallery img",
-    ]
-    for sel in gallery_selectors:
-        imgs = soup.select(sel)
-        if imgs:
-            for img in imgs:
-                src = img.get("data-src") or img.get("src") or ""
-                # Prefer full-size: look for data-zoom-image or similar
-                src = img.get("data-zoom-image") or img.get("data-large") or src
-                src = urljoin(BASE_URL, src)
-                # Filter out icons/tiny images and duplicates
-                if src not in seen and "placeholder" not in src and len(src) > 20:
-                    extra_imgs.append(src)
-                    seen.add(src)
-            break   # stop at first matching gallery selector
-
-    return main_img, extra_imgs[:9]   # GMC allows up to 10 images total
-
-
-def _extract_brand(soup: BeautifulSoup, ld: dict) -> str:
-    """Extract brand from JSON-LD or DOM."""
-    if "Product" in ld:
-        brand = ld["Product"].get("brand", {})
-        if isinstance(brand, dict):
-            return brand.get("name", "")
-        if isinstance(brand, str):
-            return brand
-
-    for sel in [".product-brand", "[itemprop='brand']", ".brand"]:
-        el = soup.select_one(sel)
-        if el:
-            return el.get_text(strip=True)
-
-    return "Movement"   # site default brand
-
-
-def _extract_availability(soup: BeautifulSoup, ld: dict) -> str:
-    """Map site stock status to Google values."""
-    if "Product" in ld:
-        offers = ld["Product"].get("offers", {})
-        if isinstance(offers, list):
-            offers = offers[0] if offers else {}
-        avail = offers.get("availability", "")
-        if "InStock" in avail:
-            return "in_stock"
-        if "OutOfStock" in avail:
-            return "out_of_stock"
-        if "PreOrder" in avail:
-            return "preorder"
-
-    for sel in [".stock-status", ".availability", "[data-availability]"]:
-        el = soup.select_one(sel)
-        if el:
-            txt = el.get_text(strip=True).lower()
-            if any(x in txt for x in ("på lager", "tilgjengelig", "in stock")):
-                return "in_stock"
-            if any(x in txt for x in ("ikke på lager", "utsolgt", "out of stock")):
-                return "out_of_stock"
-
-    return "in_stock"   # safe default
-
-
-def _extract_co2_label(soup: BeautifulSoup) -> str:
-    """
-    movement.as is a used-goods reseller — CO2 savings is a key USP.
-    Look for any CO2/miljø text and return a clean label.
-    """
-    for sel in [".co2", ".sustainability", ".environment", ".eco", "[class*='co2']", "[class*='klima']"]:
-        el = soup.select_one(sel)
-        if el:
-            txt = el.get_text(strip=True)
-            if txt:
-                return txt[:100]
-
-    # Text scan across full page
-    text = soup.get_text()
-    match = re.search(r'(CO2[^.\n]{5,80})', text, re.IGNORECASE)
-    if match:
-        return match.group(1).strip()[:100]
-
-    return "Brukt møbel - CO2-besparelse vs. nyproduksjon"   # evergreen label for used goods
-
-
-def _price_tier(price_value: float) -> str:
-    if price_value >= PRICE_TIER_HIGH:
-        return "Høy"
-    elif price_value >= PRICE_TIER_MEDIUM:
-        return "Medium"
-    return "Lav"
-
-
-def _extract_product_id(soup: BeautifulSoup, ld: dict, url: str) -> str:
-    """
-    Priority: JSON-LD productID → DOM → URL slug number.
-    """
-    if "Product" in ld:
-        pid = ld["Product"].get("productID") or ld["Product"].get("sku") or ""
-        if pid:
-            return str(pid)
-
-    for sel in ["[itemprop='productID']", "[data-product-id]", ".product-id"]:
-        el = soup.select_one(sel)
-        if el:
-            val = el.get("content") or el.get("data-product-id") or el.get_text(strip=True)
-            if val:
-                return val.strip()
-
-    # URL fallback: last number before .html
-    match = re.search(r'-(\d{4,6})\.html$', url)
-    if match:
-        return match.group(1)
-
-    return ""
-
-
-
-
-def _parse_price_text(raw: str) -> float:
-    """Parser norske prisstrenger som 3.950 ,-eks mva til float."""
-    import re
-    cleaned = re.sub(r"[^\d,\.]", "", raw)
-    if not cleaned:
-        return 0.0
-    if "," in cleaned:
-        cleaned = cleaned.replace(".", "").replace(",", ".")
-    else:
-        cleaned = cleaned.replace(".", "")
-    try:
-        return float(cleaned)
-    except ValueError:
-        return 0.0
-
-
-def _extract_price(soup, ld: dict) -> tuple:
-    """
-    Henter eks. mva og inkl. mva fra movement.as.
-    Selektorer: .sp__price.excluded og .sp__price.included
-    Returns: (ex_val, ex_str, incl_val, incl_str)
-    """
-    ex_val, ex_str     = 0.0, ""
-    incl_val, incl_str = 0.0, ""
-
+    # Grunnpriser
     ex_el   = soup.select_one(".sp__price.excluded")
     incl_el = soup.select_one(".sp__price.included")
 
     if ex_el:
-        ex_val = _parse_price_text(ex_el.get_text(strip=True))
-        ex_str = f"{int(ex_val)} {CURRENCY}" if ex_val else ""
+        price_ex = _parse_price(ex_el.get_text(strip=True))
     if incl_el:
-        incl_val = _parse_price_text(incl_el.get_text(strip=True))
-        incl_str = f"{int(incl_val)} {CURRENCY}" if incl_val else ""
+        price_incl = _parse_price(incl_el.get_text(strip=True))
 
-    if not ex_val and not incl_val:
-        log.warning("Price not found")
+    # Tilbudspris — sjekk kjente mønstre
+    for sel in [".sp__price.sale", ".sp__price--sale", ".sp__price--campaign",
+                ".sp__price.campaign", ".sp__price.discount"]:
+        el = soup.select_one(sel)
+        if el:
+            val = _parse_price(el.get_text(strip=True))
+            if val and val < price_ex:   # bare gyldig hvis lavere enn grunnpris
+                sale_ex = val
+                sale_incl = round(val * 1.25, 0)   # beregn inkl mva
+                break
 
-    return ex_val, ex_str, incl_val, incl_str
+    if not price_ex and not price_incl:
+        log.warning("Pris ikke funnet")
+
+    return price_ex, price_incl, sale_ex, sale_incl
+
 
 def _extract_attributes(soup: BeautifulSoup) -> dict:
     """
     Henter produktegenskaper fra .attributes-seksjonen.
-    Returnerer dict: {"Hovedfarge": "Sort", "Bredde": "180.00 cm", ...}
+    Returnerer: {"Hovedfarge": "Sort", "Bredde": "180.00 cm", ...}
     """
     result = {}
     attrs_el = soup.select_one(".attributes")
@@ -504,292 +309,489 @@ def _extract_attributes(soup: BeautifulSoup) -> dict:
     return result
 
 
-def _build_size(attrs: dict) -> str:
-    """Bygg size-streng fra dimensjoner."""
-    parts = []
-    for key in ["Bredde", "Høyde", "Dybde", "Sittehøyde", "Diameter"]:
-        if key in attrs:
-            parts.append(f"{key}: {attrs[key]}")
-    return " | ".join(parts)
-
-
 def _extract_quantity(soup: BeautifulSoup) -> str:
-    """Henter lagerstatus fra .sp__amount-info"""
+    """Henter lagerbeholdning fra .sp__amount-info"""
     el = soup.select_one(".sp__amount-info")
     if el:
         txt = el.get_text(strip=True)
-        # Normaliser: "100+ stk på lager" → "100+"
         match = re.search(r"(\d+\+?)\s*stk", txt, re.IGNORECASE)
         if match:
             return match.group(1)
-        return txt
+        # Sjekk hidden maxamount input
+    hidden = soup.find("input", {"name": "maxamount"})
+    if hidden:
+        return hidden.get("value", "")
     return ""
 
 
-def _extract_sale_price(soup: BeautifulSoup) -> tuple[float, str, float, str]:
+def _extract_images(soup: BeautifulSoup, ld: dict) -> tuple:
     """
-    Henter tilbudspris hvis den finnes.
-    Ser etter strøket/original pris ved siden av .sp__price.
-    Returns: (sale_ex_val, "990 NOK", sale_incl_val, "1238 NOK")
+    Hoved: og:image
+    Ekstra: bilder fra galleri-slider
+    Returns: (main_url, [extra_urls])
     """
-    # Ser etter strøket pris (crossed out / original)
-    for selector in [".sp__price--original", ".sp__price.crossed",
-                     ".sp__price--was", ".price-original", ".price--sale"]:
-        el = soup.select_one(selector)
-        if el:
-            val = _parse_price_text(el.get_text(strip=True))
-            if val:
-                return val, f"{int(val)} {CURRENCY}", 0.0, ""
-    return 0.0, "", 0.0, ""
+    main_img = ""
+    og = soup.find("meta", property="og:image")
+    if og:
+        main_img = og.get("content", "").strip()
 
-# ─── Main Product Scrape ──────────────────────────────────────────────────────
+    if not main_img and "Product" in ld:
+        img = ld["Product"].get("image", "")
+        main_img = img[0] if isinstance(img, list) else img
+
+    extra_imgs = []
+    seen = {main_img}
+
+    for sel in [".sp__image-gallery img", ".product-images img",
+                ".swiper-slide img", ".slider img", ".thumbnails img"]:
+        imgs = soup.select(sel)
+        if imgs:
+            for img in imgs:
+                src = img.get("data-zoom-image") or img.get("data-src") or img.get("src") or ""
+                src = urljoin(BASE_URL, src)
+                if src not in seen and "placeholder" not in src and len(src) > 20:
+                    extra_imgs.append(src)
+                    seen.add(src)
+            break
+
+    return main_img, extra_imgs[:9]
+
+
+def _extract_brand(soup: BeautifulSoup) -> str:
+    """Henter brand fra .sp__brand"""
+    el = soup.select_one(".sp__brand")
+    if el:
+        brand = el.get_text(strip=True)
+        if brand:
+            return brand
+    return "Movement"
+
+
+def _extract_description(soup: BeautifulSoup) -> str:
+    """Henter beskrivelse fra Beskrivelse-tabben."""
+    for sel in ["#tab-description", ".product-description",
+                ".tab-pane", "[data-tab='description']"]:
+        el = soup.select_one(sel)
+        if el:
+            return _clean_text(el.get_text(separator="\n", strip=True))
+
+    # Heading-fallback
+    for h in soup.find_all(["h2", "h3"], string=re.compile(r"Beskrivelse", re.I)):
+        sib = h.find_next_sibling()
+        if sib:
+            return _clean_text(sib.get_text(separator="\n", strip=True))
+
+    # og:description fallback
+    meta = soup.find("meta", {"name": "description"})
+    if meta:
+        return meta.get("content", "").strip()
+
+    return ""
+
+
+def _clean_text(text: str) -> str:
+    """Fjerner overflødig whitespace, beholder lesbarhet."""
+    lines = [l.strip() for l in text.splitlines()]
+    lines = [l for l in lines if l]
+    return "\n".join(lines)[:5000]
+
+
+def _extract_availability(soup: BeautifulSoup, ld: dict) -> str:
+    """Mapper lagerstatus til Google-verdier."""
+    if "Product" in ld:
+        offers = ld["Product"].get("offers", {})
+        if isinstance(offers, list):
+            offers = offers[0] if offers else {}
+        avail = offers.get("availability", "")
+        if "InStock" in avail:
+            return "in_stock"
+        if "OutOfStock" in avail:
+            return "out_of_stock"
+        if "PreOrder" in avail:
+            return "preorder"
+
+    qty_el = soup.select_one(".sp__amount-info")
+    if qty_el:
+        txt = qty_el.get_text(strip=True).lower()
+        if "ikke" in txt or "utsolgt" in txt:
+            return "out_of_stock"
+
+    return "in_stock"
+
+
+def _extract_product_id(soup: BeautifulSoup, ld: dict, url: str) -> str:
+    """ID fra JSON-LD → DOM → URL-slug."""
+    if "Product" in ld:
+        pid = ld["Product"].get("productID") or ld["Product"].get("sku") or ""
+        if pid:
+            return str(pid)
+
+    id_el = soup.select_one(".sp__info-id")
+    if id_el:
+        match = re.search(r"\d+", id_el.get_text())
+        if match:
+            return match.group()
+
+    match = re.search(r"-(\d{4,6})\.html$", url)
+    if match:
+        return match.group(1)
+
+    return ""
+
+
+def _smart_title(raw: str, leaf_category: str, color: str, material: str) -> str:
+    """
+    Smart Title v2:
+    Legg til leafkategori, farge og materiale hvis de ikke allerede er i tittelen.
+    Format: {Navn} - {Kategori} - {Farge} - {Materiale}
+    """
+    result = raw
+    appended = []
+
+    if leaf_category and leaf_category.lower() not in result.lower():
+        appended.append(leaf_category)
+
+    if color and color.lower() not in result.lower():
+        appended.append(color)
+
+    if material and material.lower() not in result.lower():
+        appended.append(material)
+
+    if appended:
+        result = f"{result} - {' - '.join(appended)}"
+
+    return result
+
+
+# ─── Main Scrape ──────────────────────────────────────────────────────────────
 def scrape_product(url: str) -> Optional[Product]:
-    """Scrape a single product page and return a Product dataclass."""
+    """Scraper én produktside og returnerer Product."""
     resp = _get(url)
     if not resp:
         return None
 
     soup = BeautifulSoup(resp.text, "html.parser")
     ld   = _extract_ld_json(soup)
+    p    = Product(url=url)
 
-    p = Product(url=url)
+    # Identifikasjon
+    p.product_id  = _extract_product_id(soup, ld, url)
+    p.brand       = _extract_brand(soup)
+    p.description = _extract_description(soup)
+    p.availability = _extract_availability(soup, ld)
 
-    # ── Core fields ───────────────────────────────────────────────────────────
-    p.product_id = _extract_product_id(soup, ld, url)
-
-    # Title: JSON-LD → og:title → <title> tag
+    # Tittel
     if "Product" in ld:
         p.title_raw = ld["Product"].get("name", "").strip()
     if not p.title_raw:
-        og_title = soup.find("meta", property="og:title")
-        p.title_raw = og_title.get("content", "").strip() if og_title else ""
+        og = soup.find("meta", property="og:title")
+        p.title_raw = og.get("content", "").strip() if og else ""
     if not p.title_raw:
-        title_tag = soup.find("title")
-        p.title_raw = title_tag.get_text(strip=True) if title_tag else ""
+        h1 = soup.select_one("h1")
+        p.title_raw = h1.get_text(strip=True) if h1 else ""
 
-    # Breadcrumbs & taxonomy
-    p.breadcrumbs  = _extract_breadcrumbs(soup, ld, url)
-    p.product_type = _build_product_type(p.breadcrumbs)
+    # Breadcrumbs
+    p.breadcrumbs   = _extract_breadcrumbs(soup, ld, url)
+    p.product_type  = " > ".join(p.breadcrumbs)
     p.leaf_category = p.breadcrumbs[-1] if p.breadcrumbs else ""
 
-    # Smart SEO title
-    p.title_seo = _smart_title(p.title_raw, p.leaf_category)
-
-    # Price
-    p.price_value, p.price, p.price_incl_value, p.price_incl = _extract_price(soup, ld)
-
-    # Other fields
-    p.availability    = _extract_availability(soup, ld)
-    p.description     = _extract_description(soup)
-    p.brand           = _extract_brand(soup, ld)
+    # Bilder
     p.image_main, p.images_extra = _extract_images(soup, ld)
 
+    # Lager
+    p.quantity = _extract_quantity(soup)
+
+    # Priser
+    p.price_ex, p.price_incl, p.sale_ex, p.sale_incl = _extract_prices(soup)
+    p.price_ex_str   = _fmt(p.price_ex)
+    p.price_incl_str = _fmt(p.price_incl)
+    p.sale_ex_str    = _fmt(p.sale_ex)    # tomt hvis ingen tilbud
+    p.sale_incl_str  = _fmt(p.sale_incl)  # tomt hvis ingen tilbud
+
     # Produktegenskaper
-    p.attributes     = _extract_attributes(soup)
-    p.color          = p.attributes.get("Hovedfarge", "")
+    p.attributes      = _extract_attributes(soup)
+    p.color           = p.attributes.get("Hovedfarge", "")
     p.color_secondary = p.attributes.get("Sekundærfarge", "")
-    p.size           = _build_size(p.attributes)
-    p.weight         = p.attributes.get("Vekt", "")
-    p.quantity       = _extract_quantity(soup)
+    p.material        = p.attributes.get("Materiale", p.attributes.get("Stoff", ""))
 
-    # Sale price
-    p.price_sale_value, p.price_sale, _, _ = _extract_sale_price(soup)
+    # Dimensjoner
+    p.width      = _parse_dim(p.attributes.get("Bredde", ""))
+    p.height     = _parse_dim(p.attributes.get("Høyde", ""))
+    p.depth      = _parse_dim(p.attributes.get("Dybde", ""))
+    p.seat_height = _parse_dim(p.attributes.get("Sittehøyde", ""))
+    p.diameter   = _parse_dim(p.attributes.get("Diameter", ""))
 
-    # Custom labels — settes manuelt i GMC etter strategi
-    p.custom_label_0 = ""
-    p.custom_label_1 = ""
-    p.custom_label_2 = ""
-    p.custom_label_3 = ""
-    p.custom_label_4 = ""
+    # Beregnet fraktvekt
+    p.shipping_weight = _calc_shipping_weight(p.width, p.height, p.depth)
+
+    # Smart Title v2
+    p.title_seo = _smart_title(p.title_raw, p.leaf_category, p.color, p.material)
 
     if not p.product_id:
-        log.warning(f"No product ID found for {url}")
+        log.warning(f"Ingen produkt-ID for {url}")
 
     return p
 
 
-def scrape_all(urls: list[str], max_products: int = 0) -> list[Product]:
-    """Scrape all URLs. Set max_products > 0 to limit (useful for testing)."""
+def scrape_all(urls: list, max_products: int = 0) -> list:
+    """Scraper alle URLer. max_products > 0 begrenser antall (test-modus)."""
     products = []
     total = len(urls) if not max_products else min(max_products, len(urls))
     for i, url in enumerate(urls[:total], 1):
-        log.info(f"[{i}/{total}] Scraping: {url}")
+        log.info(f"[{i}/{total}] {url}")
         p = scrape_product(url)
         if p:
             products.append(p)
         else:
-            log.warning(f"  → Skipped (failed to scrape)")
-    log.info(f"Scraped {len(products)} products successfully")
+            log.warning(f"  → Hoppet over")
+    log.info(f"Scraped {len(products)} produkter")
     return products
 
 
-# ─── 3. FEED GENERATION ───────────────────────────────────────────────────────
-def _cdata(text: str) -> str:
-    """Wrap text in CDATA to safely include HTML/special chars."""
-    return f"<![CDATA[{text}]]>"
+# ─── Sitemap Discovery ────────────────────────────────────────────────────────
+def discover_product_urls(sitemap_url: str = SITEMAP_URL) -> list:
+    """Walker sitemap-indeks → child-sitemaps → produkt-URLer."""
+    log.info(f"Henter sitemap: {sitemap_url}")
+    product_urls = []
+    visited = set()
+
+    def _parse(url: str):
+        if url in visited:
+            return
+        visited.add(url)
+        resp = _get(url)
+        if not resp:
+            return
+        try:
+            root = ET.fromstring(resp.content)
+        except ET.ParseError as e:
+            log.error(f"XML-feil på {url}: {e}")
+            return
+        ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        for loc in root.findall(".//sm:sitemap/sm:loc", ns):
+            _parse(loc.text.strip())
+        for loc in root.findall(".//sm:url/sm:loc", ns):
+            page_url = loc.text.strip()
+            if re.search(r"-\d{4,6}\.html$", page_url):
+                product_urls.append(page_url)
+
+    _parse(sitemap_url)
+    log.info(f"Fant {len(product_urls)} produkt-URLer")
+    return list(dict.fromkeys(product_urls))
 
 
-def _prettify(root, extra_ns: dict = None) -> str:
-    """Return pretty-printed XML string. ET auto-injects registered namespaces."""
-    raw = ET.tostring(root, encoding="unicode", xml_declaration=False)
-    full = f'<?xml version="1.0" encoding="UTF-8"?>\n{raw}'
-    parsed = minidom.parseString(full.encode("utf-8"))
-    return parsed.toprettyxml(indent="  ", encoding=None)
-
-
-def build_google_feed(products: list[Product]) -> str:
+# ─── Feed: Google Merchant Center ────────────────────────────────────────────
+def build_google_feed(products: list) -> str:
     """
-    Generate Google Merchant Center RSS 2.0 feed.
-    Spec: https://support.google.com/merchants/answer/7052112
+    Genererer Google Merchant Center RSS 2.0 feed.
+    Følger Golden Standard-strukturen med product_detail for ekstra attributter.
     """
-    # Register namespace so ET serialises as g:xxx not ns0:xxx
     ET.register_namespace("g", "http://base.google.com/ns/1.0")
+    G   = "http://base.google.com/ns/1.0"
     rss = ET.Element("rss", {"version": "2.0"})
-    channel = ET.SubElement(rss, "channel")
+    ch  = ET.SubElement(rss, "channel")
 
-    ET.SubElement(channel, "title").text       = "Movement Google Shopping Feed"
-    ET.SubElement(channel, "link").text        = BASE_URL
-    ET.SubElement(channel, "description").text = "Brukte kvalitetsmøbler fra Movement AS"
-
-    G = "http://base.google.com/ns/1.0"
+    ET.SubElement(ch, "title").text       = "Movement Google Shopping Feed"
+    ET.SubElement(ch, "link").text        = BASE_URL
+    ET.SubElement(ch, "description").text = "Brukte kvalitetsmøbler – Movement AS"
 
     for p in products:
-        item = ET.SubElement(channel, "item")
+        item = ET.SubElement(ch, "item")
 
-        ET.SubElement(item, "title").text                        = p.title_seo
-        ET.SubElement(item, "{%s}id" % G).text                  = p.product_id
-        ET.SubElement(item, "link").text                         = p.url
-        ET.SubElement(item, "description").text                  = p.description
-        ET.SubElement(item, "{%s}availability" % G).text        = p.availability
-        ET.SubElement(item, "{%s}condition" % G).text           = p.condition
-        ET.SubElement(item, "{%s}identifier_exists" % G).text   = p.identifier_exists
-        ET.SubElement(item, "{%s}brand" % G).text               = p.brand
+        # ── Kjernefelt ────────────────────────────────────────────────────────
+        ET.SubElement(item, "{%s}id" % G).text                = p.product_id
+        ET.SubElement(item, "{%s}title" % G).text             = p.title_seo
+        ET.SubElement(item, "{%s}description" % G).text       = p.description
+        ET.SubElement(item, "{%s}link" % G).text              = p.url
+        ET.SubElement(item, "{%s}brand" % G).text             = p.brand
+        ET.SubElement(item, "{%s}condition" % G).text         = p.condition
+        ET.SubElement(item, "{%s}availability" % G).text      = p.availability
+        ET.SubElement(item, "{%s}identifier_exists" % G).text = p.identifier_exists
 
         if p.product_type:
             ET.SubElement(item, "{%s}product_type" % G).text = p.product_type
 
+        # ── Bilder ────────────────────────────────────────────────────────────
         if p.image_main:
             ET.SubElement(item, "{%s}image_link" % G).text = p.image_main
         for img in p.images_extra:
             ET.SubElement(item, "{%s}additional_image_link" % G).text = img
 
-        # Pris eks mva (standard) + inkl mva
-        ET.SubElement(item, "{%s}price" % G).text          = f"{int(p.price_value)} {CURRENCY}" if p.price_value else ""
-        ET.SubElement(item, "{%s}sale_price" % G).text     = f"{int(p.price_sale_value)} {CURRENCY}" if getattr(p, "price_sale_value", 0) else ""
+        # ── Priser (eks. mva — standard) ──────────────────────────────────────
+        ET.SubElement(item, "{%s}price" % G).text      = p.price_ex_str
+        if p.sale_ex_str:
+            ET.SubElement(item, "{%s}sale_price" % G).text = p.sale_ex_str
 
-        # Currency som eget felt
-        ET.SubElement(item, "{%s}currency" % G).text = CURRENCY
+        # ── Priser (inkl. mva — B2C) ──────────────────────────────────────────
+        if p.price_incl_str:
+            ET.SubElement(item, "price_incl_vat").text = p.price_incl_str
+        if p.sale_incl_str:
+            ET.SubElement(item, "sale_price_incl_vat").text = p.sale_incl_str
 
-        # Inkl mva som egne felt
-        ET.SubElement(item, "price_incl_vat").text      = f"{int(p.price_incl_value)} {CURRENCY}" if getattr(p, "price_incl_value", 0) else ""
-        ET.SubElement(item, "sale_price_incl_vat").text = ""
-
-        # Produktegenskaper
+        # ── Produktegenskaper ─────────────────────────────────────────────────
         if p.color:
             ET.SubElement(item, "{%s}color" % G).text = p.color
-        if p.color_secondary:
-            ET.SubElement(item, "color_secondary").text = p.color_secondary
-        if p.size:
-            ET.SubElement(item, "{%s}size" % G).text = p.size
+        if p.material:
+            ET.SubElement(item, "{%s}material" % G).text = p.material
+
+        # ── Dimensjoner som egne felt ─────────────────────────────────────────
+        if p.width:
+            ET.SubElement(item, "{%s}product_width" % G).text  = f"{int(p.width)} cm"
+        if p.height:
+            ET.SubElement(item, "{%s}product_height" % G).text = f"{int(p.height)} cm"
+        if p.depth:
+            ET.SubElement(item, "{%s}product_length" % G).text = f"{int(p.depth)} cm"
+
+        # ── Fraktvekt (volum-metoden) ─────────────────────────────────────────
+        if p.shipping_weight:
+            ET.SubElement(item, "{%s}shipping_weight" % G).text = f"{p.shipping_weight} kg"
+
+        # ── Lager ─────────────────────────────────────────────────────────────
         if p.quantity:
             ET.SubElement(item, "quantity").text = p.quantity
 
-        # Custom labels
-        ET.SubElement(item, "{%s}custom_label_0" % G).text = p.custom_label_0
-        ET.SubElement(item, "{%s}custom_label_1" % G).text = p.custom_label_1
-        ET.SubElement(item, "{%s}custom_label_2" % G).text = p.custom_label_2
-        ET.SubElement(item, "{%s}custom_label_3" % G).text = p.custom_label_3
-        ET.SubElement(item, "{%s}custom_label_4" % G).text = p.custom_label_4
+        # ── product_detail for ekstra dimensjoner ────────────────────────────
+        extra_dims = {}
+        if p.seat_height:
+            extra_dims["Sittehøyde"] = f"{int(p.seat_height)} cm"
+        if p.diameter:
+            extra_dims["Diameter"] = f"{int(p.diameter)} cm"
+        if p.color_secondary:
+            extra_dims["Sekundærfarge"] = p.color_secondary
 
-        # Shipping
-        ship = ET.SubElement(item, "{%s}shipping" % G)
-        ET.SubElement(ship, "{%s}country" % G).text = COUNTRY
-        ET.SubElement(ship, "{%s}price" % G).text   = p.shipping_price.replace('.00', '') if p.shipping_price else ''
+        for attr_name, attr_val in extra_dims.items():
+            pd = ET.SubElement(item, "{%s}product_detail" % G)
+            ET.SubElement(pd, "{%s}section_name" % G).text    = "Dimensjoner"
+            ET.SubElement(pd, "{%s}attribute_name" % G).text  = attr_name
+            ET.SubElement(pd, "{%s}attribute_value" % G).text = attr_val
+
+        # ── Andre produktattributter i product_detail ────────────────────────
+        skip_keys = {"Hovedfarge", "Sekundærfarge", "Materiale", "Stoff",
+                     "Bredde", "Høyde", "Dybde", "Sittehøyde", "Diameter"}
+        for key, val in p.attributes.items():
+            if key not in skip_keys:
+                pd = ET.SubElement(item, "{%s}product_detail" % G)
+                ET.SubElement(pd, "{%s}section_name" % G).text    = "Spesifikasjoner"
+                ET.SubElement(pd, "{%s}attribute_name" % G).text  = key
+                ET.SubElement(pd, "{%s}attribute_value" % G).text = val
+
+        # ── Custom labels (tomme — settes manuelt i GMC) ──────────────────────
+        for i in range(5):
+            ET.SubElement(item, "{%s}custom_label_%d" % (G, i)).text = getattr(p, f"custom_label_{i}", "")
 
     return _prettify(rss)
 
 
-def build_meta_feed(products: list[Product]) -> str:
+# ─── Feed: Meta Retail ───────────────────────────────────────────────────────
+def build_meta_feed(products: list) -> str:
     """
-    Generate Meta Commerce Manager / Automotive Inventory Ads feed.
-    Uses <listings>/<listing> format.
+    Genererer Meta Commerce Manager feed.
+    Inkluderer dimensjoner og begge prisvariantene.
     """
     root = ET.Element("listings")
 
     for p in products:
         listing = ET.SubElement(root, "listing")
 
-        ET.SubElement(listing, "id").text              = p.product_id
-        ET.SubElement(listing, "title").text           = p.title_seo
-        ET.SubElement(listing, "description").text     = p.description
-        ET.SubElement(listing, "url").text             = p.url
-        ET.SubElement(listing, "price").text           = p.price
-        ET.SubElement(listing, "availability").text    = p.availability
-        ET.SubElement(listing, "condition").text       = p.condition
+        ET.SubElement(listing, "id").text           = p.product_id
+        ET.SubElement(listing, "title").text        = p.title_seo
+        ET.SubElement(listing, "description").text  = p.description
+        ET.SubElement(listing, "url").text          = p.url
+        ET.SubElement(listing, "availability").text = p.availability
+        ET.SubElement(listing, "condition").text    = p.condition
+        ET.SubElement(listing, "brand").text        = p.brand
 
+        if p.product_type:
+            ET.SubElement(listing, "product_type").text = p.product_type
+
+        # Bilder
         if p.image_main:
             ET.SubElement(listing, "image_link").text = p.image_main
         for img in p.images_extra:
             ET.SubElement(listing, "additional_image_link").text = img
 
-        ET.SubElement(listing, "brand").text = p.brand
+        # Priser eks. mva
+        ET.SubElement(listing, "price").text = p.price_ex_str
+        if p.sale_ex_str:
+            ET.SubElement(listing, "sale_price").text = p.sale_ex_str
 
-        if p.product_type:
-            ET.SubElement(listing, "product_type").text = p.product_type
+        # Priser inkl. mva
+        if p.price_incl_str:
+            ET.SubElement(listing, "price_incl_vat").text = p.price_incl_str
+        if p.sale_incl_str:
+            ET.SubElement(listing, "sale_price_incl_vat").text = p.sale_incl_str
 
-        ET.SubElement(listing, "custom_label_0").text = p.custom_label_0
-        ET.SubElement(listing, "custom_label_1").text = p.custom_label_1
-        ET.SubElement(listing, "custom_label_2").text = p.custom_label_2
+        # Egenskaper
+        if p.color:
+            ET.SubElement(listing, "color").text = p.color
+        if p.color_secondary:
+            ET.SubElement(listing, "color_secondary").text = p.color_secondary
+        if p.material:
+            ET.SubElement(listing, "material").text = p.material
+
+        # Dimensjoner
+        if p.width:
+            ET.SubElement(listing, "product_width").text  = f"{int(p.width)} cm"
+        if p.height:
+            ET.SubElement(listing, "product_height").text = f"{int(p.height)} cm"
+        if p.depth:
+            ET.SubElement(listing, "product_length").text = f"{int(p.depth)} cm"
+        if p.seat_height:
+            ET.SubElement(listing, "seat_height").text = f"{int(p.seat_height)} cm"
+        if p.diameter:
+            ET.SubElement(listing, "diameter").text = f"{int(p.diameter)} cm"
+
+        # Lager
+        if p.quantity:
+            ET.SubElement(listing, "quantity").text = p.quantity
 
     return _prettify(root)
 
 
-# ─── 4. ENTRY POINT ──────────────────────────────────────────────────────────
+# ─── XML Pretty Print ─────────────────────────────────────────────────────────
+def _prettify(root) -> str:
+    """Returnerer pen XML-streng med korrekt encoding."""
+    raw    = ET.tostring(root, encoding="unicode", xml_declaration=False)
+    full   = f'<?xml version="1.0" encoding="UTF-8"?>\n{raw}'
+    parsed = minidom.parseString(full.encode("utf-8"))
+    return parsed.toprettyxml(indent="  ", encoding=None)
+
+
+# ─── Entry Point ──────────────────────────────────────────────────────────────
 def main(test_mode: bool = False, test_limit: int = 5):
-    import os
-
-    # Discover URLs from sitemap
     urls = discover_product_urls()
-
     if not urls:
-        log.error("No product URLs found. Check sitemap or site structure.")
+        log.error("Ingen produkt-URLer funnet.")
         return
 
     if test_mode:
-        log.info(f"TEST MODE: limiting to {test_limit} products")
+        log.info(f"TEST MODE: {test_limit} produkter")
         urls = urls[:test_limit]
 
-    # Scrape
     products = scrape_all(urls)
-
     if not products:
-        log.error("No products scraped. Aborting feed generation.")
+        log.error("Ingen produkter scraped.")
         return
 
-    # Output directory
     out_dir = os.environ.get("FEED_OUTPUT_DIR", ".")
     os.makedirs(out_dir, exist_ok=True)
-
-    # Write feeds
-    google_xml = build_google_feed(products)
-    meta_xml   = build_meta_feed(products)
 
     google_path = os.path.join(out_dir, "feed_google.xml")
     meta_path   = os.path.join(out_dir, "feed_meta.xml")
 
     with open(google_path, "w", encoding="utf-8") as f:
-        f.write(google_xml)
+        f.write(build_google_feed(products))
     with open(meta_path, "w", encoding="utf-8") as f:
-        f.write(meta_xml)
+        f.write(build_meta_feed(products))
 
-    log.info(f"✅ Google feed → {google_path}  ({len(products)} products)")
-    log.info(f"✅ Meta feed   → {meta_path}  ({len(products)} products)")
+    log.info(f"✅ Google feed → {google_path}  ({len(products)} produkter)")
+    log.info(f"✅ Meta feed   → {meta_path}  ({len(products)} produkter)")
 
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="movement.as feed scraper")
-    parser.add_argument("--test",       action="store_true", help="Test mode (5 products)")
-    parser.add_argument("--test-limit", type=int, default=5,  help="Number of products in test mode")
+    parser = argparse.ArgumentParser(description="movement.as feed scraper v2")
+    parser.add_argument("--test",       action="store_true")
+    parser.add_argument("--test-limit", type=int, default=5)
     args = parser.parse_args()
     main(test_mode=args.test, test_limit=args.test_limit)
