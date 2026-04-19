@@ -376,16 +376,15 @@ def _extract_mpn(attributes: dict, description: str) -> str:
 
     # 2. Beskrivelse — "Vare: PNN01508M1" eller "Modell: AIR-PCIM220-M1E"
     patterns = [
-        r"[Vv]are[:\s]+([A-Z0-9][A-Z0-9\-\/]{3,})",
-        r"[Mm]odell[:\s]+([A-Z0-9][A-Z0-9\-\/]{3,})",
-        r"MPN[:\s]+([A-Z0-9][A-Z0-9\-\/]{3,})",
-        r"[Aa]rt(?:ikkel)?(?:nr)?[:\s]+([A-Z0-9][A-Z0-9\-\/]{3,})",
+        r"[Vv]are[:\s]+([A-Z0-9][A-Z0-9\-\/ ]{3,}?)(?:\s*[\n,.]|$)",
+        r"[Mm]odell[:\s]+([A-Z0-9][A-Z0-9\-\/ ]{3,}?)(?:\s*[\n,.]|$)",
+        r"MPN[:\s]+([A-Z0-9][A-Z0-9\-\/ ]{3,}?)(?:\s*[\n,.]|$)",
+        r"[Aa]rt(?:ikkel)?(?:nr)?[:\s]+([A-Z0-9][A-Z0-9\-\/ ]{3,}?)(?:\s*[\n,.]|$)",
     ]
     for pattern in patterns:
         match = re.search(pattern, description or "")
         if match:
             val = match.group(1).strip()
-            # Må inneholde både bokstaver og tall for å være en ekte kode
             if re.search(r"[A-Za-z]", val) and re.search(r"\d", val):
                 return val
 
