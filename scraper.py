@@ -129,6 +129,7 @@ class Product:
     color: str          = ""    # Hovedfarge
     color_secondary: str = ""   # Sekundærfarge
     material: str       = ""    # Materiale (fra attributter eller beskrivelse)
+    mpn: str            = ""    # Modellnummer
 
     # Dimensjoner (cm, float)
     width: float        = 0.0
@@ -190,6 +191,8 @@ def _parse_dim(raw: str) -> float:
     return 0.0
 
 
+MAX_SHIPPING_WEIGHT = 500.0   # kg — cap for urealistiske volum
+
 def _calc_shipping_weight(width: float, height: float, depth: float) -> float:
     """
     Volum-metoden for fraktvekt.
@@ -201,38 +204,42 @@ def _calc_shipping_weight(width: float, height: float, depth: float) -> float:
         return 0.0
     h = height if height else 10.0  # estimat for flate gjenstander
     volume_liters = (width * h * depth) / 1000
-    return round(volume_liters / 5, 1)
+    weight = round(volume_liters / 5, 1)
+    return min(weight, MAX_SHIPPING_WEIGHT)
 
 
 
-# Google Product Category mapping
+# Google Product Category — numeriske IDer
+# Ref: https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt
 GOOGLE_CATEGORY_MAP = {
-    "kontorstol":        "Office Supplies > Office Furniture > Chairs > Office Chairs",
-    "stoler":            "Office Supplies > Office Furniture > Chairs",
-    "skrivebord":        "Office Supplies > Office Furniture > Desks",
-    "bordplater":        "Office Supplies > Office Furniture > Tables > Office Table Tops",
-    "møtebord":          "Office Supplies > Office Furniture > Tables > Conference Tables",
-    "hev":               "Office Supplies > Office Furniture > Desks",
-    "bord":              "Office Supplies > Office Furniture > Tables",
-    "oppbevaring":       "Office Supplies > Office Furniture > Bookcases & Shelving Units",
-    "skap":              "Office Supplies > Office Furniture > Filing Cabinets",
-    "reol":              "Office Supplies > Office Furniture > Bookcases & Shelving Units",
-    "belysning":         "Lighting",
-    "lampe":             "Lighting",
-    "sofa":              "Furniture > Living Room Furniture > Sofas",
-    "loungestol":        "Furniture > Living Room Furniture > Chairs",
-    "garderobe":         "Furniture > Bedroom Furniture > Wardrobes & Armoires",
-    "whiteboard":        "Office Supplies > Presentation Supplies > Whiteboards",
-    "tavle":             "Office Supplies > Presentation Supplies > Whiteboards",
+    "kontorstol":   "447",    # Office Supplies > Office Furniture > Chairs > Office Chairs
+    "gjestestol":   "447",
+    "barstol":      "447",
+    "stoler":       "446",    # Office Supplies > Office Furniture > Chairs
+    "loungestol":   "2786",   # Furniture > Living Room Furniture > Chairs
+    "sofa":         "2634",   # Furniture > Living Room Furniture > Sofas
+    "bordplater":   "4090",   # Office Supplies > Office Furniture > Tables > Office Table Tops
+    "møtebord":     "4317",   # Office Supplies > Office Furniture > Tables > Conference Tables
+    "skrivebord":   "4191",   # Office Supplies > Office Furniture > Desks
+    "hev":          "4191",   # Hevsenk = skrivebord
+    "bord":         "4316",   # Office Supplies > Office Furniture > Tables
+    "reol":         "4318",   # Office Supplies > Office Furniture > Bookcases & Shelving Units
+    "oppbevaring":  "4318",
+    "skap":         "4163",   # Office Supplies > Office Furniture > Filing Cabinets
+    "garderobe":    "4163",
+    "whiteboard":   "932",    # Office Supplies > Presentation Supplies > Whiteboards
+    "tavle":        "932",
+    "belysning":    "2634",   # Lighting
+    "lampe":        "594",    # Lighting > Lamps
 }
 
 def _map_google_category(breadcrumbs: list, title: str) -> str:
-    """Mapper breadcrumbs/tittel til Google Product Category."""
+    """Mapper breadcrumbs/tittel til Google Product Category numerisk ID."""
     search_text = " ".join(breadcrumbs + [title]).lower()
-    for keyword, category in GOOGLE_CATEGORY_MAP.items():
+    for keyword, cat_id in GOOGLE_CATEGORY_MAP.items():
         if keyword in search_text:
-            return category
-    return "Office Supplies > Office Furniture"
+            return cat_id
+    return "4319"   # Office Supplies > Office Furniture (fallback)
 
 # ─── Extraction Functions ─────────────────────────────────────────────────────
 def _extract_ld_json(soup: BeautifulSoup) -> dict:
@@ -285,42 +292,81 @@ def _extract_prices(soup: BeautifulSoup) -> tuple:
     Henter alle fire prisvariantene fra movement.as.
 
     Normal situasjon (ingen tilbud):
-      .sp__price.excluded = grunnpris eks mva  → price_ex
-      .sp__price.included = grunnpris inkl mva → price_incl
-      sale = 0 (ingen tilbud)
+      .sp__price.excluded = grunnpris eks mva
+      .sp__price.included = grunnpris inkl mva
+      sale = 0
 
-    Ved tilbud viser movement.as sannsynligvis en ekstra .sp__price.sale
-    eller lignende klasse med tilbudsprisen.
+    Ved tilbud:
+      .priceReduce span = ORIGINALPRISEN (strøket, eks mva)
+      .sp__price.excluded = TILBUDSPRISEN (eks mva)
+      .sp__price.included = TILBUDSPRISEN (inkl mva)
 
     Returns:
       (price_ex, price_incl, sale_ex, sale_incl)
+      price_ex  = alltid originalprisen
+      sale_ex   = tilbudspris hvis tilbud, ellers 0
     """
-    price_ex = price_incl = sale_ex = sale_incl = 0.0
+    current_ex = current_incl = original_ex = 0.0
 
-    # Grunnpriser
+    # Nåværende priser (alltid til stede)
     ex_el   = soup.select_one(".sp__price.excluded")
     incl_el = soup.select_one(".sp__price.included")
 
     if ex_el:
-        price_ex = _parse_price(ex_el.get_text(strip=True))
+        current_ex = _parse_price(ex_el.get_text(strip=True))
     if incl_el:
-        price_incl = _parse_price(incl_el.get_text(strip=True))
+        current_incl = _parse_price(incl_el.get_text(strip=True))
 
-    # Tilbudspris — sjekk kjente mønstre
-    for sel in [".sp__price.sale", ".sp__price--sale", ".sp__price--campaign",
-                ".sp__price.campaign", ".sp__price.discount"]:
-        el = soup.select_one(sel)
-        if el:
-            val = _parse_price(el.get_text(strip=True))
-            if val and val < price_ex:   # bare gyldig hvis lavere enn grunnpris
-                sale_ex = val
-                sale_incl = round(val * 1.25, 0)   # beregn inkl mva
-                break
+    # Sjekk om det er tilbud — .priceReduce inneholder originalprisen
+    reduce_el = soup.select_one(".priceReduce span:not(i)")
+    if not reduce_el:
+        reduce_el = soup.select_one(".priceReduce span")
+    if reduce_el:
+        val = _parse_price(reduce_el.get_text(strip=True))
+        if val and val > current_ex:
+            original_ex = val
 
-    if not price_ex and not price_incl:
+    if original_ex:
+        # Tilbud: price = original, sale = nåværende
+        price_ex   = original_ex
+        price_incl = round(original_ex * 1.25, 0)
+        sale_ex    = current_ex
+        sale_incl  = current_incl if current_incl else round(current_ex * 1.25, 0)
+    else:
+        # Ingen tilbud
+        price_ex   = current_ex
+        price_incl = current_incl if current_incl else round(current_ex * 1.25, 0)
+        sale_ex    = 0.0
+        sale_incl  = 0.0
+
+    if not price_ex:
         log.warning("Pris ikke funnet")
 
     return price_ex, price_incl, sale_ex, sale_incl
+
+
+def _extract_mpn(description: str, attributes: dict) -> str:
+    """
+    Henter modellnummer fra beskrivelse eller attributter.
+    Ser etter mønstre som 'Modell: X', 'Vare: X', 'MPN: X'
+    """
+    # Sjekk attributter først
+    for key in ["Modell", "Modellnummer", "MPN", "Varenr", "Artikkelnummer"]:
+        if key in attributes:
+            return attributes[key].strip()
+
+    # Søk i beskrivelse
+    patterns = [
+        r"[Mm]odell[:\s]+([A-Za-z0-9\-\/]+)",
+        r"[Vv]are[:\s]+([A-Za-z0-9\-\/]+)",
+        r"MPN[:\s]+([A-Za-z0-9\-\/]+)",
+        r"[Aa]rtikkel[:\s]+([A-Za-z0-9\-\/]+)",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, description or "")
+        if match:
+            return match.group(1).strip()
+    return ""
 
 
 def _extract_attributes(soup: BeautifulSoup) -> dict:
@@ -560,6 +606,9 @@ def scrape_product(url: str) -> Optional[Product]:
     # Beregnet fraktvekt
     p.shipping_weight = _calc_shipping_weight(p.width, p.height, p.depth)
 
+    # MPN
+    p.mpn = _extract_mpn(p.description, p.attributes)
+
     # Google Product Category
     p.google_product_category = _map_google_category(p.breadcrumbs, p.title_raw)
 
@@ -657,6 +706,12 @@ def build_google_feed(products: list) -> str:
         ET.SubElement(item, "{%s}condition" % G).text    = p.condition
         ET.SubElement(item, "{%s}availability" % G).text = p.availability
 
+        # Identifikatorer
+        if p.mpn:
+            ET.SubElement(item, "{%s}mpn" % G).text = p.mpn
+        else:
+            ET.SubElement(item, "{%s}identifier_exists" % G).text = "no"
+
         if p.google_product_category:
             ET.SubElement(item, "{%s}google_product_category" % G).text = p.google_product_category
         if p.product_type:
@@ -749,6 +804,12 @@ def build_meta_feed(products: list) -> str:
         ET.SubElement(listing, "availability").text = p.availability
         ET.SubElement(listing, "condition").text    = p.condition
         ET.SubElement(listing, "brand").text        = p.brand
+
+        # Identifikatorer
+        if p.mpn:
+            ET.SubElement(listing, "mpn").text = p.mpn
+        else:
+            ET.SubElement(listing, "identifier_exists").text = "no"
 
         if p.product_type:
             ET.SubElement(listing, "product_type").text = p.product_type
