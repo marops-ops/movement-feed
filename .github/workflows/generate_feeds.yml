@@ -3,7 +3,7 @@ name: Generate Movement Feeds
 on:
   schedule:
     # Every 4 hours – adjust to taste
-    - cron: "0 */4 * * *"
+    - cron: "0 3 * * *"
   workflow_dispatch:   # allow manual trigger from GitHub UI
 
 permissions:

@@ -105,6 +105,7 @@ class Product:
     # Tilstand
     condition: str            = CONDITION
     identifier_exists: str    = IDENTIFIER_EXISTS
+    google_product_category: str = ""
     availability: str         = "in_stock"
 
     # Priser — eks. mva (standard / B2B)
@@ -127,7 +128,7 @@ class Product:
     attributes: dict    = field(default_factory=dict)
     color: str          = ""    # Hovedfarge
     color_secondary: str = ""   # Sekundærfarge
-    material: str       = ""    # Materiale
+    material: str       = ""    # Materiale (fra attributter eller beskrivelse)
 
     # Dimensjoner (cm, float)
     width: float        = 0.0
@@ -202,6 +203,36 @@ def _calc_shipping_weight(width: float, height: float, depth: float) -> float:
     volume_liters = (width * h * depth) / 1000
     return round(volume_liters / 5, 1)
 
+
+
+# Google Product Category mapping
+GOOGLE_CATEGORY_MAP = {
+    "kontorstol":        "Office Supplies > Office Furniture > Chairs > Office Chairs",
+    "stoler":            "Office Supplies > Office Furniture > Chairs",
+    "skrivebord":        "Office Supplies > Office Furniture > Desks",
+    "bordplater":        "Office Supplies > Office Furniture > Tables > Office Table Tops",
+    "møtebord":          "Office Supplies > Office Furniture > Tables > Conference Tables",
+    "hev":               "Office Supplies > Office Furniture > Desks",
+    "bord":              "Office Supplies > Office Furniture > Tables",
+    "oppbevaring":       "Office Supplies > Office Furniture > Bookcases & Shelving Units",
+    "skap":              "Office Supplies > Office Furniture > Filing Cabinets",
+    "reol":              "Office Supplies > Office Furniture > Bookcases & Shelving Units",
+    "belysning":         "Lighting",
+    "lampe":             "Lighting",
+    "sofa":              "Furniture > Living Room Furniture > Sofas",
+    "loungestol":        "Furniture > Living Room Furniture > Chairs",
+    "garderobe":         "Furniture > Bedroom Furniture > Wardrobes & Armoires",
+    "whiteboard":        "Office Supplies > Presentation Supplies > Whiteboards",
+    "tavle":             "Office Supplies > Presentation Supplies > Whiteboards",
+}
+
+def _map_google_category(breadcrumbs: list, title: str) -> str:
+    """Mapper breadcrumbs/tittel til Google Product Category."""
+    search_text = " ".join(breadcrumbs + [title]).lower()
+    for keyword, category in GOOGLE_CATEGORY_MAP.items():
+        if keyword in search_text:
+            return category
+    return "Office Supplies > Office Furniture"
 
 # ─── Extraction Functions ─────────────────────────────────────────────────────
 def _extract_ld_json(soup: BeautifulSoup) -> dict:
@@ -480,6 +511,11 @@ def scrape_product(url: str) -> Optional[Product]:
     p.description = _extract_description(soup)
     p.availability = _extract_availability(soup, ld)
 
+    # Condition: NY/UBRUKT i tittel eller URL = new, ellers used
+    _ny_kw = ["ny-ubrukt", "ny/ubrukt", "nyubrukt", "ubrukt", "ny-i-eske", "-ny-"]
+    _check = ((p.title_raw or "") + " " + p.url).lower()
+    p.condition = "new" if any(k in _check for k in _ny_kw) else CONDITION
+
     # Tittel
     if "Product" in ld:
         p.title_raw = ld["Product"].get("name", "").strip()
@@ -523,6 +559,20 @@ def scrape_product(url: str) -> Optional[Product]:
 
     # Beregnet fraktvekt
     p.shipping_weight = _calc_shipping_weight(p.width, p.height, p.depth)
+
+    # Google Product Category
+    p.google_product_category = _map_google_category(p.breadcrumbs, p.title_raw)
+
+    # Material — fra attributter eller scrape fra beskrivelse
+    p.material = p.attributes.get("Materiale", p.attributes.get("Stoff", ""))
+    if not p.material:
+        # Prioritert rekkefølge — mer spesifikke materialer først
+        for kw in ["laminat", "eik", "bjørk", "bøk", "finer", "mdf",
+                   "mesh", "skinn", "stoff", "tekstil",
+                   "glass", "metall", "aluminium", "stål", "tre"]:
+            if kw in (p.description or "").lower() or kw in (p.title_raw or "").lower():
+                p.material = kw.capitalize()
+                break
 
     # Smart Title v2
     p.title_seo = _smart_title(p.title_raw, p.leaf_category, p.color, p.material)
@@ -604,10 +654,11 @@ def build_google_feed(products: list) -> str:
         ET.SubElement(item, "{%s}description" % G).text       = p.description
         ET.SubElement(item, "{%s}link" % G).text              = p.url
         ET.SubElement(item, "{%s}brand" % G).text             = p.brand
-        ET.SubElement(item, "{%s}condition" % G).text         = p.condition
-        ET.SubElement(item, "{%s}availability" % G).text      = p.availability
-        ET.SubElement(item, "{%s}identifier_exists" % G).text = p.identifier_exists
+        ET.SubElement(item, "{%s}condition" % G).text    = p.condition
+        ET.SubElement(item, "{%s}availability" % G).text = p.availability
 
+        if p.google_product_category:
+            ET.SubElement(item, "{%s}google_product_category" % G).text = p.google_product_category
         if p.product_type:
             ET.SubElement(item, "{%s}product_type" % G).text = p.product_type
 
@@ -619,14 +670,12 @@ def build_google_feed(products: list) -> str:
 
         # ── Priser (eks. mva — standard) ──────────────────────────────────────
         ET.SubElement(item, "{%s}price" % G).text      = p.price_ex_str
-        if p.sale_ex_str:
-            ET.SubElement(item, "{%s}sale_price" % G).text = p.sale_ex_str
+        ET.SubElement(item, "{%s}sale_price" % G).text  = p.sale_ex_str if p.sale_ex_str else p.price_ex_str
 
         # ── Priser (inkl. mva — B2C) ──────────────────────────────────────────
         if p.price_incl_str:
             ET.SubElement(item, "price_incl_vat").text = p.price_incl_str
-        if p.sale_incl_str:
-            ET.SubElement(item, "sale_price_incl_vat").text = p.sale_incl_str
+        ET.SubElement(item, "sale_price_incl_vat").text = p.sale_incl_str if p.sale_incl_str else p.price_incl_str
 
         # ── Produktegenskaper ─────────────────────────────────────────────────
         if p.color:
