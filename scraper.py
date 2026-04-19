@@ -600,13 +600,50 @@ def scrape_product(url: str) -> Optional[Product]:
     return p
 
 
+def fetch_outlet_ids() -> set:
+    """
+    Henter alle produkt-IDer fra /outlet.
+    Bruker requests direkte (ikke _get) for å unngå delay.
+    """
+    outlet_ids = set()
+    page = 1
+    while page <= 20:   # maks 20 sider som sikkerhet
+        url = f"{BASE_URL}/outlet" if page == 1 else f"{BASE_URL}/outlet?page={page}"
+        try:
+            resp = SESSION.get(url, timeout=15)
+            if resp.status_code != 200:
+                break
+        except Exception as e:
+            log.error(f"Outlet fetch feilet: {e}")
+            break
+        soup = BeautifulSoup(resp.text, "html.parser")
+        found = 0
+        for a in soup.find_all("a", href=True):
+            href = a.get("href", "")
+            match = re.search(r"-(\d{4,6})\.html", href)
+            if match and "?" in href:   # outlet-lenker har ?h= parameter
+                outlet_ids.add(match.group(1))
+                found += 1
+        if not found:
+            break
+        next_page = soup.select_one("a.next, .pagination .next, [rel='next']")
+        if not next_page:
+            break
+        page += 1
+    log.info(f"Fant {len(outlet_ids)} outlet-produkter")
+    return outlet_ids
+
+
 def scrape_all(urls: list, max_products: int = 0) -> list:
+    outlet_ids = fetch_outlet_ids()
     products = []
     total = len(urls) if not max_products else min(max_products, len(urls))
     for i, url in enumerate(urls[:total], 1):
         log.info(f"[{i}/{total}] {url}")
         p = scrape_product(url)
         if p:
+            if p.product_id in outlet_ids:
+                p.custom_label_1 = "Outlet"
             products.append(p)
         else:
             log.warning("  → Hoppet over")
