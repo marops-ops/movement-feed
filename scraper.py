@@ -45,8 +45,8 @@ SITEMAP_URL = "https://www.movement.as/sitemap.xml"
 CURRENCY    = "NOK"
 COUNTRY     = "NO"
 
-REQUEST_DELAY_MIN = 1.2
-REQUEST_DELAY_MAX = 3.0
+REQUEST_DELAY_MIN = 0.8
+REQUEST_DELAY_MAX = 1.5
 MAX_SHIPPING_WEIGHT = 500.0  # kg cap
 
 # Google Product Category numeriske IDer
