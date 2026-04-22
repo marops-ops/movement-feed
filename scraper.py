@@ -198,10 +198,10 @@ def _parse_price(raw: str) -> float:
 
 
 def _fmt(value: float) -> str:
-    """3950.0 → '3950.00'"""
+    """3950.0 → '3950 NOK'"""
     if not value:
         return ""
-    return f"{value:.2f}"
+    return f"{int(value)} {CURRENCY}"
 
 
 def _parse_dim(raw: str) -> float:
@@ -450,8 +450,8 @@ def _extract_availability(soup: BeautifulSoup) -> str:
     if qty_el:
         txt = qty_el.get_text(strip=True).lower()
         if "ikke" in txt or "utsolgt" in txt:
-            return "out of stock"
-    return "in stock"
+            return "out_of_stock"
+    return "in_stock"
 
 
 def _extract_quantity(soup: BeautifulSoup) -> str:
@@ -553,8 +553,6 @@ def scrape_product(url: str) -> Optional[Product]:
     p.product_id  = _extract_product_id(soup, url)
     p.title_raw   = _extract_title(soup)
     p.description = _extract_description(soup)
-    if not p.description:
-        p.description = p.title_raw
     p.brand       = _extract_brand(soup)
     p.availability = _extract_availability(soup)
     p.quantity    = _extract_quantity(soup)
@@ -586,7 +584,7 @@ def scrape_product(url: str) -> Optional[Product]:
     p.shipping_weight = _calc_shipping_weight(p.width, p.height, p.depth)
 
     p.condition  = _detect_condition(p.title_raw, url)
-    p.title_seo  = _smart_title(p.title_raw, p.leaf_category, p.color, p.material)[:150]
+    p.title_seo  = _smart_title(p.title_raw, p.leaf_category, p.color, p.material)
 
     # Custom labels
     disc_pct = round((1 - p.sale_ex / p.price_ex) * 100) if p.sale_ex and p.price_ex else 0
@@ -733,7 +731,6 @@ def build_feed(products: list) -> str:
         # ── Priser eks. mva ───────────────────────────────────────────────────
         ET.SubElement(item, "{%s}price" % G).text      = p.price_ex_str
         ET.SubElement(item, "{%s}sale_price" % G).text = p.sale_ex_str if p.sale_ex_str else p.price_ex_str
-        ET.SubElement(item, "currency").text            = CURRENCY
 
         # ── Priser inkl. mva ──────────────────────────────────────────────────
         ET.SubElement(item, "price_incl_vat").text      = p.price_incl_str
