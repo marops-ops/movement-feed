@@ -733,8 +733,8 @@ def build_feed(products: list) -> str:
         ET.SubElement(item, "{%s}sale_price" % G).text = p.sale_ex_str if p.sale_ex_str else p.price_ex_str
 
         # ── Priser inkl. mva ──────────────────────────────────────────────────
-        ET.SubElement(item, "price_incl_vat").text      = p.price_incl_str
-        ET.SubElement(item, "sale_price_incl_vat").text = p.sale_incl_str if p.sale_incl_str else p.price_incl_str
+        ET.SubElement(item, "{%s}price_incl_vat" % G).text = p.price_incl_str
+        ET.SubElement(item, "{%s}sale_price_incl_vat" % G).text = p.sale_incl_str if p.sale_incl_str else p.price_incl_str
 
         # ── Produktegenskaper ─────────────────────────────────────────────────
         if p.color:
@@ -759,7 +759,7 @@ def build_feed(products: list) -> str:
 
         # ── Lager ─────────────────────────────────────────────────────────────
         if p.quantity:
-            ET.SubElement(item, "quantity").text = p.quantity
+            ET.SubElement(item, "{%s}quantity" % G).text = p.quantity
 
         # ── product_detail for ekstra dimensjoner ─────────────────────────────
         extra_details = {}
