@@ -169,12 +169,18 @@ class Product:
     # Lager
     quantity: str        = ""
 
+    # Current price (nåværende pris — hybrid rolle)
+    current_price: float      = 0.0
+    current_price_str: str    = ""
+    current_price_ex: float   = 0.0
+    current_price_ex_str: str = ""
+
     # Custom labels
-    custom_label_0: str  = ""   # Tilbud / tom
-    custom_label_1: str  = ""   # Outlet (rabatt >= 30%) / tom
-    custom_label_2: str  = ""   # Priskategori
-    custom_label_3: str  = ""   # tom — manuell bruk i GMC/Meta
-    custom_label_4: str  = ""   # tom — manuell bruk i GMC/Meta
+    custom_label_0: str  = ""   # Hovedkategori
+    custom_label_1: str  = ""   # Underkategori
+    custom_label_2: str  = ""   # Tredje nivå
+    custom_label_3: str  = ""   # Tilbud
+    custom_label_4: str  = ""   # Outlet
 
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -201,7 +207,7 @@ def _fmt(value: float) -> str:
     """3950.0 → '3950 NOK'"""
     if not value:
         return ""
-    return f"{int(value)} {CURRENCY}"
+    return f"{value:.2f}"
 
 
 def _parse_dim(raw: str) -> float:
@@ -570,6 +576,12 @@ def scrape_product(url: str) -> Optional[Product]:
     p.sale_ex_str    = _fmt(p.sale_ex)
     p.sale_incl_str  = _fmt(p.sale_incl)
 
+    # Current price — nåværende pris (inkl. mva)
+    p.current_price     = p.sale_incl if p.sale_incl else p.price_incl
+    p.current_price_str = _fmt(p.current_price)
+    p.current_price_ex  = p.sale_ex if p.sale_ex else p.price_ex
+    p.current_price_ex_str = _fmt(p.current_price_ex)
+
     p.attributes      = _extract_attributes(soup)
     p.color           = p.attributes.get("Hovedfarge", "")
     p.color_secondary = p.attributes.get("Sekundærfarge", "")
@@ -729,12 +741,15 @@ def build_feed(products: list) -> str:
             ET.SubElement(item, "{%s}additional_image_link" % G).text = img
 
         # ── Priser eks. mva ───────────────────────────────────────────────────
-        ET.SubElement(item, "{%s}price" % G).text      = p.price_ex_str
-        ET.SubElement(item, "{%s}sale_price" % G).text = p.sale_ex_str if p.sale_ex_str else p.price_ex_str
+        ET.SubElement(item, "{%s}price" % G).text      = p.price_incl_str
+        ET.SubElement(item, "{%s}sale_price" % G).text = p.sale_incl_str if p.sale_incl_str else p.price_incl_str
 
         # ── Priser inkl. mva ──────────────────────────────────────────────────
-        ET.SubElement(item, "{%s}price_incl_vat" % G).text = p.price_incl_str
-        ET.SubElement(item, "{%s}sale_price_incl_vat" % G).text = p.sale_incl_str if p.sale_incl_str else p.price_incl_str
+        ET.SubElement(item, "{%s}price_ex_vat" % G).text = p.price_ex_str
+        ET.SubElement(item, "{%s}sale_price_ex_vat" % G).text = p.sale_ex_str if p.sale_ex_str else p.price_ex_str
+        ET.SubElement(item, "{%s}current_price" % G).text    = _fmt(p.sale_incl if p.sale_incl else p.price_incl)
+        ET.SubElement(item, "{%s}current_price_ex_vat" % G).text = _fmt(p.sale_ex if p.sale_ex else p.price_ex)
+        ET.SubElement(item, "{%s}currency" % G).text         = CURRENCY
 
         # ── Produktegenskaper ─────────────────────────────────────────────────
         if p.color:
@@ -785,10 +800,11 @@ def build_feed(products: list) -> str:
                 ET.SubElement(pd, "{%s}attribute_value" % G).text = val
 
         # ── Custom labels ─────────────────────────────────────────────────────
-        ET.SubElement(item, "{%s}custom_label_0" % G).text = p.custom_label_0
-        ET.SubElement(item, "{%s}custom_label_1" % G).text = p.custom_label_1
-        ET.SubElement(item, "{%s}custom_label_2" % G).text = p.custom_label_2
-        ET.SubElement(item, "{%s}custom_label_3" % G).text = p.custom_label_3
+        crumbs = p.breadcrumbs
+        ET.SubElement(item, "{%s}custom_label_0" % G).text = crumbs[0].strip() if len(crumbs) > 0 else ""
+        ET.SubElement(item, "{%s}custom_label_1" % G).text = crumbs[1].strip() if len(crumbs) > 1 else ""
+        ET.SubElement(item, "{%s}custom_label_2" % G).text = crumbs[2].strip() if len(crumbs) > 2 else ""
+        ET.SubElement(item, "{%s}custom_label_3" % G).text = "Tilbud" if p.sale_incl else ""
         ET.SubElement(item, "{%s}custom_label_4" % G).text = p.custom_label_4
 
     return _prettify(rss)
