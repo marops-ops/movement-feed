@@ -207,7 +207,7 @@ def _fmt(value: float) -> str:
     """3950.0 → '3950 NOK'"""
     if not value:
         return ""
-    return f"{value:.2f}"
+    return f"{int(value)} {CURRENCY}"
 
 
 def _parse_dim(raw: str) -> float:
@@ -749,7 +749,6 @@ def build_feed(products: list) -> str:
         ET.SubElement(item, "{%s}sale_price_ex_vat" % G).text = p.sale_ex_str if p.sale_ex_str else p.price_ex_str
         ET.SubElement(item, "{%s}current_price" % G).text    = _fmt(p.sale_incl if p.sale_incl else p.price_incl)
         ET.SubElement(item, "{%s}current_price_ex_vat" % G).text = _fmt(p.sale_ex if p.sale_ex else p.price_ex)
-        ET.SubElement(item, "{%s}currency" % G).text         = CURRENCY
 
         # ── Produktegenskaper ─────────────────────────────────────────────────
         if p.color:
