@@ -131,7 +131,7 @@ class Product:
     google_category: str = ""   # numerisk GMC ID
 
     # Tilstand
-    condition: str       = "used"
+    condition: str       = "refurbished"
     availability: str    = "in_stock"
 
     # Priser eks. mva (standard/B2B)
@@ -497,10 +497,10 @@ def _map_google_category(breadcrumbs: list, title: str) -> str:
 
 
 def _detect_condition(title: str, url: str) -> str:
-    """NY/UBRUKT i tittel eller URL = new, ellers used."""
+    """NY/UBRUKT i tittel eller URL = new, ellers refurbished."""
     ny_kw = ["ny-ubrukt", "ny/ubrukt", "nyubrukt", "ubrukt", "ny-i-eske", "-ny-"]
     check = (title + " " + url).lower()
-    return "new" if any(k in check for k in ny_kw) else "used"
+    return "new" if any(k in check for k in ny_kw) else "refurbished"
 
 
 def _detect_material(attributes: dict, description: str, title: str) -> str:
@@ -767,9 +767,6 @@ def build_feed(products: list) -> str:
             ET.SubElement(item, "{%s}product_length" % G).text = f"{int(p.depth)} cm"
 
         # ── Fraktvekt ─────────────────────────────────────────────────────────
-        if p.shipping_weight:
-            sw = int(p.shipping_weight) if p.shipping_weight == int(p.shipping_weight) else p.shipping_weight
-            ET.SubElement(item, "{%s}shipping_weight" % G).text = f"{sw} kg"
 
         # ── Lager ─────────────────────────────────────────────────────────────
         if p.quantity:
