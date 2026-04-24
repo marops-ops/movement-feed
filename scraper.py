@@ -742,11 +742,13 @@ def build_feed(products: list) -> str:
 
         # ── Priser eks. mva ───────────────────────────────────────────────────
         ET.SubElement(item, "{%s}price" % G).text      = p.price_incl_str
-        ET.SubElement(item, "{%s}sale_price" % G).text = p.sale_incl_str if p.sale_incl_str else p.price_incl_str
+        if p.sale_incl_str:
+            ET.SubElement(item, "{%s}sale_price" % G).text = p.sale_incl_str
 
         # ── Priser inkl. mva ──────────────────────────────────────────────────
         ET.SubElement(item, "{%s}price_ex_vat" % G).text = p.price_ex_str
-        ET.SubElement(item, "{%s}sale_price_ex_vat" % G).text = p.sale_ex_str if p.sale_ex_str else p.price_ex_str
+        if p.sale_ex_str:
+            ET.SubElement(item, "{%s}sale_price_ex_vat" % G).text = p.sale_ex_str
         ET.SubElement(item, "{%s}current_price" % G).text    = _fmt(p.sale_incl if p.sale_incl else p.price_incl)
         ET.SubElement(item, "{%s}current_price_ex_vat" % G).text = _fmt(p.sale_ex if p.sale_ex else p.price_ex)
 
