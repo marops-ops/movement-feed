@@ -119,6 +119,7 @@ class Product:
     # Identifikasjon
     product_id: str      = ""
     title_raw: str       = ""   # kombinert H1 + .sp__desc
+    title_short: str     = ""   # bare H1 — kort versjon for annonser
     title_seo: str       = ""   # smart tittel med kategori/farge/materiale
     description: str     = ""
     brand: str           = ""
@@ -269,8 +270,8 @@ def _extract_title(soup: BeautifulSoup) -> str:
     h1_text = h1.get_text(strip=True) if h1 else ""
     desc_text = desc.get_text(strip=True) if desc else ""
     if h1_text and desc_text:
-        return f"{h1_text} {desc_text}".strip()
-    return h1_text or desc_text
+        return f"{h1_text} {desc_text}".strip(), h1_text
+    return (h1_text or desc_text), h1_text or desc_text
 
 
 def _extract_breadcrumbs(soup: BeautifulSoup, ld: dict, url: str) -> list:
@@ -557,7 +558,7 @@ def scrape_product(url: str) -> Optional[Product]:
     p    = Product(url=url)
 
     p.product_id  = _extract_product_id(soup, url)
-    p.title_raw   = _extract_title(soup)
+    p.title_raw, p.title_short = _extract_title(soup)
     p.description = _extract_description(soup)
     p.brand       = _extract_brand(soup)
     p.availability = _extract_availability(soup)
@@ -715,6 +716,7 @@ def build_feed(products: list) -> str:
         # ── Kjernefelt ────────────────────────────────────────────────────────
         ET.SubElement(item, "{%s}id" % G).text          = p.product_id
         ET.SubElement(item, "{%s}title" % G).text       = p.title_seo
+        ET.SubElement(item, "{%s}short_title" % G).text  = p.title_short
         ET.SubElement(item, "{%s}description" % G).text = p.description
         ET.SubElement(item, "{%s}link" % G).text        = p.url
         ET.SubElement(item, "{%s}brand" % G).text       = p.brand
