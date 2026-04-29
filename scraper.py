@@ -271,7 +271,8 @@ def _extract_title(soup: BeautifulSoup) -> str:
     desc_text = desc.get_text(strip=True) if desc else ""
     if h1_text and desc_text:
         return f"{h1_text} {desc_text}".strip(), h1_text
-    return (h1_text or desc_text), h1_text or desc_text
+    full = f"{h1_text} {desc_text}".strip() if h1_text and desc_text else (h1_text or desc_text)
+    return full, _make_short_title(full)
 
 
 def _extract_breadcrumbs(soup: BeautifulSoup, ld: dict, url: str) -> list:
@@ -518,6 +519,20 @@ def _detect_material(attributes: dict, description: str, title: str) -> str:
     return ""
 
 
+def _make_short_title(title: str, min_length: int = 10) -> str:
+    stoppers = [",", " fra ", " til ", " NY/", " NY ", " Pent", " Godt", " Ubrukt"]
+    best = title
+    for stopper in stoppers:
+        idx = title.lower().find(stopper.lower())
+        if idx >= min_length and idx < len(best):
+            best = title[:idx].strip()
+    trail = [" fra", " til", " for", " med", " i", " og", " av", " på"]
+    for t in trail:
+        if best.lower().endswith(t.lower()):
+            best = best[:len(best)-len(t)].strip()
+    return best
+
+
 def _smart_title(raw: str, leaf_category: str, color: str, material: str) -> str:
     """
     Legger til leafkategori, farge og materiale hvis de ikke er i tittelen.
@@ -606,6 +621,11 @@ def scrape_product(url: str) -> Optional[Product]:
     p.custom_label_2 = _price_category(p.price_ex)
     p.custom_label_3 = ""
     p.custom_label_4 = ""
+
+    # Filtrer bort solgte produkter
+    if "solgt" in (p.title_raw or "").lower() or "solgt" in (p.description or "").lower():
+        log.info(f"Solgt produkt filtrert bort: {url}")
+        return None
 
     if not p.product_id:
         log.warning(f"Ingen produkt-ID for {url}")
