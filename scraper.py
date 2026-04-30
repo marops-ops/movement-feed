@@ -527,9 +527,7 @@ def _make_short_title(title: str, min_length: int = 10) -> str:
         if idx >= min_length and idx < len(best):
             best = title[:idx].strip()
     trail = [" fra", "fra", " til", " for", " med", " i", " og", " av", " på"]
-    for t in trail:
-        if best.lower().endswith(t.lower()):
-            best = best[:len(best)-len(t)].strip()
+
     return best
 
 
