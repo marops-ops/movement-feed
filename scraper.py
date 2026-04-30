@@ -526,7 +526,7 @@ def _make_short_title(title: str, min_length: int = 10) -> str:
         idx = title.lower().find(stopper.lower())
         if idx >= min_length and idx < len(best):
             best = title[:idx].strip()
-    trail = [" fra", " til", " for", " med", " i", " og", " av", " på"]
+    trail = [" fra", "fra", " til", " for", " med", " i", " og", " av", " på"]
     for t in trail:
         if best.lower().endswith(t.lower()):
             best = best[:len(best)-len(t)].strip()
@@ -825,7 +825,7 @@ def build_feed(products: list) -> str:
         ET.SubElement(item, "{%s}custom_label_1" % G).text = crumbs[1].strip() if len(crumbs) > 1 else ""
         ET.SubElement(item, "{%s}custom_label_2" % G).text = crumbs[2].strip() if len(crumbs) > 2 else ""
         ET.SubElement(item, "{%s}custom_label_3" % G).text = "Tilbud" if p.sale_incl else ""
-        ET.SubElement(item, "{%s}custom_label_4" % G).text = p.custom_label_4
+        ET.SubElement(item, "{%s}custom_label_4" % G).text = p.title_short
 
     return _prettify(rss)
 
