@@ -526,14 +526,9 @@ def _make_short_title(title: str, min_length: int = 10) -> str:
         idx = title.lower().find(stopper.lower())
         if idx >= min_length and idx < len(best):
             best = title[:idx].strip()
-    bad_endings = ["fra", "til", "med", " i", ",", ":", "/", "-"]
-    changed = True
-    while changed:
-        changed = False
-        for bad in bad_endings:
-            if best.lower().rstrip().endswith(bad.lower()):
-                best = best[:-(len(bad))].strip()
-                changed = True
+    import re
+    best = re.sub(r'\s*(fra|til|med|i|og|av|på|for)\s*$', '', best, flags=re.IGNORECASE).strip()
+    best = re.sub(r'[,:/\-]+$', '', best).strip()
     return best
 
 
