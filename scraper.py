@@ -520,7 +520,7 @@ def _detect_material(attributes: dict, description: str, title: str) -> str:
 
 
 def _make_short_title(title: str, min_length: int = 10) -> str:
-    stoppers = [",", " NY/", " NY ", " Pent", " Godt", " Ubrukt"]
+    stoppers = [",", " fra ", " NY/", " NY ", " Pent", " Godt", " Ubrukt"]
     best = title
     for stopper in stoppers:
         idx = title.lower().find(stopper.lower())
