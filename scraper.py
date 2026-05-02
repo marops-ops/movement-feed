@@ -269,8 +269,6 @@ def _extract_title(soup: BeautifulSoup) -> str:
     desc = soup.select_one(".sp__desc")
     h1_text = h1.get_text(strip=True) if h1 else ""
     desc_text = desc.get_text(strip=True) if desc else ""
-    if h1_text and desc_text:
-        return f"{h1_text} {desc_text}".strip(), h1_text
     full = f"{h1_text} {desc_text}".strip() if h1_text and desc_text else (h1_text or desc_text)
     return full, _make_short_title(h1_text or desc_text)
 
