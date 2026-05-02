@@ -272,7 +272,7 @@ def _extract_title(soup: BeautifulSoup) -> str:
     if h1_text and desc_text:
         return f"{h1_text} {desc_text}".strip(), h1_text
     full = f"{h1_text} {desc_text}".strip() if h1_text and desc_text else (h1_text or desc_text)
-    return full, _make_short_title(full)
+    return full, _make_short_title(h1_text or desc_text)
 
 
 def _extract_breadcrumbs(soup: BeautifulSoup, ld: dict, url: str) -> list:
