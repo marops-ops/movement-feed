@@ -6748,23 +6748,26 @@ Sancal er et spansk møbelmerke kjent for sitt innovative design og bærekraftig
     </item>
     <item>
       <g:id>58477</g:id>
-      <g:title>Mousse 3-seter 317.11.Z7.BA2 Lys grå, Brukt - Sofa</g:title>
-      <g:short_title>Mousse 3-seter 317.11.Z7.BA2 Lys</g:short_title>
-      <g:description>Mousse 3-seter sofaen fra Sancal er designet av den anerkjente designeren Patricia Urquiola. Med sitt myke og innbydende uttrykk kombinerer Mousse sofaen moderne design med høy komfort. Den er ideell for både kontor- og hjemmemiljøer og gir et stilfullt og behagelig møbelvalg til rommet.
-Produsent: Sancal
-Sancal er et spansk møbelmerke kjent for sitt innovative design og bærekraftige tilnærming. Med et sterkt engasjement for miljøet bruker Sancal resirkulerte materialer og ansvarlige produksjonsmetoder i sine produkter. Merket samarbeider med ledende designere som Patricia Urquiola og Yonoh Studio for å skape møbler som kombinerer funksjonalitet, estetikk og bærekraft – ideelt for både kontor- og hjemmemiljøer.</g:description>
+      <g:title>Mags soft 3-seter Lys grå, Brukt - Sofa</g:title>
+      <g:short_title>Mags soft 3-seter Lys grå</g:short_title>
+      <g:description>Mags Soft er en 3-seter sofa fra HAY, designet av HAY Studio, med et mykt og avslappet uttrykk. Sofaen er en videreutvikling av den klassiske Mags-serien, med mer avrundede former og ekstra komfort.
+Den dype sitteflaten og myke putene gir en behagelig sitteopplevelse, og gjør sofaen godt egnet i stue, loungeområder eller sosiale soner. Designet er enkelt og tidløst, og lett å kombinere med ulike interiørstiler.
+▪ Design: HAY Studio
+▪ 3-seter med mykere og mer avslappet uttrykk
+▪ Egnet for stue og lounge
+En komfortabel sofa med moderne og uformelt design – brukt er det nye.</g:description>
       <g:link>https://www.movement.as/sofa/mousse-3-seter-31711z7ba2-lys-gra-brukt-58477.html</g:link>
-      <g:brand>Sancal</g:brand>
+      <g:brand>HAY</g:brand>
       <g:condition>refurbished</g:condition>
       <g:availability>in_stock</g:availability>
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>2634</g:google_product_category>
       <g:product_type>Sofa</g:product_type>
       <g:image_link>https://www.movement.as/images/products/58477/big_fff22078a4507fd710df564d88082d9aa5537556.jpg</g:image_link>
-      <g:price>19950 NOK</g:price>
-      <g:price_ex_vat>15960 NOK</g:price_ex_vat>
-      <g:current_price>19950 NOK</g:current_price>
-      <g:current_price_ex_vat>15960 NOK</g:current_price_ex_vat>
+      <g:price>17950 NOK</g:price>
+      <g:price_ex_vat>14360 NOK</g:price_ex_vat>
+      <g:current_price>17950 NOK</g:current_price>
+      <g:current_price_ex_vat>14360 NOK</g:current_price_ex_vat>
       <g:color>Grå</g:color>
       <g:product_width>308 cm</g:product_width>
       <g:product_height>66 cm</g:product_height>
@@ -6774,7 +6777,7 @@ Sancal er et spansk møbelmerke kjent for sitt innovative design og bærekraftig
       <g:custom_label_1/>
       <g:custom_label_2/>
       <g:custom_label_3/>
-      <g:custom_label_4>Mousse 3-seter 317.11.Z7.BA2 Lys</g:custom_label_4>
+      <g:custom_label_4>Mags soft 3-seter Lys grå</g:custom_label_4>
     </item>
     <item>
       <g:id>58491</g:id>
@@ -7098,7 +7101,7 @@ HÅG er en norsk produsent kjent for sine ergonomiske kontorstoler og møbler so
       <g:product_width>47 cm</g:product_width>
       <g:product_height>101 cm</g:product_height>
       <g:product_length>53 cm</g:product_length>
-      <g:quantity>2</g:quantity>
+      <g:quantity>1</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -12656,7 +12659,7 @@ EFG er en anerkjent svensk produsent av kontormøbler, kjent for å levere høy 
       <g:product_width>107 cm</g:product_width>
       <g:product_height>195 cm</g:product_height>
       <g:product_length>53 cm</g:product_length>
-      <g:quantity>24</g:quantity>
+      <g:quantity>22</g:quantity>
       <g:custom_label_0>Oppbevaring</g:custom_label_0>
       <g:custom_label_1>Låsbare skap</g:custom_label_1>
       <g:custom_label_2/>
@@ -12761,7 +12764,7 @@ EFG er en anerkjent svensk produsent av kontormøbler, kjent for å levere høy 
       <g:product_width>72 cm</g:product_width>
       <g:product_height>195 cm</g:product_height>
       <g:product_length>53 cm</g:product_length>
-      <g:quantity>3</g:quantity>
+      <g:quantity>2</g:quantity>
       <g:custom_label_0>Oppbevaring</g:custom_label_0>
       <g:custom_label_1>Låsbare skap</g:custom_label_1>
       <g:custom_label_2/>
@@ -28590,41 +28593,6 @@ Sitland er en anerkjent italiensk produsent som har vært i fronten av kontormø
       <g:custom_label_2/>
       <g:custom_label_3/>
       <g:custom_label_4>Soffo kontorstol med armlene Beige</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>60182</g:id>
-      <g:title>ScreenIT A30 120x65cm Beige stoff (Nevotex Pearl Beige), Pent brukt - Bordskjermer</g:title>
-      <g:short_title>ScreenIT A30 120x65cm Beige stoff</g:short_title>
-      <g:description>ScreenIT A30 fra Götessons er en bordskjerm utviklet for å gi økt skjerming og redusert støy i åpne kontorlandskap. Skjermen monteres direkte på bordplaten og fungerer som en visuell og delvis lydabsorberende barriere mellom arbeidsstasjoner, noe som bidrar til bedre konsentrasjon og arbeidsro.
-Denne modellen måler 120 × 65 cm og passer godt mellom to plasser på et skrivebord. Den enkle og funksjonelle utformingen gjør den lett å integrere i ulike kontormiljøer. Götessons er kjent for praktiske og effektive løsninger som forbedrer arbeidsmiljøet.
-▪ 120 × 65 cm – gir god skjerming mellom arbeidsplasser
-▪ Lydabsorberende bordskjerm – bidrar til roligere arbeidsmiljø
-▪ Kvalitet fra Götessons – et godt eksempel på at brukt er det nye
-ScreenIT A30 fra Götessons er et utmerket valg for deg som ønsker en effektiv og diskret skjermløsning til kontoret.
-Produsent: Gøtessons
-Götessons er en svensk produsent kjent for innovative og funksjonelle kontormøbler og akustiske løsninger. Med et sterkt fokus på design, bærekraft og kvalitet, leverer Götessons produkter som forbedrer arbeidsmiljøet, både når det gjelder komfort og effektivitet. Deres produkter er utviklet for å møte moderne kontorbehov, med et spesielt fokus på akustikk og fleksibilitet. Götessons kombinerer tidløs design med høy funksjonalitet, og tilbyr løsninger som bidrar til bedre arbeidsforhold og et mer produktivt miljø.</g:description>
-      <g:link>https://www.movement.as/skillevegger/bordskjermer/screenit-a30-120x65cm-beige-stoff-_nevotex-pearl-beige_-pent-brukt-60182.html</g:link>
-      <g:brand>Gøtessons</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4316</g:google_product_category>
-      <g:product_type>Skillevegger &gt; Bordskjermer</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/60182/big_eda1f573935511e97c807b33489f3be3b9ae3164.jpg</g:image_link>
-      <g:price>2244 NOK</g:price>
-      <g:price_ex_vat>1795 NOK</g:price_ex_vat>
-      <g:current_price>2244 NOK</g:current_price>
-      <g:current_price_ex_vat>1795 NOK</g:current_price_ex_vat>
-      <g:color>Beige</g:color>
-      <g:material>Stoff</g:material>
-      <g:product_width>120 cm</g:product_width>
-      <g:product_height>65 cm</g:product_height>
-      <g:quantity>4</g:quantity>
-      <g:custom_label_0>Skillevegger</g:custom_label_0>
-      <g:custom_label_1>Bordskjermer</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>ScreenIT A30 120x65cm Beige stoff</g:custom_label_4>
     </item>
     <item>
       <g:id>60184</g:id>
@@ -64416,281 +64384,6 @@ Martela er en ledende produsent av kontormøbler som kombinerer funksjonalitet, 
       <g:custom_label_4>Pinta E 160x80cm Lys grå</g:custom_label_4>
     </item>
     <item>
-      <g:id>62540</g:id>
-      <g:title>Little Giraffe 3211, med hjul Burgunderrødt stoff, fotkryss i polert aluminium, Pent brukt - Konferansestoler - Finer</g:title>
-      <g:short_title>Little Giraffe 3211</g:short_title>
-      <g:description>Little Giraffe 3211 fra Fritz Hansen er en elegant konferansestol med hjul, designet av Arne Jacobsen. Modellen kombinerer den ikoniske danske designarven med moderne funksjonalitet, og passer perfekt i møterom og kreative arbeidsmiljøer.
-Den slanke silhuetten og myke formen gir stolen et raffinert uttrykk, mens hjulene gjør den fleksibel og enkel å flytte. Little Giraffe viderefører Jacobsens klassiske formspråk med en tidløs balanse mellom komfort og estetikk.
-▪ Designet av Arne Jacobsen for Fritz Hansen
-▪ Konferansestol med hjul for fleksibel bruk
-▪ Kombinerer klassisk dansk design og moderne funksjon
-Little Giraffe 3211 fra Fritz Hansen viser at brukt er det nye – en ikonisk stol som tilfører møterommet både eleganse og bevegelsesfrihet.
-Produsent: Fritz Hansen
-Fritz Hansen – Ikonisk dansk design
-Fritz Hansen er en av Danmarks mest anerkjente møbelprodusenter, kjent for sitt samarbeid med noen av de mest legendariske designerne i historien, inkludert Arne Jacobsen, Hans J. Wegner, Poul Kjærholm, og Verner Panton. Siden 1872 har Fritz Hansen vært en pioner innen skandinavisk møbeldesign, og deres produkter kombinerer innovasjon, funksjonalitet og tidløs estetikk. Med en sterk arv for kvalitet og håndverk har Fritz Hansen skapt flere designklassikere som har satt standarden for moderne møblering, og deres kolleksjoner er fortsatt ettertraktet for både kontorer og hjem.</g:description>
-      <g:link>https://www.movement.as/stoler/konferansestoler/little-giraffe-3211-med-hjul-burgunderrodt-stoff-fotkryss-i-polert-aluminium-pent-brukt-62540.html</g:link>
-      <g:brand>Fritz Hansen</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>446</g:google_product_category>
-      <g:product_type>Stoler &gt; Konferansestoler</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/62540/big_da4a2b601abd2a77139e8ac1c8505dfc5a36c8ad.jpg</g:image_link>
-      <g:price>6188 NOK</g:price>
-      <g:price_ex_vat>4950 NOK</g:price_ex_vat>
-      <g:current_price>6188 NOK</g:current_price>
-      <g:current_price_ex_vat>4950 NOK</g:current_price_ex_vat>
-      <g:color>Rød</g:color>
-      <g:material>Finer</g:material>
-      <g:quantity>4</g:quantity>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Konferansestoler</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>Little Giraffe 3211</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>62542</g:id>
-      <g:title>Eon 3 seter uten armlener Petrolblått stoff ( Nevotex Lido Trend 138 Pool) sorte stålben , Pent brukt - Sofa</g:title>
-      <g:short_title>Eon 3 seter uten armlener</g:short_title>
-      <g:description>Eon 3-seter sofa uten armlener fra VAD – fleksibel sittemøbel for kontor og fellesområder
-Eon 2-seter fra norske VAD er en funksjonell og plassbesparende sofa som passer godt i resepsjonsområder, pauserom, sosiale soner og åpne kontorlandskap. Den armlenefrie utformingen gir en åpen og tilgjengelig sitteløsning, samtidig som den gjør sofaen enkel å kombinere med andre moduler eller møbler i rommet.
-Sofaens kompakte utforming gir god sitteplass uten å oppta for mye areal, og de rette avslutningene gjør den like egnet som frittstående møbel eller plassert inntil en vegg. Den solide konstruksjonen gjør den godt tilpasset profesjonelle miljøer der møbler brukes hyppig gjennom arbeidsdagen.
-▪ 3-seter uten armlener – fleksibel og plassbesparende løsning
-▪ Produsert av norske VAD – robust og funksjonell design
-▪ Egnet for kontor, resepsjon og sosiale soner
-Eon 3-seter fra VAD er et gjennomtenkt valg for deg som ønsker en enkel og funksjonell løsning som varer – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/sofa/eon-3-seter-uten-armlener-petrolblatt-stoff-_-nevotex-lido-trend-138-pool_-sorte-stalben--pent-brukt-62542.html</g:link>
-      <g:brand>VAD</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>2634</g:google_product_category>
-      <g:product_type>Sofa</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/62542/big_613b3e97d2a989c159ed21fa60d8ebbe8510400b.jpg</g:image_link>
-      <g:price>11813 NOK</g:price>
-      <g:price_ex_vat>9450 NOK</g:price_ex_vat>
-      <g:current_price>11813 NOK</g:current_price>
-      <g:current_price_ex_vat>9450 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:color_secondary>Blå</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>186 cm</g:product_width>
-      <g:product_height>84 cm</g:product_height>
-      <g:product_length>68 cm</g:product_length>
-      <g:quantity>11</g:quantity>
-      <g:product_detail>
-        <g:section_name>Spesifikasjoner</g:section_name>
-        <g:attribute_name>Vekt</g:attribute_name>
-        <g:attribute_value>45.00 kg</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Sofa</g:custom_label_0>
-      <g:custom_label_1/>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>Eon 3 seter uten armlener</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>62544</g:id>
-      <g:title>Eon hjørne innvendig 90g Petrolblått stoff ( Nevotex Lido Trend 138 Pool) sorte stålben , Pent brukt - Sofa</g:title>
-      <g:short_title>Eon hjørne innvendig 90g</g:short_title>
-      <g:description/>
-      <g:link>https://www.movement.as/sofa/eon-hjorne-innvendig-90g-petrolblatt-stoff-_-nevotex-lido-trend-138-pool_-sorte-stalben--pent-brukt-62544.html</g:link>
-      <g:brand>VAD</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>2634</g:google_product_category>
-      <g:product_type>Sofa</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/62544/big_b28de574063e4431102d995675acca0a90664782.jpg</g:image_link>
-      <g:price>8688 NOK</g:price>
-      <g:price_ex_vat>6950 NOK</g:price_ex_vat>
-      <g:current_price>8688 NOK</g:current_price>
-      <g:current_price_ex_vat>6950 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:color_secondary>Blå</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>68 cm</g:product_width>
-      <g:product_height>84 cm</g:product_height>
-      <g:product_length>68 cm</g:product_length>
-      <g:quantity>2</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>45 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Sofa</g:custom_label_0>
-      <g:custom_label_1/>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>Eon hjørne innvendig 90g</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>62545</g:id>
-      <g:title>Eon 3 seter uten armlener Lys blått stoff (Nevotex Lido Trend 42 Soda) sorte stålben, Pent brukt - Sofa</g:title>
-      <g:short_title>Eon 3 seter uten armlener Lys blått</g:short_title>
-      <g:description>Eon 3-seter sofa uten armlener fra VAD – fleksibel sittemøbel for kontor og fellesområder
-Eon 2-seter fra norske VAD er en funksjonell og plassbesparende sofa som passer godt i resepsjonsområder, pauserom, sosiale soner og åpne kontorlandskap. Den armlenefrie utformingen gir en åpen og tilgjengelig sitteløsning, samtidig som den gjør sofaen enkel å kombinere med andre moduler eller møbler i rommet.
-Sofaens kompakte utforming gir god sitteplass uten å oppta for mye areal, og de rette avslutningene gjør den like egnet som frittstående møbel eller plassert inntil en vegg. Den solide konstruksjonen gjør den godt tilpasset profesjonelle miljøer der møbler brukes hyppig gjennom arbeidsdagen.
-▪ 3-seter uten armlener – fleksibel og plassbesparende løsning
-▪ Produsert av norske VAD – robust og funksjonell design
-▪ Egnet for kontor, resepsjon og sosiale soner
-Eon 3-seter fra VAD er et gjennomtenkt valg for deg som ønsker en enkel og funksjonell løsning som varer – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/sofa/eon-3-seter-uten-armlener-lys-blatt-stoff-_nevotex-lido-trend-42-soda_-sorte-stalben-pent-brukt-62545.html</g:link>
-      <g:brand>VAD</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>2634</g:google_product_category>
-      <g:product_type>Sofa</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/62545/big_a2b3dac24dc7dfd292b9d7dd2012b6ced9ecc49e.jpg</g:image_link>
-      <g:price>11813 NOK</g:price>
-      <g:price_ex_vat>9450 NOK</g:price_ex_vat>
-      <g:current_price>11813 NOK</g:current_price>
-      <g:current_price_ex_vat>9450 NOK</g:current_price_ex_vat>
-      <g:color>Blå</g:color>
-      <g:color_secondary>Sort</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>186 cm</g:product_width>
-      <g:product_height>84 cm</g:product_height>
-      <g:product_length>68 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:product_detail>
-        <g:section_name>Spesifikasjoner</g:section_name>
-        <g:attribute_name>Vekt</g:attribute_name>
-        <g:attribute_value>45.00 kg</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Sofa</g:custom_label_0>
-      <g:custom_label_1/>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>Eon 3 seter uten armlener Lys blått</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>62547</g:id>
-      <g:title>Eon 2 seter uten armlener Petrolblått stoff (Nevotex Lido Trend 138 Pool) sorte stålben, Pent brukt - Sofa</g:title>
-      <g:short_title>Eon 2 seter uten armlener</g:short_title>
-      <g:description>Eon 2-seter sofa uten armlener fra VAD – fleksibel sittemøbel for kontor og fellesområder
-Eon 2-seter fra norske VAD er en funksjonell og plassbesparende sofa som passer godt i resepsjonsområder, pauserom, sosiale soner og åpne kontorlandskap. Den armlenefrie utformingen gir en åpen og tilgjengelig sitteløsning, samtidig som den gjør sofaen enkel å kombinere med andre moduler eller møbler i rommet.
-Sofaens kompakte utforming gir god sitteplass uten å oppta for mye areal, og de rette avslutningene gjør den like egnet som frittstående møbel eller plassert inntil en vegg. Den solide konstruksjonen gjør den godt tilpasset profesjonelle miljøer der møbler brukes hyppig gjennom arbeidsdagen.
-▪ 2-seter uten armlener – fleksibel og plassbesparende løsning
-▪ Produsert av norske VAD – robust og funksjonell design
-▪ Egnet for kontor, resepsjon og sosiale soner
-Eon 2-seter fra VAD er et gjennomtenkt valg for deg som ønsker en enkel og funksjonell løsning som varer – brukt er det nye.
-Produsent: VAD
-VAD er en norsk møbelprodusent fra Stordal på Sunnmøre med røtter tilbake til 1870-tallet. De er kjent for modulbaserte møbler til kontor, offentlig miljø og helse, med fokus på funksjonalitet, kvalitet og skandinavisk design. VAD samarbeider med designere som Åsmund Engesland og tilbyr både standardprodukter og spesialtilpassede løsninger. Bærekraft står sentralt i produksjonen, med bruk av miljøvennlige materialer og energieffektiv drift.</g:description>
-      <g:link>https://www.movement.as/sofa/eon-2-seter-uten-armlener-petrolblatt-stoff-_nevotex-lido-trend-138-pool_-sorte-stalben-pent-brukt-62547.html</g:link>
-      <g:brand>VAD</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>2634</g:google_product_category>
-      <g:product_type>Sofa</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/62547/big_50ba349a241ad5c84d8f5e85e39f174d942936d9.jpg</g:image_link>
-      <g:price>8688 NOK</g:price>
-      <g:price_ex_vat>6950 NOK</g:price_ex_vat>
-      <g:current_price>8688 NOK</g:current_price>
-      <g:current_price_ex_vat>6950 NOK</g:current_price_ex_vat>
-      <g:color>Blå</g:color>
-      <g:color_secondary>Sort</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>124 cm</g:product_width>
-      <g:product_height>84 cm</g:product_height>
-      <g:product_length>68 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:product_detail>
-        <g:section_name>Spesifikasjoner</g:section_name>
-        <g:attribute_name>Vekt</g:attribute_name>
-        <g:attribute_value>45.00 kg</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Sofa</g:custom_label_0>
-      <g:custom_label_1/>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>Eon 2 seter uten armlener</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>62549</g:id>
-      <g:title>H05 5600 Swingback-armlene Sort stoff (Gabriel Gaja), fotkryss i grått, Upcycled - Kontorstol</g:title>
-      <g:short_title>H05 5600 Swingback-armlene Sort</g:short_title>
-      <g:description>HÅG H05 5600 er en ergonomisk kontorstol med høy rygg, designet av Peter Opsvik, en pioner innen sittedesign. Opsvik er kjent for sitt fokus på bevegelse og variasjon, noe som gjenspeiles i denne modellen. Stolen har SwingBack-armlener, som enkelt kan svinges bakover for større bevegelsesfrihet.
-✅ Ergonomisk design – høy rygg gir ekstra støtte, og stolen fremmer naturlig bevegelse.
-✅ Enkel justering – juster høyde, setedybde, ryggstøtte og vippemotstand med én spak.
-✅ Tidløst utseende – minimalistisk design som passer i de fleste kontormiljøer.
-Velg en brukt HÅG H05 5600 for en kombinasjon av komfort, funksjonalitet og skandinavisk design.
-Produsent: Håg
-HÅG er en norsk produsent kjent for sine ergonomiske kontorstoler og møbler som fremmer helse og produktivitet på arbeidsplassen. Med fokus på bærekraft og design, tilbyr HÅG innovative løsninger som tilpasser seg brukerens bevegelser, og gir optimal støtte gjennom hele arbeidsdagen. Deres produkter er populære i både moderne kontormiljøer og hjemmekontor, og er kjent for høy kvalitet og lang holdbarhet.</g:description>
-      <g:link>https://www.movement.as/stoler/kontorstol/h05-5600-swingback-armlene-sort-stoff-_gabriel-gaja_-fotkryss-i-gratt-upcycled-62549.html</g:link>
-      <g:brand>Håg</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>447</g:google_product_category>
-      <g:product_type>Stoler &gt; Kontorstol</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/62549/big_18da9debe008cc9bb1ae86ee88e6e01fe072e6cc.jpg</g:image_link>
-      <g:price>4938 NOK</g:price>
-      <g:price_ex_vat>3950 NOK</g:price_ex_vat>
-      <g:current_price>4938 NOK</g:current_price>
-      <g:current_price_ex_vat>3950 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:color_secondary>Grå</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>46 cm</g:product_width>
-      <g:product_height>90 cm</g:product_height>
-      <g:product_length>42 cm</g:product_length>
-      <g:quantity>85</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>45 cm</g:attribute_value>
-      </g:product_detail>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Diameter</g:attribute_name>
-        <g:attribute_value>75 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Kontorstol</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>H05 5600 Swingback-armlene Sort</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>62550</g:id>
-      <g:title>Møtebord 200x90cm Hvit laminat, hvitt understell, Pent brukt</g:title>
-      <g:short_title>Møtebord 200x90cm Hvit laminat</g:short_title>
-      <g:description>Møtebord 200 × 90 cm – rektangulært bord for møter, arbeid eller samlinger.
-Bordet har en romslig arbeidsflate som gir plass til 6–8 personer, og egner seg godt for møterom, prosjektområder eller fellessoner. Den klassiske formen gjør bordet lett å kombinere med ulike typer stoler og interiør.
-▪ Størrelse 200 × 90 cm – gir god plass for flere personer
-▪ Rektangulær form for fleksibel plassering og bruk
-▪ Egnet for møterom, prosjektområder og fellesarealer
-Dette møtbordet er et godt valg når du ønsker en enkel og funksjonell bordløsning med gjenbruk i fokus – brukt er det nye.
-Produsent: ukjent</g:description>
-      <g:link>https://www.movement.as/bord/motebord/motebord-200x90cm-hvit-laminat-hvitt-understell-pent-brukt-62550.html</g:link>
-      <g:brand>Movement</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4317</g:google_product_category>
-      <g:product_type>Bord &gt; Møtebord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/62550/big_693c4f532dedb772199fe6eecc2fb542d99a4938.jpg</g:image_link>
-      <g:price>6188 NOK</g:price>
-      <g:price_ex_vat>4950 NOK</g:price_ex_vat>
-      <g:current_price>6188 NOK</g:current_price>
-      <g:current_price_ex_vat>4950 NOK</g:current_price_ex_vat>
-      <g:color>Hvit</g:color>
-      <g:material>Laminat</g:material>
-      <g:product_width>200 cm</g:product_width>
-      <g:product_height>72 cm</g:product_height>
-      <g:product_length>90 cm</g:product_length>
-      <g:quantity>10</g:quantity>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Møtebord</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>Møtebord 200x90cm Hvit laminat</g:custom_label_4>
-    </item>
-    <item>
       <g:id>62551</g:id>
       <g:title>Barbord 160x80cm, høyde 110cm Foliert eik, Pent brukt - Barbord og ståbord</g:title>
       <g:short_title>Barbord 160x80cm</g:short_title>
@@ -71025,36 +70718,6 @@ Samsung QB55R er et godt valg for deg som ønsker kvalitet og gjenbruk i fokus �
       <g:custom_label_2/>
       <g:custom_label_3/>
       <g:custom_label_4>QB55R 55toms 4K 3840x2160</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>62933</g:id>
-      <g:title>QB75R 75toms 3840x2160 4K, Pent brukt - Flatskjerms-TV og Public Display - Sort</g:title>
-      <g:short_title>QB75R 75toms 3840x2160 4K</g:short_title>
-      <g:description>Samsung QB75R er en 75-tommers signageskjerm utviklet for informasjonsvisning og presentasjoner i møterom, undervisningsrom og fellesarealer. Skjermen har 4K Ultra HD-oppløsning (3840 × 2160) som gir et skarpt og detaljert bilde, godt egnet til visning av tekst, grafikk og video på store flater.
-Størrelsen gjør skjermen godt egnet i mellomstore og større rom der mange skal kunne se innholdet samtidig. Modellen er laget for stabil drift over tid og kan monteres både horisontalt og vertikalt. Flere tilkoblingsmuligheter gjør den enkel å integrere i ulike AV-oppsett.
-▪ 75” signageskjerm med 4K Ultra HD-oppløsning
-▪ tilkoblinger: HDMI, DisplayPort, USB og Ethernet (LAN)
-▪ egnet til møterom, undervisning og fellesarealer
-Samsung QB75R er et godt valg for deg som ønsker kvalitet og gjenbruk i fokus – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/elektronikk/flatskjerms-tv-og-public-display/qb75r-75toms-3840x2160-4k-pent-brukt-62933.html</g:link>
-      <g:brand>Samsung</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4319</g:google_product_category>
-      <g:product_type>Elektronikk &gt; Flatskjerms-TV og Public Display</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/62933/big_e99e60abdd94d2b9648461cb91965ef491112f07.jpg</g:image_link>
-      <g:price>12438 NOK</g:price>
-      <g:price_ex_vat>9950 NOK</g:price_ex_vat>
-      <g:current_price>12438 NOK</g:current_price>
-      <g:current_price_ex_vat>9950 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:quantity>1</g:quantity>
-      <g:custom_label_0>Elektronikk</g:custom_label_0>
-      <g:custom_label_1>Flatskjerms-TV og Public Display</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>QB75R 75toms 3840x2160 4K</g:custom_label_4>
     </item>
     <item>
       <g:id>62934</g:id>
@@ -85855,47 +85518,6 @@ City fra Fora Form er et ikonisk og fleksibelt valg – brukt er det nye.</g:des
       <g:custom_label_4>City plast</g:custom_label_4>
     </item>
     <item>
-      <g:id>63626</g:id>
-      <g:title>Molo med meieben Hvitt skall krom ben, Pent brukt - Konferansestoler</g:title>
-      <g:short_title>Molo med meieben Hvitt skall krom</g:short_title>
-      <g:description>olo fra Duba er en stol utviklet for bruk i møterom, prosjektrom og fellesarealer i profesjonelle miljøer. Stolen er designet av Norway Says og kjennetegnes av et nøkternt og funksjonelt formspråk som gjør den godt egnet rundt møtebord og i rom der møbler brukes av mange gjennom dagen.
-Stolen har et kompakt uttrykk som gjør den enkel å plassere både i mindre møterom og i større oppsett med flere stoler samlet. Molo fungerer godt til møter av kortere og moderat varighet og bidrar til et ryddig og helhetlig uttrykk i rommet. Utformingen gjør stolen lett å kombinere med ulike typer bord og øvrig innredning i kontor- og prosjektmiljøer. Den passer både som fast konferansestol og i mer fleksible rom der møbler flyttes etter behov.
-▪ Stol fra Duba – modell Molo
-▪ Designet av Norway Says
-▪ Egnet for møterom og fellesarealer
-Molo stol fra Duba er et gjennomtenkt valg for funksjonelle møteplasser med tydelig skandinavisk design – brukt er det nye.
----
-Prisen er pr stol.
----
-Se også våre andre annonser for et godt utvalg i pent brukte stoler og andre kontormøbler.</g:description>
-      <g:link>https://www.movement.as/stoler/konferansestoler/molo-med-meieben-hvitt-skall-krom-ben-pent-brukt-63626.html</g:link>
-      <g:brand>Duba-B8</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>446</g:google_product_category>
-      <g:product_type>Stoler &gt; Konferansestoler</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/63626/big_37051c107bbdfc1115d25777ae3c35624aea5b06.jpg</g:image_link>
-      <g:price>1119 NOK</g:price>
-      <g:price_ex_vat>895 NOK</g:price_ex_vat>
-      <g:current_price>1119 NOK</g:current_price>
-      <g:current_price_ex_vat>895 NOK</g:current_price_ex_vat>
-      <g:color>Hvit</g:color>
-      <g:product_width>57 cm</g:product_width>
-      <g:product_height>80 cm</g:product_height>
-      <g:quantity>10</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>44 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Konferansestoler</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>Molo med meieben Hvitt skall krom</g:custom_label_4>
-    </item>
-    <item>
       <g:id>63627</g:id>
       <g:title>Eyes Wood Lounge EJ-3-U Burgunder stoff, ben i eik, Pent brukt - Lenestoler og loungestoler</g:title>
       <g:short_title>Eyes Wood Lounge EJ-3-U Burgunder</g:short_title>
@@ -86036,7 +85658,7 @@ Se også våre andre annonser for et godt utvalg i pent brukte stoler og andre k
       <g:color>Grå</g:color>
       <g:product_width>57 cm</g:product_width>
       <g:product_height>80 cm</g:product_height>
-      <g:quantity>39</g:quantity>
+      <g:quantity>19</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -93495,7 +93117,7 @@ Ziggy fra Martela er et gjennomtenkt og funksjonelt bruktvalg for aktive arbeids
       <g:product_width>40 cm</g:product_width>
       <g:product_height>59 cm</g:product_height>
       <g:product_length>40 cm</g:product_length>
-      <g:quantity>5</g:quantity>
+      <g:quantity>4</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -100500,7 +100122,7 @@ Dis Executive konferansestol med glidere fra Dynamobel er et gjennomtenkt og fun
       <g:current_price_ex_vat>3950 NOK</g:current_price_ex_vat>
       <g:color>Lilla</g:color>
       <g:material>Skinn</g:material>
-      <g:quantity>11</g:quantity>
+      <g:quantity>12</g:quantity>
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Konferansestoler</g:custom_label_1>
       <g:custom_label_2/>
@@ -108765,7 +108387,7 @@ Velg en brukt HÅG H05 5600 for en kombinasjon av komfort, funksjonalitet og ska
       <g:product_width>46 cm</g:product_width>
       <g:product_height>90 cm</g:product_height>
       <g:product_length>42 cm</g:product_length>
-      <g:quantity>24</g:quantity>
+      <g:quantity>15</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -114509,10 +114131,10 @@ Et gjennomarbeidet design med tydelig identitet – brukt er det nye.</g:descrip
       <g:google_product_category>2634</g:google_product_category>
       <g:product_type>Sofa &gt; Alkovesofa</g:product_type>
       <g:image_link>https://www.movement.as/images/products/64869/big_a11105dbd4147906b14307cced4790c25062250b.jpg</g:image_link>
-      <g:price>28688 NOK</g:price>
-      <g:price_ex_vat>22950 NOK</g:price_ex_vat>
-      <g:current_price>28688 NOK</g:current_price>
-      <g:current_price_ex_vat>22950 NOK</g:current_price_ex_vat>
+      <g:price>22438 NOK</g:price>
+      <g:price_ex_vat>17950 NOK</g:price_ex_vat>
+      <g:current_price>22438 NOK</g:current_price>
+      <g:current_price_ex_vat>17950 NOK</g:current_price_ex_vat>
       <g:color>Sort</g:color>
       <g:color_secondary>Grønn</g:color_secondary>
       <g:material>Stoff</g:material>
@@ -119451,10 +119073,10 @@ Et gjennomarbeidet design med tydelig identitet – brukt er det nye.</g:descrip
       <g:google_product_category>2634</g:google_product_category>
       <g:product_type>Sofa &gt; Alkovesofa</g:product_type>
       <g:image_link>https://www.movement.as/images/products/65061/big_b718ed3e39e9483531e269d328fabbb30e491ef1.jpg</g:image_link>
-      <g:price>28688 NOK</g:price>
-      <g:price_ex_vat>22950 NOK</g:price_ex_vat>
-      <g:current_price>28688 NOK</g:current_price>
-      <g:current_price_ex_vat>22950 NOK</g:current_price_ex_vat>
+      <g:price>22438 NOK</g:price>
+      <g:price_ex_vat>17950 NOK</g:price_ex_vat>
+      <g:current_price>22438 NOK</g:current_price>
+      <g:current_price_ex_vat>17950 NOK</g:current_price_ex_vat>
       <g:color>Blå</g:color>
       <g:color_secondary>Sort</g:color_secondary>
       <g:material>Stoff</g:material>
@@ -120365,7 +119987,7 @@ Et praktisk bord med flere bruksområder – brukt er det nye.</g:description>
       <g:current_price_ex_vat>1160 NOK</g:current_price_ex_vat>
       <g:product_width>160 cm</g:product_width>
       <g:product_length>40 cm</g:product_length>
-      <g:quantity>4</g:quantity>
+      <g:quantity>3</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Klappbord og kursbord</g:custom_label_1>
       <g:custom_label_2/>
@@ -126704,44 +126326,6 @@ En liten pendellampe som gir et stilrent og moderne uttrykk – brukt er det nye
       <g:custom_label_4>Bon lamp Ø=9cm Sort</g:custom_label_4>
     </item>
     <item>
-      <g:id>65334</g:id>
-      <g:title>Rul Trolley 71x48cm Burgunder, Pent brukt - Avlastningsbord - Lilla</g:title>
-      <g:short_title>Rul Trolley 71x48cm Burgunder</g:short_title>
-      <g:description>Rul Trolley fra Normann Copenhagen, designet av Simon Legald, er en praktisk tralle utviklet for fleksibel bruk i kontormiljøer. Den egner seg godt som mobil oppbevaringsløsning i møterom, sosiale soner eller ved arbeidsstasjoner, og kan brukes til servering, oppbevaring eller organisering av utstyr.
-Trallen har en kompakt utforming med flere nivåer som gir god lagringsplass uten å oppta mye gulvareal. Hjulene gjør den enkel å flytte etter behov, noe som gir høy fleksibilitet i hverdagen. Den åpne konstruksjonen gir god oversikt over innholdet og gjør det enkelt å holde orden i ulike typer kontorutstyr.
-▪ Designet av Simon Legald for Normann Copenhagen
-▪ Mobil tralle med flere hyller
-▪ Hjul for enkel flytting og fleksibel bruk
-Rul Trolley fra Normann Copenhagen er en funksjonell løsning for organisering og mobil oppbevaring – et godt valg som viser at brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/bord/avlastningsbord/rul-trolley-71x48cm-burgunder-pent-brukt-65334.html</g:link>
-      <g:brand>Normann Copenhagen</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4316</g:google_product_category>
-      <g:product_type>Bord &gt; Avlastningsbord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/65334/big_69428bf179a46a24a1274229f6a6fb15bf941638.jpg</g:image_link>
-      <g:price>2288 NOK</g:price>
-      <g:price_ex_vat>1830 NOK</g:price_ex_vat>
-      <g:current_price>2288 NOK</g:current_price>
-      <g:current_price_ex_vat>1830 NOK</g:current_price_ex_vat>
-      <g:color>Lilla</g:color>
-      <g:product_width>71 cm</g:product_width>
-      <g:product_height>77 cm</g:product_height>
-      <g:product_length>48 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:product_detail>
-        <g:section_name>Spesifikasjoner</g:section_name>
-        <g:attribute_name>Vekt</g:attribute_name>
-        <g:attribute_value>12.00 kg</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Avlastningsbord</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>Rul Trolley 71x48cm Burgunder</g:custom_label_4>
-    </item>
-    <item>
       <g:id>65335</g:id>
       <g:title>Form barstol 65cm Rød(Bright red), Pent brukt - Barstoler - Metall</g:title>
       <g:short_title>Form barstol 65cm Rød(Bright red)</g:short_title>
@@ -126887,7 +126471,7 @@ Bit Stool Cone fra Normann Copenhagen er et godt valg for deg som ønsker kvalit
       <g:color>Hvit</g:color>
       <g:color_secondary>Rød</g:color_secondary>
       <g:product_height>42 cm</g:product_height>
-      <g:quantity>2</g:quantity>
+      <g:quantity>1</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Diameter</g:attribute_name>
@@ -126928,7 +126512,7 @@ Bit Stool Stack kombinerer miljøbevisst produksjon med moderne form – brukt e
       <g:current_price_ex_vat>1550 NOK</g:current_price_ex_vat>
       <g:color>Hvit</g:color>
       <g:product_height>42 cm</g:product_height>
-      <g:quantity>7</g:quantity>
+      <g:quantity>6</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Diameter</g:attribute_name>
@@ -133256,7 +132840,7 @@ Produsent: Thonet</g:description>
       <g:product_width>43 cm</g:product_width>
       <g:product_height>83 cm</g:product_height>
       <g:product_length>55 cm</g:product_length>
-      <g:quantity>5</g:quantity>
+      <g:quantity>3</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -134380,7 +133964,7 @@ Velg en brukt HÅG H05 5600 for en kombinasjon av komfort, funksjonalitet og ska
       <g:product_width>46 cm</g:product_width>
       <g:product_height>90 cm</g:product_height>
       <g:product_length>42 cm</g:product_length>
-      <g:quantity>14</g:quantity>
+      <g:quantity>7</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -135111,43 +134695,6 @@ IKEA er en svensk møbelprodusent kjent for sine stilrene, funksjonelle og prisv
       <g:custom_label_2/>
       <g:custom_label_3/>
       <g:custom_label_4>Knippe Rustfritt stål</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>61799</g:id>
-      <g:title>Avec 140x70cm Hvit bordplate grått understell, Pent brukt - Spisebord og kantinebord</g:title>
-      <g:short_title>Avec 140x70cm Hvit bordplate grått</g:short_title>
-      <g:description>Avec fra EFG er et stilrent og funksjonelt kantine- eller møtebord med rektangulær form og høy anvendbarhet.
-Med målene 140 × 70 cm passer bordet godt til pauserom, kantine og mindre møterom – og gir god plass uten å ta for mye areal. Det enkle, rene designet gjør det lett å kombinere med ulike typer stoler og innredning.
-Bordet har plass til 4–6 personer, og egner seg både til faste og fleksible møte- eller spiseområder.
-▪ Størrelse 140 × 70 cm – praktisk størrelse for sosiale og møtesoner
-▪ Stabil konstruksjon med klassisk understell
-▪ Egnet for kantine, pauserom og mindre møterom
-Avec kantinebord fra EFG er et godt valg når du ønsker funksjonell kvalitet og gjenbruk i ett – brukt er det nye.
-Produsent: EFG
-EFG er en anerkjent svensk produsent av kontormøbler, kjent for å levere høy kvalitet og funksjonalitet. Med fokus på ergonomi, design og bærekraft, har EFG i mange år vært en pålitelig leverandør av møbler som møter moderne kontormiljøers behov. Deres produkter er utviklet for å skape effektive og komfortable arbeidsplasser, og de tilbyr løsninger som både er tidløse og robuste. EFG er et naturlig valg for deg som ønsker møbler som kombinerer estetikk, funksjonalitet og lang levetid.</g:description>
-      <g:link>https://www.movement.as/bord/spisebord-og-kantinebord/avec-140x70cm-hvit-bordplate-gratt-understell-pent-brukt-61799.html</g:link>
-      <g:brand>Efg</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4316</g:google_product_category>
-      <g:product_type>Bord &gt; Spisebord og kantinebord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/61799/big_129efbea8122194d401fb24df20ca42e184874e8.jpg</g:image_link>
-      <g:price>3063 NOK</g:price>
-      <g:price_ex_vat>2450 NOK</g:price_ex_vat>
-      <g:current_price>3063 NOK</g:current_price>
-      <g:current_price_ex_vat>2450 NOK</g:current_price_ex_vat>
-      <g:color>Grå</g:color>
-      <g:color_secondary>Hvit</g:color_secondary>
-      <g:product_width>140 cm</g:product_width>
-      <g:product_height>73 cm</g:product_height>
-      <g:product_length>70 cm</g:product_length>
-      <g:quantity>3</g:quantity>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Spisebord og kantinebord</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3/>
-      <g:custom_label_4>Avec 140x70cm Hvit bordplate grått</g:custom_label_4>
     </item>
     <item>
       <g:id>62906</g:id>
