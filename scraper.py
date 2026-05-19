@@ -821,7 +821,7 @@ def build_feed(products: list) -> str:
         ET.SubElement(item, "{%s}custom_label_0" % G).text = crumbs[0].strip() if len(crumbs) > 0 else ""
         ET.SubElement(item, "{%s}custom_label_1" % G).text = crumbs[1].strip() if len(crumbs) > 1 else ""
         ET.SubElement(item, "{%s}custom_label_2" % G).text = crumbs[2].strip() if len(crumbs) > 2 else ""
-        ET.SubElement(item, "{%s}custom_label_3" % G).text = "Tilbud" if p.sale_incl else ""
+        ET.SubElement(item, "{%s}custom_label_3" % G).text = p.quantity if p.quantity else ""
         ET.SubElement(item, "{%s}custom_label_4" % G).text = p.title_short
 
     return _prettify(rss)
