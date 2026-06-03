@@ -335,16 +335,10 @@ def _extract_prices(soup: BeautifulSoup) -> tuple:
                     original_ex = val
                     break
 
-    if original_ex:
-        price_ex    = original_ex
-        price_incl  = round(original_ex * 1.25, 0)
-        sale_ex     = current_ex
-        sale_incl   = current_incl if current_incl else round(current_ex * 1.25, 0)
-    else:
-        price_ex    = current_ex
-        price_incl  = current_incl if current_incl else round(current_ex * 1.25, 0)
-        sale_ex     = 0.0
-        sale_incl   = 0.0
+    price_ex   = current_ex
+    price_incl = current_incl if current_incl else round(current_ex * 1.25, 0)
+    sale_ex    = 0.0
+    sale_incl  = 0.0
 
     if not price_ex:
         log.warning("Pris ikke funnet")
