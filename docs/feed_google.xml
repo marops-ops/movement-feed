@@ -812,11 +812,11 @@ Prisen er pr stk.</g:description>
       <g:color>Sort</g:color>
       <g:product_width>180 cm</g:product_width>
       <g:product_length>80 cm</g:product_length>
-      <g:quantity>38</g:quantity>
+      <g:quantity>26</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Bordplater til skrivebord</g:custom_label_2>
-      <g:custom_label_3>38</g:custom_label_3>
+      <g:custom_label_3>26</g:custom_label_3>
       <g:custom_label_4>Sort bordplate</g:custom_label_4>
     </item>
     <item>
@@ -1775,43 +1775,6 @@ Prisen er pr stk.</g:description>
       <g:custom_label_4>Lyddempende veggdekorasjon</g:custom_label_4>
     </item>
     <item>
-      <g:id>43817</g:id>
-      <g:title>Luke til kabler / kabelluke fra Narbutas, for montering i møtebord eller skrivebord, sortlakkert metall, rektangulær, NY - Ergonomi og tilbehør</g:title>
-      <g:short_title>Luke til kabler / kabelluke</g:short_title>
-      <g:description>Tilbehør til møtebord eller skrivebord.
-Kabelluke med lokk i lakkert metall fra Narbutas.
-
-NB! Montering kommer i tillegg
-Dette er kun en luke med lokk. 
-Strømtilkopling og kabelskjuler etc følger ikke med.
-
-Mål:
-317x119mm
-Prisen er pr stk.</g:description>
-      <g:link>https://www.movement.as/annet/kontorutstyr/ergonomi-og-tilbehor/luke-til-kabler---kabelluke-fra-narbutas-for-montering-i-motebord-eller-skrivebord-sortlakkert-metall-rektangulaer-ny-43817.html</g:link>
-      <g:brand>Narbutas</g:brand>
-      <g:condition>new</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4317</g:google_product_category>
-      <g:product_type>Annet &gt; Kontorutstyr &gt; Ergonomi og tilbehør</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/43817/big_2869d55840dcd63a46095da7ea465adbfdf4f2c8.jpg</g:image_link>
-      <g:price>938 NOK</g:price>
-      <g:price_ex_vat>750 NOK</g:price_ex_vat>
-      <g:current_price>938 NOK</g:current_price>
-      <g:current_price_ex_vat>750 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:material>Metall</g:material>
-      <g:product_width>31 cm</g:product_width>
-      <g:product_length>11 cm</g:product_length>
-      <g:quantity>2</g:quantity>
-      <g:custom_label_0>Annet</g:custom_label_0>
-      <g:custom_label_1>Kontorutstyr</g:custom_label_1>
-      <g:custom_label_2>Ergonomi og tilbehør</g:custom_label_2>
-      <g:custom_label_3>2</g:custom_label_3>
-      <g:custom_label_4>Luke til kabler / kabelluke</g:custom_label_4>
-    </item>
-    <item>
       <g:id>43819</g:id>
       <g:title>Bordplate i sort fra Narbutas, til skrivebord 120x80cm, NY/UBRUKT - Bordplater til skrivebord</g:title>
       <g:short_title>Bordplate i sort</g:short_title>
@@ -2200,42 +2163,6 @@ Prisen er pr stk.</g:description>
       <g:custom_label_4>Rund bordplate i mørk varmgrå</g:custom_label_4>
     </item>
     <item>
-      <g:id>47839</g:id>
-      <g:title>Rund bordplate i sort laminat fra Narbutas, Ø=60cm, NY/UBRUKT - Bordplater til skrivebord</g:title>
-      <g:short_title>Rund bordplate i sort laminat</g:short_title>
-      <g:description>Rund bordplate for rundt bord fra Narbutas.
-Mål på plate: Ø=60cm 25mm høyde, hvit plastlist rundt platen for bedre beskyttelse.
-Farge:Sort laminat
-
-Prisen er pr stk.</g:description>
-      <g:link>https://www.movement.as/bord/skrivebord/bordplater-til-skrivebord/rund-bordplate-i-sort-laminat-fra-narbutas-o60cm-ny-ubrukt-47839.html</g:link>
-      <g:brand>Narbutas</g:brand>
-      <g:condition>new</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4090</g:google_product_category>
-      <g:product_type>Bord &gt; Skrivebord &gt; Bordplater til skrivebord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/47839/big_449e6aa771c8c04f574b51bca1700f20df8108ab.jpg</g:image_link>
-      <g:price>1244 NOK</g:price>
-      <g:price_ex_vat>995 NOK</g:price_ex_vat>
-      <g:current_price>1244 NOK</g:current_price>
-      <g:current_price_ex_vat>995 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:material>Laminat</g:material>
-      <g:product_height>0 cm</g:product_height>
-      <g:quantity>4</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Diameter</g:attribute_name>
-        <g:attribute_value>120 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Skrivebord</g:custom_label_1>
-      <g:custom_label_2>Bordplater til skrivebord</g:custom_label_2>
-      <g:custom_label_3>4</g:custom_label_3>
-      <g:custom_label_4>Rund bordplate i sort laminat</g:custom_label_4>
-    </item>
-    <item>
       <g:id>47840</g:id>
       <g:title>Rund bordplate i hvit laminat fra Narbutas, Ø=90cm, NY/UBRUKT - Bordplater til skrivebord - Sort</g:title>
       <g:short_title>Rund bordplate i hvit laminat</g:short_title>
@@ -2455,11 +2382,11 @@ Prisen er pr stk.</g:description>
       <g:product_width>108 cm</g:product_width>
       <g:product_height>11 cm</g:product_height>
       <g:product_length>18 cm</g:product_length>
-      <g:quantity>16</g:quantity>
+      <g:quantity>12</g:quantity>
       <g:custom_label_0>Annet</g:custom_label_0>
       <g:custom_label_1>Kontorutstyr</g:custom_label_1>
       <g:custom_label_2>Ergonomi og tilbehør</g:custom_label_2>
-      <g:custom_label_3>16</g:custom_label_3>
+      <g:custom_label_3>12</g:custom_label_3>
       <g:custom_label_4>Kabeloppheng / kabelbrønn</g:custom_label_4>
     </item>
     <item>
@@ -2893,11 +2820,11 @@ Prisen er pr. stk. eks. mva.</g:description>
       <g:product_width>160 cm</g:product_width>
       <g:product_height>22 cm</g:product_height>
       <g:product_length>80 cm</g:product_length>
-      <g:quantity>24</g:quantity>
+      <g:quantity>17</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Bordplater til skrivebord</g:custom_label_2>
-      <g:custom_label_3>24</g:custom_label_3>
+      <g:custom_label_3>17</g:custom_label_3>
       <g:custom_label_4>Bordplate i sort linoleum</g:custom_label_4>
     </item>
     <item>
@@ -6250,11 +6177,11 @@ Prisen er oppgitt pr bord eks mva.</g:description>
       <g:material>Metall</g:material>
       <g:product_width>180 cm</g:product_width>
       <g:product_length>90 cm</g:product_length>
-      <g:quantity>77</g:quantity>
+      <g:quantity>67</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Elektriske hev og senk skrivebord</g:custom_label_2>
-      <g:custom_label_3>77</g:custom_label_3>
+      <g:custom_label_3>67</g:custom_label_3>
       <g:custom_label_4>Skrivebord i grå linoleum</g:custom_label_4>
     </item>
     <item>
@@ -10983,7 +10910,7 @@ Northern er en norsk designprodusent som kombinerer skandinavisk enkelhet med ut
       <g:color>Sort</g:color>
       <g:material>Eik</g:material>
       <g:product_height>148 cm</g:product_height>
-      <g:quantity>1</g:quantity>
+      <g:quantity>2</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Diameter</g:attribute_name>
@@ -10997,7 +10924,7 @@ Northern er en norsk designprodusent som kombinerer skandinavisk enkelhet med ut
       <g:custom_label_0>Belysning</g:custom_label_0>
       <g:custom_label_1>Gulvlamper</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
+      <g:custom_label_3>2</g:custom_label_3>
       <g:custom_label_4>Acorn Floor Black matt</g:custom_label_4>
     </item>
     <item>
@@ -16098,53 +16025,6 @@ EFG er en anerkjent svensk produsent av kontormøbler, kjent for å levere høy 
       <g:custom_label_4>Astor loungebord Ø=70cm</g:custom_label_4>
     </item>
     <item>
-      <g:id>59272</g:id>
-      <g:title>S3 med nakkepute og armlene Sort stoff, fotkryss i polert aluminium, Pent brukt - Kontorstol</g:title>
-      <g:short_title>S3 med nakkepute og armlene Sort</g:short_title>
-      <g:description>Savo S3 er en moderne og gjennomarbeidet kontorstol, utviklet for å gi god støtte og bevegelighet gjennom hele arbeidsdagen. Denne modellen er utstyrt med både nakkepute og armlener, som gir økt komfort og avlastning i krevende kontormiljøer.
-Stolen har et rent og funksjonelt formspråk med høy rygg, og bygger videre på Savo sin filosofi om intuitiv sitting – der stolen følger kroppens bevegelser uten unødvendige innstillinger. Den ergonomiske ryggen og seteformen bidrar til aktiv sittestilling og støtte gjennom lange økter.
-✅ Nakkepute og armlene – Gir ekstra støtte og komfort
-✅ Intuitiv ergonomi – Følger kroppen uten kompliserte justeringer
-✅ Rent og moderne design – Passer i åpne kontorlandskap og cellekontor
-Savo S3 med nakkepute er et trygt valg for deg som ønsker en kontorstol med høy komfort, moderne uttrykk og ergonomiske løsninger i hverdagen.
-Produsent: Savo
-Savo er en norsk produsent kjent for sine ergonomiske og funksjonelle kontormøbler. Med fokus på bærekraft, innovasjon og komfort, tilbyr Savo møbler som er designet for å forbedre arbeidsmiljøet og støtte langvarig bruk. Deres produkter er laget for å gi både høy kvalitet og en god arbeidsstilling, ideelt for både kontor og hjemmekontor.</g:description>
-      <g:link>https://www.movement.as/stoler/kontorstol/s3-med-nakkepute-og-armlene-sort-stoff-fotkryss-i-polert-aluminium-pent-brukt-59272.html</g:link>
-      <g:brand>savo</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>447</g:google_product_category>
-      <g:product_type>Stoler &gt; Kontorstol</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/59272/big_85379e75cc6328c998ebf3972c4bcd74fbc4434c.jpg</g:image_link>
-      <g:price>3319 NOK</g:price>
-      <g:price_ex_vat>2655 NOK</g:price_ex_vat>
-      <g:current_price>3319 NOK</g:current_price>
-      <g:current_price_ex_vat>2655 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:color_secondary>Sølv</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>46 cm</g:product_width>
-      <g:product_height>120 cm</g:product_height>
-      <g:product_length>48 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>45 cm</g:attribute_value>
-      </g:product_detail>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Diameter</g:attribute_name>
-        <g:attribute_value>75 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Kontorstol</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
-      <g:custom_label_4>S3 med nakkepute og armlene Sort</g:custom_label_4>
-    </item>
-    <item>
       <g:id>59284</g:id>
       <g:title>Pedalbøtte Addison med 1 beholder 15L Rustfritt stål, lokk i sort plast, Godt brukt - Avfallshåndtering - Grå</g:title>
       <g:short_title>Pedalbøtte Addison med 1 beholder</g:short_title>
@@ -18832,7 +18712,7 @@ Produsent: Wagner</g:description>
       <g:product_width>57 cm</g:product_width>
       <g:product_height>102 cm</g:product_height>
       <g:product_length>54 cm</g:product_length>
-      <g:quantity>15</g:quantity>
+      <g:quantity>13</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -18846,7 +18726,7 @@ Produsent: Wagner</g:description>
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Kontorstol</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>15</g:custom_label_3>
+      <g:custom_label_3>13</g:custom_label_3>
       <g:custom_label_4>ErgoMedic 100-2 med armlene  Sete</g:custom_label_4>
     </item>
     <item>
@@ -19868,7 +19748,7 @@ Martela er en ledende produsent av kontormøbler som kombinerer funksjonalitet, 
       <g:product_width>48 cm</g:product_width>
       <g:product_height>83 cm</g:product_height>
       <g:product_length>50 cm</g:product_length>
-      <g:quantity>3</g:quantity>
+      <g:quantity>8</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -19877,7 +19757,7 @@ Martela er en ledende produsent av kontormøbler som kombinerer funksjonalitet, 
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Konferansestoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>3</g:custom_label_3>
+      <g:custom_label_3>8</g:custom_label_3>
       <g:custom_label_4>Soft X konferansestol med fotkryss</g:custom_label_4>
     </item>
     <item>
@@ -24639,46 +24519,6 @@ HAY er et dansk designmerke som kombinerer estetikk, funksjonalitet og innovasjo
       <g:custom_label_4>About a chair AAC 26</g:custom_label_4>
     </item>
     <item>
-      <g:id>60045</g:id>
-      <g:title>Splice med armlene Sort Fame, sort kryss, Pent brukt - Kontorstol</g:title>
-      <g:short_title>Splice med armlene Sort Fame</g:short_title>
-      <g:description>Splice fra EFG er en funksjonell og komfortabel kontorstol utviklet for å støtte god ergonomi i det daglige kontorarbeidet. Denne modellen er utstyrt med armlener som bidrar til bedre støtte for skuldre og armer, og har et tidløst design som passer i både åpne kontormiljøer og private arbeidsplasser.
-Med justerbare innstillinger for sete og rygg gir Splice god mulighet for individuell tilpasning og en mer variert sittestilling.
-✅ Armlener for ekstra støtte – Økt komfort ved lange arbeidsøkter
-✅ Ergonomiske innstillinger – Tilpasning av sete- og ryggvinkel
-✅ Tidløst design – Passer i mange typer arbeidsmiljøer
-EFG Splice kontorstol er et godt valg for deg som ønsker en komfortabel og ergonomisk stol med praktiske justeringsmuligheter.
-Produsent: EFG
-EFG er en anerkjent svensk produsent av kontormøbler, kjent for å levere høy kvalitet og funksjonalitet. Med fokus på ergonomi, design og bærekraft, har EFG i mange år vært en pålitelig leverandør av møbler som møter moderne kontormiljøers behov. Deres produkter er utviklet for å skape effektive og komfortable arbeidsplasser, og de tilbyr løsninger som både er tidløse og robuste. EFG er et naturlig valg for deg som ønsker møbler som kombinerer estetikk, funksjonalitet og lang levetid.</g:description>
-      <g:link>https://www.movement.as/stoler/kontorstol/splice-med-armlene-sort-fame-sort-kryss-pent-brukt-60045.html</g:link>
-      <g:brand>Efg</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>447</g:google_product_category>
-      <g:product_type>Stoler &gt; Kontorstol</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/60045/big_d6205dcfa11e4b6ef9ea9ba318b9b57d10ab84ef.jpg</g:image_link>
-      <g:price>3319 NOK</g:price>
-      <g:price_ex_vat>2655 NOK</g:price_ex_vat>
-      <g:current_price>3319 NOK</g:current_price>
-      <g:current_price_ex_vat>2655 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:product_width>65 cm</g:product_width>
-      <g:product_height>97 cm</g:product_height>
-      <g:product_length>70 cm</g:product_length>
-      <g:quantity>4</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>45 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Kontorstol</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>4</g:custom_label_3>
-      <g:custom_label_4>Splice med armlene Sort Fame</g:custom_label_4>
-    </item>
-    <item>
       <g:id>60046</g:id>
       <g:title>Izi pro 180x90cm, magebue Lys grå laminat, grått understell, Pent brukt - Rektangulære hevsenk, elektrisk</g:title>
       <g:short_title>Izi pro 180x90cm</g:short_title>
@@ -25374,41 +25214,6 @@ Softline er en dansk møbelprodusent grunnlagt i 1979, kjent for sitt brede utva
       <g:custom_label_2/>
       <g:custom_label_3>2</g:custom_label_3>
       <g:custom_label_4>Drum pouf Ø=45cm high Rosa stoff</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>60093</g:id>
-      <g:title>Tab 160x76cm Lyst grått stoff, Pent brukt - Bordskjermer</g:title>
-      <g:short_title>Tab 160x76cm Lyst grått stoff</g:short_title>
-      <g:description>Tab bordskillevegg fra EFG er en lydabsorberende skjerm som bidrar til å skape en roligere og mer fokusert arbeidsplass. Med sitt enkle og moderne design passer den godt inn i åpne kontorlandskap og individuelle arbeidsstasjoner. ￼
-Skjermen er konstruert med en 15 mm trefiberplatekjerne, dekket med 20 mm kaldskum og trukket i tekstil, noe som gir gode lydabsorberende egenskaper. Den leveres med to eller tre monteringsbeslag, avhengig av lengden, for enkel montering på skrivebordet. ￼
-▪ Lydabsorberende konstruksjon – Forbedrer akustikken i åpne kontorlandskap
-▪ Enkel montering – Leveres med nødvendige monteringsbeslag
-▪ Stilrent design – Passer inn i moderne arbeidsmiljøer
-Tab bordskillevegg fra EFG er et utmerket valg for deg som ønsker å forbedre arbeidsmiljøet med en funksjonell og estetisk tiltalende løsning.
-Produsent: EFG
-EFG er en anerkjent svensk produsent av kontormøbler, kjent for å levere høy kvalitet og funksjonalitet. Med fokus på ergonomi, design og bærekraft, har EFG i mange år vært en pålitelig leverandør av møbler som møter moderne kontormiljøers behov. Deres produkter er utviklet for å skape effektive og komfortable arbeidsplasser, og de tilbyr løsninger som både er tidløse og robuste. EFG er et naturlig valg for deg som ønsker møbler som kombinerer estetikk, funksjonalitet og lang levetid.</g:description>
-      <g:link>https://www.movement.as/skillevegger/bordskjermer/tab-160x76cm-lyst-gratt-stoff-pent-brukt-60093.html</g:link>
-      <g:brand>Efg</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4316</g:google_product_category>
-      <g:product_type>Skillevegger &gt; Bordskjermer</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/60093/big_aa771bffd0bd86a4c14abfb3bf12f6e1fb61ca4f.jpg</g:image_link>
-      <g:price>2188 NOK</g:price>
-      <g:price_ex_vat>1750 NOK</g:price_ex_vat>
-      <g:current_price>2188 NOK</g:current_price>
-      <g:current_price_ex_vat>1750 NOK</g:current_price_ex_vat>
-      <g:color>Grå</g:color>
-      <g:material>Stoff</g:material>
-      <g:product_width>160 cm</g:product_width>
-      <g:product_height>76 cm</g:product_height>
-      <g:quantity>4</g:quantity>
-      <g:custom_label_0>Skillevegger</g:custom_label_0>
-      <g:custom_label_1>Bordskjermer</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>4</g:custom_label_3>
-      <g:custom_label_4>Tab 160x76cm Lyst grått stoff</g:custom_label_4>
     </item>
     <item>
       <g:id>60101</g:id>
@@ -40278,11 +40083,11 @@ Horreds er en svensk møbelprodusent med røtter tilbake til 1936, kjent for å 
       <g:material>Eik</g:material>
       <g:product_width>160 cm</g:product_width>
       <g:product_length>80 cm</g:product_length>
-      <g:quantity>2</g:quantity>
+      <g:quantity>1</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Elektriske hev og senk skrivebord</g:custom_label_2>
-      <g:custom_label_3>2</g:custom_label_3>
+      <g:custom_label_3>1</g:custom_label_3>
       <g:custom_label_4>Nomono hevsenk 160x80cm Sortlakkert</g:custom_label_4>
     </item>
     <item>
@@ -47561,11 +47366,11 @@ Narbutas er en litauisk møbelprodusent grunnlagt i 1991, kjent for sine funksjo
       <g:material>Stoff</g:material>
       <g:product_width>90 cm</g:product_width>
       <g:product_height>180 cm</g:product_height>
-      <g:quantity>11</g:quantity>
+      <g:quantity>10</g:quantity>
       <g:custom_label_0>Skillevegger</g:custom_label_0>
       <g:custom_label_1/>
       <g:custom_label_2/>
-      <g:custom_label_3>11</g:custom_label_3>
+      <g:custom_label_3>10</g:custom_label_3>
       <g:custom_label_4>Free standing 90x180cm Lyst grått</g:custom_label_4>
     </item>
     <item>
@@ -47630,11 +47435,11 @@ Duba B8, nå kjent som Holmris B8, er en velrenommert produsent av kontormøbler
       <g:material>Laminat</g:material>
       <g:product_width>160 cm</g:product_width>
       <g:product_length>90 cm</g:product_length>
-      <g:quantity>2</g:quantity>
+      <g:quantity>1</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Elektriske hev og senk skrivebord</g:custom_label_2>
-      <g:custom_label_3>2</g:custom_label_3>
+      <g:custom_label_3>1</g:custom_label_3>
       <g:custom_label_4>S4000 hevsenk 160x90cm Lys grå</g:custom_label_4>
     </item>
     <item>
@@ -61247,7 +61052,7 @@ HÅG er en norsk produsent kjent for sine ergonomiske kontorstoler og møbler so
       <g:product_width>45 cm</g:product_width>
       <g:product_height>97 cm</g:product_height>
       <g:product_length>45 cm</g:product_length>
-      <g:quantity>5</g:quantity>
+      <g:quantity>6</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -61256,7 +61061,7 @@ HÅG er en norsk produsent kjent for sine ergonomiske kontorstoler og møbler so
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Konferansestoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>5</g:custom_label_3>
+      <g:custom_label_3>6</g:custom_label_3>
       <g:custom_label_4>H04 4472 Communication uten armlene</g:custom_label_4>
     </item>
     <item>
@@ -74046,11 +73851,11 @@ En praktisk løsning der fleksibilitet og gjenbruk er viktig – Brukt er det ny
       <g:product_width>120 cm</g:product_width>
       <g:product_height>78 cm</g:product_height>
       <g:product_length>45 cm</g:product_length>
-      <g:quantity>3</g:quantity>
+      <g:quantity>9</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Klappbord og kursbord</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>3</g:custom_label_3>
+      <g:custom_label_3>9</g:custom_label_3>
       <g:custom_label_4>Standard 4680 klappbord 120x45cm</g:custom_label_4>
     </item>
     <item>
@@ -74820,40 +74625,6 @@ MultiSync C651Q fra NEC er en solid løsning for videre bruk – brukt er det ny
       <g:custom_label_2/>
       <g:custom_label_3>2</g:custom_label_3>
       <g:custom_label_4>MultiSync C651Q 65toms 4K</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>63356</g:id>
-      <g:title>Pulse personlig skap RFID 10 luker Hvit skrog sorte dører, Pent brukt - Låsbare skap</g:title>
-      <g:short_title>Pulse personlig skap RFID 10 luker</g:short_title>
-      <g:description>Puls lukeskap fra EFG er et funksjonelt og sikkert oppbevaringsskap med RFID-låser, utviklet for kontormiljøer og arbeidsplasser hvor sikkerhet og organisering er viktig. Med sine 10 rom gir skapet enkel og ryddig oppbevaring for personlige eiendeler, dokumenter eller kontorutstyr. Skapet passer godt i kontorlandskap, resepsjoner eller fellesområder der effektiv lagring er nødvendig.
-Skapet har en høyde på 200 cm, bredde på 80 cm og dybde på 40 cm, og gir et kompakt fotavtrykk samtidig som det rommer flere låsbare rom. RFID-låsene gjør det enkelt å tildele tilgang til ansatte uten behov for nøkler, og programmeringskort medfølger for enkel administrasjon av låsene. Kjøper du flere skap, medfølger kun et sett med programmeringskort. 
-▪ 10 rom – gir oversiktlig og sikker oppbevaring
-▪ RFID-låser med medfølgende programmeringskort – enkel nøkkelfri tilgang (det kan være leveringstid på programmeringskortet)
-▪ 200 × 80 × 40 cm – kompakt og plassbesparende
-Puls lukeskap fra EFG er et praktisk og sikkert valg for kontoret – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/oppbevaring/lasbare-skap/pulse-personlig-skap-rfid-10-luker-hvit-skrog-sorte-dorer-pent-brukt-63356.html</g:link>
-      <g:brand>Efg</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4318</g:google_product_category>
-      <g:product_type>Oppbevaring &gt; Låsbare skap</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/63356/big_f66e476c6ca5fde9901f9144ec54689b4ee47e07.jpg</g:image_link>
-      <g:price>6188 NOK</g:price>
-      <g:price_ex_vat>4950 NOK</g:price_ex_vat>
-      <g:current_price>6188 NOK</g:current_price>
-      <g:current_price_ex_vat>4950 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:color_secondary>Hvit</g:color_secondary>
-      <g:product_width>80 cm</g:product_width>
-      <g:product_height>200 cm</g:product_height>
-      <g:product_length>40 cm</g:product_length>
-      <g:quantity>2</g:quantity>
-      <g:custom_label_0>Oppbevaring</g:custom_label_0>
-      <g:custom_label_1>Låsbare skap</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>2</g:custom_label_3>
-      <g:custom_label_4>Pulse personlig skap RFID 10 luker</g:custom_label_4>
     </item>
     <item>
       <g:id>63358</g:id>
@@ -77512,11 +77283,11 @@ En smart løsning for mer konsentrasjon og komfort i hverdagen – brukt er det 
       <g:product_width>80 cm</g:product_width>
       <g:product_height>75 cm</g:product_height>
       <g:product_length>4 cm</g:product_length>
-      <g:quantity>21</g:quantity>
+      <g:quantity>5</g:quantity>
       <g:custom_label_0>Skillevegger</g:custom_label_0>
       <g:custom_label_1>Bordskjermer</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>21</g:custom_label_3>
+      <g:custom_label_3>5</g:custom_label_3>
       <g:custom_label_4>Dezibel table 80x75cm Grønt stoff</g:custom_label_4>
     </item>
     <item>
@@ -87064,7 +86835,7 @@ En gjennomprøvd designklassiker med lang levetid og gjenbruk i fokus – brukt 
       <g:product_width>56 cm</g:product_width>
       <g:product_height>79 cm</g:product_height>
       <g:product_length>53 cm</g:product_length>
-      <g:quantity>45</g:quantity>
+      <g:quantity>41</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -87073,7 +86844,7 @@ En gjennomprøvd designklassiker med lang levetid og gjenbruk i fokus – brukt 
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Konferansestoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>45</g:custom_label_3>
+      <g:custom_label_3>41</g:custom_label_3>
       <g:custom_label_4>Catifa 46, 4 bein, plast Hvit</g:custom_label_4>
     </item>
     <item>
@@ -91017,40 +90788,6 @@ Chaise Lounge-modulen fra Rope Sofa-serien viser hvordan fleksible loungeløsnin
       <g:custom_label_2/>
       <g:custom_label_3>1</g:custom_label_3>
       <g:custom_label_4>Rope Sofa Chaise-lounge armlene</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>64099</g:id>
-      <g:title>Dezibel table 140x75cm Grønt stoff, Pent brukt - Bordskjermer - Grønn</g:title>
-      <g:short_title>Dezibel table 140x75cm Grønt stoff</g:short_title>
-      <g:description>Dezibel Table fra Zilenzio er en effektiv bordskillevegg utviklet for å forbedre akustikken og skape visuell avskjerming mellom arbeidsplasser. Med målene 140x75 cm passer den godt til standard skrivebord og arbeidsbord i kontorlandskap.
-Skjermen er kledd i tekstil og fylt med lydabsorberende materiale som bidrar til å redusere støy og etterklang. Den monteres direkte på bordplaten og er et enkelt tiltak for å skape mer ro og konsentrasjon i åpne miljøer.
-• Bordskillevegg 140x75 cm
-• Lydabsorberende fyll og tekstilkledd overflate
-• For montering på skrivebord eller arbeidsbord
-En praktisk løsning for bedre arbeidsro og tydeligere soner i kontorlandskap – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/skillevegger/bordskjermer/dezibel-table-140x75cm-gront-stoff-pent-brukt-64099.html</g:link>
-      <g:brand>Zilenzio</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4316</g:google_product_category>
-      <g:product_type>Skillevegger &gt; Bordskjermer</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/64099/big_78ef942390d05d9291ab39fb4a0a1196ef517be3.jpg</g:image_link>
-      <g:price>2244 NOK</g:price>
-      <g:price_ex_vat>1795 NOK</g:price_ex_vat>
-      <g:current_price>2244 NOK</g:current_price>
-      <g:current_price_ex_vat>1795 NOK</g:current_price_ex_vat>
-      <g:color>Grønn</g:color>
-      <g:material>Stoff</g:material>
-      <g:product_width>140 cm</g:product_width>
-      <g:product_height>75 cm</g:product_height>
-      <g:product_length>4 cm</g:product_length>
-      <g:quantity>8</g:quantity>
-      <g:custom_label_0>Skillevegger</g:custom_label_0>
-      <g:custom_label_1>Bordskjermer</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>8</g:custom_label_3>
-      <g:custom_label_4>Dezibel table 140x75cm Grønt stoff</g:custom_label_4>
     </item>
     <item>
       <g:id>64101</g:id>
@@ -122720,46 +122457,6 @@ Giro fra Narbutas er et godt valg for deg som ønsker et funksjonelt og fleksibe
       <g:custom_label_4>Giro Mørkt grønt stoff (Camira</g:custom_label_4>
     </item>
     <item>
-      <g:id>65547</g:id>
-      <g:title>XO med høy rygg, nakkepute og armlene Sort stoff (Gabriel Gaja), forkryss i polert aluminium, Upcycled - Kontorstol</g:title>
-      <g:short_title>XO med høy rygg</g:short_title>
-      <g:description>Savo XO er en ergonomisk kontorstol designet for å gi maksimal komfort og støtte gjennom lange arbeidsdager. Denne modellen har høy rygg, nakkepute og armlener, som gir god støtte for både rygg og nakke, og bidrar til en mer avslappet sittestilling.
-Stolen er utstyrt med justerbar vippemekanisme, som lar deg tilpasse sittestillingen etter behov. Den høye ryggen gir ekstra støtte til korsryggen, mens nakkeputen gir nødvendig avlastning for hodet og nakken. Armlenene gir god støtte for armene, og bidrar til å redusere belastningen på skuldrene.
-✅ Høy rygg og nakkepute – Øker komforten og støtten for nakke og rygg.
-✅ Justerbare armlener – Tilpasser seg ulike arbeidsstillinger.
-✅ Ergonomisk design – Fremmer en naturlig og komfortabel sittestilling.
-Savo XO er et solid valg for deg som ønsker en ergonomisk, komfortabel og støttende kontorstol med flere</g:description>
-      <g:link>https://www.movement.as/stoler/kontorstol/xo-med-hoy-rygg-nakkepute-og-armlene-sort-stoff-_gabriel-gaja_-forkryss-i-polert-aluminium-upcycled-65547.html</g:link>
-      <g:brand>savo</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>447</g:google_product_category>
-      <g:product_type>Stoler &gt; Kontorstol</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/65547/big_8a4681d22acaee358c148aad548279cbc18023d2.jpg</g:image_link>
-      <g:price>7819 NOK</g:price>
-      <g:price_ex_vat>6255 NOK</g:price_ex_vat>
-      <g:current_price>7819 NOK</g:current_price>
-      <g:current_price_ex_vat>6255 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:color_secondary>Sølv</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>62 cm</g:product_width>
-      <g:product_height>117 cm</g:product_height>
-      <g:product_length>70 cm</g:product_length>
-      <g:quantity>2</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>45 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Kontorstol</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>2</g:custom_label_3>
-      <g:custom_label_4>XO med høy rygg</g:custom_label_4>
-    </item>
-    <item>
       <g:id>65548</g:id>
       <g:title>City plast, 4 ben Mørk grå, ben i grålakkert metall, Pent brukt - Konferansestoler</g:title>
       <g:short_title>City plast</g:short_title>
@@ -126599,45 +126296,6 @@ En lett og komfortabel konferansestol med moderne uttrykk – brukt er det nye.<
       <g:custom_label_4>Konferansestol mesh med hjul</g:custom_label_4>
     </item>
     <item>
-      <g:id>65717</g:id>
-      <g:title>Konferansestol mesh med hjul og armlene Sort mesh, polert aluminium fotkryss, Brukt - Konferansestoler</g:title>
-      <g:short_title>Konferansestol mesh med hjul</g:short_title>
-      <g:description>Moderne konferansestol med mesh i sete og rygg, utviklet for komfort og fleksibilitet i møterom og samarbeidsområder. Den transparente mesh-konstruksjonen gir stolen et lett og moderne uttrykk samtidig som den bidrar til god ventilasjon.
-Stolen har armlener for ekstra støtte og hjul som gjør den enkel å flytte rundt møtebordet. Den fleksible rygg- og seteløsningen gir god komfort også ved lengre møter.
-▪ Mesh i sete og rygg for god ventilasjon
-▪ Armlener og hjul for fleksibel bruk
-▪ Egnet for møterom og konferanse
-En lett og komfortabel konferansestol med moderne uttrykk – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/stoler/konferansestoler/konferansestol-mesh-med-hjul-og-armlene-sort-mesh-polert-aluminium-fotkryss-brukt-65717.html</g:link>
-      <g:brand>Movement</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>446</g:google_product_category>
-      <g:product_type>Stoler &gt; Konferansestoler</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/65717/big_c2d0ab813824869c86f445aa60f612f95453a3fd.jpg</g:image_link>
-      <g:price>1950 NOK</g:price>
-      <g:price_ex_vat>1560 NOK</g:price_ex_vat>
-      <g:current_price>1950 NOK</g:current_price>
-      <g:current_price_ex_vat>1560 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:material>Mesh</g:material>
-      <g:product_width>58 cm</g:product_width>
-      <g:product_height>94 cm</g:product_height>
-      <g:product_length>70 cm</g:product_length>
-      <g:quantity>9</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>50 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Konferansestoler</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>9</g:custom_label_3>
-      <g:custom_label_4>Konferansestol mesh med hjul</g:custom_label_4>
-    </item>
-    <item>
       <g:id>65718</g:id>
       <g:title>Slow chair Knit Mørk brun mesh, lys brun sittepute, Godt brukt - Lenestoler og loungestoler</g:title>
       <g:short_title>Slow chair Knit Mørk brun mesh</g:short_title>
@@ -128931,7 +128589,7 @@ Slit Table fra HAY er et utmerket valg for deg som ønsker et lite, stilrent og 
       <g:current_price_ex_vat>760 NOK</g:current_price_ex_vat>
       <g:color>Sort</g:color>
       <g:product_height>35 cm</g:product_height>
-      <g:quantity>4</g:quantity>
+      <g:quantity>3</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Diameter</g:attribute_name>
@@ -128940,7 +128598,7 @@ Slit Table fra HAY er et utmerket valg for deg som ønsker et lite, stilrent og 
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Sofabord og loungebord</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>4</g:custom_label_3>
+      <g:custom_label_3>3</g:custom_label_3>
       <g:custom_label_4>Slit table Ø=45cm Sort</g:custom_label_4>
     </item>
     <item>
@@ -131592,11 +131250,11 @@ En enkel og velprøvd skuffeseksjon som holder arbeidsplassen i orden – brukt 
       <g:product_width>45 cm</g:product_width>
       <g:product_height>55 cm</g:product_height>
       <g:product_length>60 cm</g:product_length>
-      <g:quantity>2</g:quantity>
+      <g:quantity>1</g:quantity>
       <g:custom_label_0>Oppbevaring</g:custom_label_0>
       <g:custom_label_1>Skuffeseksjoner</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>2</g:custom_label_3>
+      <g:custom_label_3>1</g:custom_label_3>
       <g:custom_label_4>Galant skuffeseksjon 2 skuffer</g:custom_label_4>
     </item>
     <item>
@@ -137093,11 +136751,11 @@ Produsent: LINAK</g:description>
       <g:material>Laminat</g:material>
       <g:product_width>120 cm</g:product_width>
       <g:product_length>80 cm</g:product_length>
-      <g:quantity>16</g:quantity>
+      <g:quantity>14</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>16</g:custom_label_3>
+      <g:custom_label_3>14</g:custom_label_3>
       <g:custom_label_4>Hevsenk 120x80cm Hvit laminatplate</g:custom_label_4>
     </item>
     <item>
@@ -138015,11 +137673,11 @@ Backapp balansestol er et utmerket valg for deg som ønsker en ergonomisk stol s
       <g:product_width>60 cm</g:product_width>
       <g:product_height>85 cm</g:product_height>
       <g:product_length>60 cm</g:product_length>
-      <g:quantity>5</g:quantity>
+      <g:quantity>4</g:quantity>
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Kontorstol</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>5</g:custom_label_3>
+      <g:custom_label_3>4</g:custom_label_3>
       <g:custom_label_4>BackApp Sort kunstskinn</g:custom_label_4>
     </item>
     <item>
@@ -140053,45 +139711,6 @@ Et utmerket valg for deg som ønsker en loungestol med avslappet komfort og tidl
       <g:custom_label_4>Catifa 80 meieunderstell Orangerødt</g:custom_label_4>
     </item>
     <item>
-      <g:id>65716</g:id>
-      <g:title>Konferansestol mesh med hjul og armlene Sort mesh, polert aluminium fotkryss, Pent brukt - Konferansestoler</g:title>
-      <g:short_title>Konferansestol mesh med hjul</g:short_title>
-      <g:description>Moderne konferansestol med mesh i sete og rygg, utviklet for komfort og fleksibilitet i møterom og samarbeidsområder. Den transparente mesh-konstruksjonen gir stolen et lett og moderne uttrykk samtidig som den bidrar til god ventilasjon.
-Stolen har armlener for ekstra støtte og hjul som gjør den enkel å flytte rundt møtebordet. Den fleksible rygg- og seteløsningen gir god komfort også ved lengre møter.
-▪ Mesh i sete og rygg for god ventilasjon
-▪ Armlener og hjul for fleksibel bruk
-▪ Egnet for møterom og konferanse
-En lett og komfortabel konferansestol med moderne uttrykk – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/stoler/konferansestoler/konferansestol-mesh-med-hjul-og-armlene-sort-mesh-polert-aluminium-fotkryss-pent-brukt-65716.html</g:link>
-      <g:brand>Movement</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>446</g:google_product_category>
-      <g:product_type>Stoler &gt; Konferansestoler</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/65716/big_1f191d0adfe38bd3931ae6e61c49014a70312f65.jpg</g:image_link>
-      <g:price>2438 NOK</g:price>
-      <g:price_ex_vat>1950 NOK</g:price_ex_vat>
-      <g:current_price>2438 NOK</g:current_price>
-      <g:current_price_ex_vat>1950 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:material>Mesh</g:material>
-      <g:product_width>58 cm</g:product_width>
-      <g:product_height>94 cm</g:product_height>
-      <g:product_length>70 cm</g:product_length>
-      <g:quantity>3</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>50 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Konferansestoler</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>3</g:custom_label_3>
-      <g:custom_label_4>Konferansestol mesh med hjul</g:custom_label_4>
-    </item>
-    <item>
       <g:id>65485</g:id>
       <g:title>Planet Beige stoff (Nevotex Wooly 2151 Beige), Upcycled - Lenestoler og loungestoler</g:title>
       <g:short_title>Planet Beige stoff (Nevotex Wooly</g:short_title>
@@ -140796,11 +140415,11 @@ EFG er en anerkjent svensk produsent av kontormøbler, kjent for å levere høy 
       <g:material>Metall</g:material>
       <g:product_width>180 cm</g:product_width>
       <g:product_length>80 cm</g:product_length>
-      <g:quantity>36</g:quantity>
+      <g:quantity>35</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Understell og bordben</g:custom_label_2>
-      <g:custom_label_3>36</g:custom_label_3>
+      <g:custom_label_3>35</g:custom_label_3>
       <g:custom_label_4>Izi pro understell Grålakkert</g:custom_label_4>
     </item>
     <item>
@@ -140978,7 +140597,7 @@ En gjennomarbeidet kontorstol med lang brukstid og sirkulær verdi – Brukt er 
       <g:product_width>70 cm</g:product_width>
       <g:product_height>102 cm</g:product_height>
       <g:product_length>70 cm</g:product_length>
-      <g:quantity>10</g:quantity>
+      <g:quantity>8</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -140987,7 +140606,7 @@ En gjennomarbeidet kontorstol med lang brukstid og sirkulær verdi – Brukt er 
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Kontorstol</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>10</g:custom_label_3>
+      <g:custom_label_3>8</g:custom_label_3>
       <g:custom_label_4>H09 Inspiration 9220 Sort sete</g:custom_label_4>
     </item>
     <item>
@@ -141550,53 +141169,6 @@ En ergonomisk klassiker som legger til rette for aktiv sitting – brukt er det 
       <g:custom_label_4>Capisco 8106 lav Sort stoff</g:custom_label_4>
     </item>
     <item>
-      <g:id>62141</g:id>
-      <g:title>Bella forsidepolstret Blått stoff Gabriel Comfort bjerkeskall grå ben, Pent brukt - Konferansestoler</g:title>
-      <g:short_title>Bella forsidepolstret Blått stoff</g:short_title>
-      <g:description>Bella konferansestol fra RBM er designet av den norske formgiveren Tias Eckhoff, kjent for sine rene linjer og funksjonelle estetikk. Denne modellens forsidepolstrede sete og rygg sammen med en solid ramme gir god komfort og stabilitet, samtidig som stolen bevarer et nøkternt og tidløst uttrykk.
-Stolen passer godt i møterom, kantiner eller som besøksstol – spesielt der man ønsker en stol med høy sittekomfort, men uten unødvendig utsmykning. Den kan stables, noe som gjør den praktisk i fleksible romløsninger.
-▪ Designer: Tias Eckhoff – funksjonell design i et nøkternt uttrykk
-▪ Forsidepolstret sete og rygg – gir komfort ved lengre bruk
-▪ Stablingsbar stol fra RBM – et solid og tidløst valg – brukt er det nye
-Bella fra RBM er et utmerket valg for deg som ønsker en klassisk og funksjonell konferansestol med høy kvalitet.
-Produsent: RBM
-RBM, en dansk møbelprodusent, er kjent for sine funksjonelle og slitesterke møbler for offentlige og kommersielle miljøer. I dag går deres modeller under navnet Profim, som fortsetter å levere moderne og kvalitetsrike møbler for kontorer, kantiner og fellesområder. RBM/Profim kombinerer skandinavisk design med høy holdbarhet, og produktene er laget for å tåle daglig bruk i krevende miljøer.</g:description>
-      <g:link>https://www.movement.as/stoler/konferansestoler/bella-forsidepolstret-blatt-stoff-gabriel-comfort-bjerkeskall-gra-ben-pent-brukt-62141.html</g:link>
-      <g:brand>RBM</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>446</g:google_product_category>
-      <g:product_type>Stoler &gt; Konferansestoler</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/62141/big_07c6fd4dba9125b76c9f269a8715963edf9d1023.jpg</g:image_link>
-      <g:price>994 NOK</g:price>
-      <g:price_ex_vat>795 NOK</g:price_ex_vat>
-      <g:current_price>994 NOK</g:current_price>
-      <g:current_price_ex_vat>795 NOK</g:current_price_ex_vat>
-      <g:color>Blå</g:color>
-      <g:color_secondary>Grå</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>42 cm</g:product_width>
-      <g:product_height>92 cm</g:product_height>
-      <g:product_length>42 cm</g:product_length>
-      <g:quantity>9</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>45 cm</g:attribute_value>
-      </g:product_detail>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Diameter</g:attribute_name>
-        <g:attribute_value>70 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Konferansestoler</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>9</g:custom_label_3>
-      <g:custom_label_4>Bella forsidepolstret Blått stoff</g:custom_label_4>
-    </item>
-    <item>
       <g:id>59045</g:id>
       <g:title>Base high table 190x85, høyde 95cm Hvit laminat med kryssfiner kant, ben i hvitt, Pent brukt - Barbord og ståbord</g:title>
       <g:short_title>Base high table 190x85</g:short_title>
@@ -141769,7 +141341,7 @@ En komfortabel barstol med rent og moderne uttrykk – brukt er det nye.</g:desc
       <g:product_width>45 cm</g:product_width>
       <g:product_height>97 cm</g:product_height>
       <g:product_length>58 cm</g:product_length>
-      <g:quantity>17</g:quantity>
+      <g:quantity>14</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -141778,7 +141350,7 @@ En komfortabel barstol med rent og moderne uttrykk – brukt er det nye.</g:desc
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Barstoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>17</g:custom_label_3>
+      <g:custom_label_3>14</g:custom_label_3>
       <g:custom_label_4>Com K42CV, barstol høy</g:custom_label_4>
     </item>
     <item>
@@ -142098,11 +141670,11 @@ HAY er et dansk designmerke som kombinerer estetikk, funksjonalitet og innovasjo
       <g:product_width>150 cm</g:product_width>
       <g:product_height>74 cm</g:product_height>
       <g:product_length>90 cm</g:product_length>
-      <g:quantity>1</g:quantity>
+      <g:quantity>3</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Spisebord og kantinebord</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
+      <g:custom_label_3>3</g:custom_label_3>
       <g:custom_label_4>CPH spisebord 150x90cm Eik finer</g:custom_label_4>
     </item>
     <item>
@@ -142520,6 +142092,46 @@ HÅG Capisco Puls 8020 er et utmerket valg for deg som ønsker en moderne, ergon
       <g:custom_label_2/>
       <g:custom_label_3>4</g:custom_label_3>
       <g:custom_label_4>Capisco Puls 8020 ekstra pute</g:custom_label_4>
+    </item>
+    <item>
+      <g:id>65547</g:id>
+      <g:title>XO med høy rygg, nakkepute og armlene Sort stoff (Gabriel Gaja), forkryss i polert aluminium, Upcycled - Kontorstol</g:title>
+      <g:short_title>XO med høy rygg</g:short_title>
+      <g:description>Savo XO er en ergonomisk kontorstol designet for å gi maksimal komfort og støtte gjennom lange arbeidsdager. Denne modellen har høy rygg, nakkepute og armlener, som gir god støtte for både rygg og nakke, og bidrar til en mer avslappet sittestilling.
+Stolen er utstyrt med justerbar vippemekanisme, som lar deg tilpasse sittestillingen etter behov. Den høye ryggen gir ekstra støtte til korsryggen, mens nakkeputen gir nødvendig avlastning for hodet og nakken. Armlenene gir god støtte for armene, og bidrar til å redusere belastningen på skuldrene.
+✅ Høy rygg og nakkepute – Øker komforten og støtten for nakke og rygg.
+✅ Justerbare armlener – Tilpasser seg ulike arbeidsstillinger.
+✅ Ergonomisk design – Fremmer en naturlig og komfortabel sittestilling.
+Savo XO er et solid valg for deg som ønsker en ergonomisk, komfortabel og støttende kontorstol med flere</g:description>
+      <g:link>https://www.movement.as/stoler/kontorstol/xo-med-hoy-rygg-nakkepute-og-armlene-sort-stoff-_gabriel-gaja_-forkryss-i-polert-aluminium-upcycled-65547.html</g:link>
+      <g:brand>savo</g:brand>
+      <g:condition>refurbished</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>447</g:google_product_category>
+      <g:product_type>Stoler &gt; Kontorstol</g:product_type>
+      <g:image_link>https://www.movement.as/images/products/65547/big_8a4681d22acaee358c148aad548279cbc18023d2.jpg</g:image_link>
+      <g:price>7819 NOK</g:price>
+      <g:price_ex_vat>6255 NOK</g:price_ex_vat>
+      <g:current_price>7819 NOK</g:current_price>
+      <g:current_price_ex_vat>6255 NOK</g:current_price_ex_vat>
+      <g:color>Sort</g:color>
+      <g:color_secondary>Sølv</g:color_secondary>
+      <g:material>Stoff</g:material>
+      <g:product_width>62 cm</g:product_width>
+      <g:product_height>117 cm</g:product_height>
+      <g:product_length>70 cm</g:product_length>
+      <g:quantity>1</g:quantity>
+      <g:product_detail>
+        <g:section_name>Dimensjoner</g:section_name>
+        <g:attribute_name>Sittehøyde</g:attribute_name>
+        <g:attribute_value>45 cm</g:attribute_value>
+      </g:product_detail>
+      <g:custom_label_0>Stoler</g:custom_label_0>
+      <g:custom_label_1>Kontorstol</g:custom_label_1>
+      <g:custom_label_2/>
+      <g:custom_label_3>1</g:custom_label_3>
+      <g:custom_label_4>XO med høy rygg</g:custom_label_4>
     </item>
   </channel>
 </rss>
