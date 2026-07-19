@@ -78919,44 +78919,6 @@ Et tidløst designikon som gir rommet særpreg og varig verdi – Brukt er det n
       <g:custom_label_4>Panton One barstol 75cm Rosa</g:custom_label_4>
     </item>
     <item>
-      <g:id>63680</g:id>
-      <g:title>Panton One barstol 75cm Orange, Pent brukt - Barstoler</g:title>
-      <g:short_title>Panton One barstol 75cm Orange</g:short_title>
-      <g:description>Panton One er en ikonisk barstol med et lett og grafisk uttrykk, også kjent som Tivolistol. Modellen kombinerer et tydelig formspråk med god sittekomfort, og passer godt i sosiale soner, kantiner og uformelle møteområder der man ønsker et karaktersterkt, men ryddig møbel.
-Med sittehøyde 75 cm passer barstolen til bord med høyde rundt 105 cm. Stolen fungerer godt både enkeltvis og i rekker rundt barbord, og gir et luftig preg som gjør den lett å plassere i ulike miljøer.
-▪ barstol med sittehøyde 75 cm
-▪ passer til bordhøyde ca. 105 cm
-▪ designet av Verner Panton
-Et tidløst designikon som gir rommet særpreg og varig verdi – Brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/stoler/barstoler/panton-one-barstol-75cm-orange-pent-brukt-63680.html</g:link>
-      <g:brand>Montana</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>447</g:google_product_category>
-      <g:product_type>Stoler &gt; Barstoler</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/63680/big_e20cb9b239de2e76f4ef4f2cf1443155ecae9eb2.jpg</g:image_link>
-      <g:price>1563 NOK</g:price>
-      <g:price_ex_vat>1250 NOK</g:price_ex_vat>
-      <g:current_price>1563 NOK</g:current_price>
-      <g:current_price_ex_vat>1250 NOK</g:current_price_ex_vat>
-      <g:color>Orange</g:color>
-      <g:product_width>50 cm</g:product_width>
-      <g:product_height>95 cm</g:product_height>
-      <g:product_length>46 cm</g:product_length>
-      <g:quantity>7</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>75 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Barstoler</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>7</g:custom_label_3>
-      <g:custom_label_4>Panton One barstol 75cm Orange</g:custom_label_4>
-    </item>
-    <item>
       <g:id>63681</g:id>
       <g:title>Panton One barstol 75cm Rød, Pent brukt - Barstoler</g:title>
       <g:short_title>Panton One barstol 75cm Rød</g:short_title>
@@ -151631,6 +151593,44 @@ Herman Miller er en amerikansk møbelprodusent kjent for sine banebrytende, ergo
       <g:custom_label_2/>
       <g:custom_label_3>10</g:custom_label_3>
       <g:custom_label_4>Embody  Sort stoff</g:custom_label_4>
+    </item>
+    <item>
+      <g:id>63680</g:id>
+      <g:title>Panton One barstol 75cm Orange, Pent brukt - Barstoler</g:title>
+      <g:short_title>Panton One barstol 75cm Orange</g:short_title>
+      <g:description>Panton One er en ikonisk barstol med et lett og grafisk uttrykk, også kjent som Tivolistol. Modellen kombinerer et tydelig formspråk med god sittekomfort, og passer godt i sosiale soner, kantiner og uformelle møteområder der man ønsker et karaktersterkt, men ryddig møbel.
+Med sittehøyde 75 cm passer barstolen til bord med høyde rundt 105 cm. Stolen fungerer godt både enkeltvis og i rekker rundt barbord, og gir et luftig preg som gjør den lett å plassere i ulike miljøer.
+▪ barstol med sittehøyde 75 cm
+▪ passer til bordhøyde ca. 105 cm
+▪ designet av Verner Panton
+Et tidløst designikon som gir rommet særpreg og varig verdi – Brukt er det nye.</g:description>
+      <g:link>https://www.movement.as/stoler/barstoler/panton-one-barstol-75cm-orange-pent-brukt-63680.html</g:link>
+      <g:brand>Montana</g:brand>
+      <g:condition>refurbished</g:condition>
+      <g:availability>in_stock</g:availability>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>447</g:google_product_category>
+      <g:product_type>Stoler &gt; Barstoler</g:product_type>
+      <g:image_link>https://www.movement.as/images/products/63680/big_e20cb9b239de2e76f4ef4f2cf1443155ecae9eb2.jpg</g:image_link>
+      <g:price>1563 NOK</g:price>
+      <g:price_ex_vat>1250 NOK</g:price_ex_vat>
+      <g:current_price>1563 NOK</g:current_price>
+      <g:current_price_ex_vat>1250 NOK</g:current_price_ex_vat>
+      <g:color>Orange</g:color>
+      <g:product_width>50 cm</g:product_width>
+      <g:product_height>95 cm</g:product_height>
+      <g:product_length>46 cm</g:product_length>
+      <g:quantity>6</g:quantity>
+      <g:product_detail>
+        <g:section_name>Dimensjoner</g:section_name>
+        <g:attribute_name>Sittehøyde</g:attribute_name>
+        <g:attribute_value>75 cm</g:attribute_value>
+      </g:product_detail>
+      <g:custom_label_0>Stoler</g:custom_label_0>
+      <g:custom_label_1>Barstoler</g:custom_label_1>
+      <g:custom_label_2/>
+      <g:custom_label_3>6</g:custom_label_3>
+      <g:custom_label_4>Panton One barstol 75cm Orange</g:custom_label_4>
     </item>
   </channel>
 </rss>
