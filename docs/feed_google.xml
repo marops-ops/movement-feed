@@ -3999,11 +3999,11 @@ bl.a Svenheim, Holmris etc.</g:description>
       <g:price_ex_vat>550 NOK</g:price_ex_vat>
       <g:current_price>688 NOK</g:current_price>
       <g:current_price_ex_vat>550 NOK</g:current_price_ex_vat>
-      <g:quantity>17</g:quantity>
+      <g:quantity>16</g:quantity>
       <g:custom_label_0>Reservedeler</g:custom_label_0>
       <g:custom_label_1>Nokler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>17</g:custom_label_3>
+      <g:custom_label_3>16</g:custom_label_3>
       <g:custom_label_4>Reset nøkkel / Master key Z0001</g:custom_label_4>
     </item>
     <item>
@@ -15826,43 +15826,6 @@ ScreenIT A30 er et godt valg for deg som ønsker å strukturere åpne arbeidsmil
       <g:custom_label_4>ScreenIT A30 Gulvskjerm 90x193cm</g:custom_label_4>
     </item>
     <item>
-      <g:id>59458</g:id>
-      <g:title>Frankie 350x160/100cm T-ben Plate i hvit laminat, ben i sort, Pent brukt - Motebord</g:title>
-      <g:short_title>Frankie 350x160/100cm T-ben Plate</g:short_title>
-      <g:description>Frankie møtebord fra Martela er designet med tanke på funksjon, kommunikasjon og fleksibilitet. Bordet har en asymmetrisk form med dybde på 160 cm i den ene enden og 100 cm i den andre, noe som gjør det ideelt for videokonferanser der flere deltakere skal kunne samles og se mot en skjerm plassert på kortsiden.
-Med en lengde på 350 cm gir det plass til 10–12 personer, avhengig av type stoler og oppsett.
-▪ Størrelse 350x160/100 cm – God plass og tydelig retning
-▪ Tilpasset videomøter – Bred kortside for skjermplassering
-▪ Plass til 10–12 personer – Effektiv utnyttelse av rommet
-Martela Frankie er et funksjonelt og elegant valg for deg som ønsker et møtebord optimalisert for samarbeid og hybridmøter i moderne kontormiljøer.
-Produsent: Martela
-Martela er en ledende produsent av kontormøbler som kombinerer funksjonalitet, design og bærekraft. Med mer enn 70 års erfaring har Martela etablert seg som en pålitelig leverandør av innovative og ergonomiske løsninger for moderne arbeidsplasser. Deres produkter er utviklet med fokus på å skape fleksible og komfortable arbeidsmiljøer som fremmer trivsel og produktivitet.</g:description>
-      <g:link>https://www.movement.as/bord/motebord/frankie-350x160-100cm-t-ben-plate-i-hvit-laminat-ben-i-sort-pent-brukt-59458.html</g:link>
-      <g:brand>Martela</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4316</g:google_product_category>
-      <g:product_type>Bord &gt; Motebord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/59458/big_9db5561b5656a95cabd3966eace55e78d08e39a3.jpg</g:image_link>
-      <g:price>16188 NOK</g:price>
-      <g:price_ex_vat>12950 NOK</g:price_ex_vat>
-      <g:current_price>16188 NOK</g:current_price>
-      <g:current_price_ex_vat>12950 NOK</g:current_price_ex_vat>
-      <g:color>Hvit</g:color>
-      <g:color_secondary>Sort</g:color_secondary>
-      <g:material>Laminat</g:material>
-      <g:product_width>350 cm</g:product_width>
-      <g:product_height>73 cm</g:product_height>
-      <g:product_length>160 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Motebord</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
-      <g:custom_label_4>Frankie 350x160/100cm T-ben Plate</g:custom_label_4>
-    </item>
-    <item>
       <g:id>59463</g:id>
       <g:title>Gas Armchair sort stoff, sort mesh, krom, Pent brukt - Konferansestoler</g:title>
       <g:short_title>Gas Armchair sort stoff</g:short_title>
@@ -25560,11 +25523,11 @@ Produsent: LINAK</g:description>
       <g:product_width>190 cm</g:product_width>
       <g:product_height>65 cm</g:product_height>
       <g:product_length>110 cm</g:product_length>
-      <g:quantity>7</g:quantity>
+      <g:quantity>5</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Understell Og Bordben</g:custom_label_2>
-      <g:custom_label_3>7</g:custom_label_3>
+      <g:custom_label_3>5</g:custom_label_3>
       <g:custom_label_4>Hevsenkunderstell justerbar bredde</g:custom_label_4>
     </item>
     <item>
@@ -27785,11 +27748,11 @@ Kinnarps er en av Europas ledende produsenter av kontormøbler, grunnlagt i Sver
       <g:product_width>60 cm</g:product_width>
       <g:product_height>38 cm</g:product_height>
       <g:product_length>60 cm</g:product_length>
-      <g:quantity>1</g:quantity>
+      <g:quantity>2</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Sofabord Og Loungebord</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
+      <g:custom_label_3>2</g:custom_label_3>
       <g:custom_label_4>Fields sofabord FIT66L</g:custom_label_4>
     </item>
     <item>
@@ -28464,11 +28427,11 @@ Softline skillevegg fra Abstracta er et godt eksempel på at brukt er det nye �
       <g:material>Stoff</g:material>
       <g:product_width>100 cm</g:product_width>
       <g:product_height>170 cm</g:product_height>
-      <g:quantity>2</g:quantity>
+      <g:quantity>1</g:quantity>
       <g:custom_label_0>Skillevegger</g:custom_label_0>
       <g:custom_label_1>Skillevegger</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>2</g:custom_label_3>
+      <g:custom_label_3>1</g:custom_label_3>
       <g:custom_label_4>Softline 100x170cm Sort stoff</g:custom_label_4>
     </item>
     <item>
@@ -29309,41 +29272,6 @@ Lintex er en svensk produsent som spesialiserer seg på visuelle kommunikasjonsp
       <g:custom_label_2/>
       <g:custom_label_3>3</g:custom_label_3>
       <g:custom_label_4>Mood Wall 100x100cm Petrolblått</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>60669</g:id>
-      <g:title>Edu-X klappbord 120x60cm Hvit plate grått understell, Pent brukt - Klappbord Og Kursbord</g:title>
-      <g:short_title>Edu-X klappbord 120x60cm Hvit plate</g:short_title>
-      <g:description>Edu-X klappbord fra Kinnarps er et praktisk og plassbesparende bord utviklet for undervisningsmiljøer, møterom og kantiner. Med størrelsen 120 × 60 cm gir det en kompakt arbeidsflate som passer godt til både enkeltbruk og gruppearbeid.
-Bordet kan enkelt klappes sammen når det ikke er i bruk, noe som gjør det ideelt for fleksible rom der møbleringen ofte endres. Den solide konstruksjonen sørger for stabilitet, samtidig som bordet er lett å håndtere.
-▪ Klappbord i størrelse 120 × 60 cm
-▪ Plassbesparende løsning – lett å slå opp og ned
-▪ Solid og funksjonelt design fra Kinnarps
-Edu-X klappbord fra Kinnarps er en fleksibel løsning for dynamiske miljøer – brukt er det nye.
-Produsent: Kinnarps
-Kinnarps er en av Europas ledende produsenter av kontormøbler, grunnlagt i Sverige i 1942. Selskapet er kjent for å levere helhetlige, bærekraftige innredningsløsninger med fokus på ergonomi, funksjonalitet og skandinavisk design. Med egen produksjon i Sverige og kortreiste materialer setter Kinnarps miljø og kvalitet høyt på agendaen. Produktene deres brukes i alt fra kontorer og skoler til helseinstitusjoner og offentlige rom – alltid med menneskets behov og arbeidsflyt i sentrum.</g:description>
-      <g:link>https://www.movement.as/bord/klappbord-og-kursbord/edu-x-klappbord-120x60cm-hvit-plate-gratt-understell-pent-brukt-60669.html</g:link>
-      <g:brand>Kinnarps</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4316</g:google_product_category>
-      <g:product_type>Bord &gt; Klappbord Og Kursbord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/60669/big_b9df95e10c19ad469552a9c037107f26620f9efe.jpg</g:image_link>
-      <g:price>1869 NOK</g:price>
-      <g:price_ex_vat>1495 NOK</g:price_ex_vat>
-      <g:current_price>1869 NOK</g:current_price>
-      <g:current_price_ex_vat>1495 NOK</g:current_price_ex_vat>
-      <g:color>Hvit</g:color>
-      <g:color_secondary>Grå</g:color_secondary>
-      <g:product_width>120 cm</g:product_width>
-      <g:product_length>60 cm</g:product_length>
-      <g:quantity>3</g:quantity>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Klappbord Og Kursbord</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>3</g:custom_label_3>
-      <g:custom_label_4>Edu-X klappbord 120x60cm Hvit plate</g:custom_label_4>
     </item>
     <item>
       <g:id>60676</g:id>
@@ -35448,7 +35376,7 @@ Normann Copenhagen er et dansk designmerke kjent for sitt innovative og funksjon
       <g:current_price_ex_vat>6250 NOK</g:current_price_ex_vat>
       <g:color>Grønn</g:color>
       <g:product_height>44 cm</g:product_height>
-      <g:quantity>4</g:quantity>
+      <g:quantity>2</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Diameter</g:attribute_name>
@@ -35457,7 +35385,7 @@ Normann Copenhagen er et dansk designmerke kjent for sitt innovative og funksjon
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Sofabord Og Loungebord</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>4</g:custom_label_3>
+      <g:custom_label_3>2</g:custom_label_3>
       <g:custom_label_4>Pine table large Light green</g:custom_label_4>
     </item>
     <item>
@@ -61904,11 +61832,11 @@ Reolen har en kompakt størrelse med mål på 90 cm i bredde, 40 cm i dybde og 1
       <g:product_width>90 cm</g:product_width>
       <g:product_height>117 cm</g:product_height>
       <g:product_length>40 cm</g:product_length>
-      <g:quantity>17</g:quantity>
+      <g:quantity>12</g:quantity>
       <g:custom_label_0>Oppbevaring</g:custom_label_0>
       <g:custom_label_1>Hyller</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>17</g:custom_label_3>
+      <g:custom_label_3>12</g:custom_label_3>
       <g:custom_label_4>Ringpermreol 90x117cm Hvit</g:custom_label_4>
     </item>
     <item>
@@ -91186,7 +91114,7 @@ Root fra Fora Form er et loungebord som forener skandinavisk formspråk med prak
       <g:product_width>114 cm</g:product_width>
       <g:product_height>45 cm</g:product_height>
       <g:product_length>63 cm</g:product_length>
-      <g:quantity>22</g:quantity>
+      <g:quantity>17</g:quantity>
       <g:product_detail>
         <g:section_name>Spesifikasjoner</g:section_name>
         <g:attribute_name>Vekt</g:attribute_name>
@@ -91195,7 +91123,7 @@ Root fra Fora Form er et loungebord som forener skandinavisk formspråk med prak
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Sofabord Og Loungebord</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>22</g:custom_label_3>
+      <g:custom_label_3>17</g:custom_label_3>
       <g:custom_label_4>Root 114x63cm Chocolate valchromat</g:custom_label_4>
     </item>
     <item>
@@ -92633,7 +92561,7 @@ Pind Barstool fra Normann Copenhagen er et funksjonelt designmøbel til sosiale 
       <g:product_width>44 cm</g:product_width>
       <g:product_height>92 cm</g:product_height>
       <g:product_length>45 cm</g:product_length>
-      <g:quantity>1</g:quantity>
+      <g:quantity>17</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -92647,7 +92575,7 @@ Pind Barstool fra Normann Copenhagen er et funksjonelt designmøbel til sosiale 
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Barstoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
+      <g:custom_label_3>17</g:custom_label_3>
       <g:custom_label_4>Pind Barstool 75cm Brunbeiset</g:custom_label_4>
     </item>
     <item>
@@ -94475,7 +94403,7 @@ Herit Chair fra Normann Copenhagen er et gjennomtenkt valg innen sirkulært desi
       <g:product_width>47 cm</g:product_width>
       <g:product_height>78 cm</g:product_height>
       <g:product_length>47 cm</g:product_length>
-      <g:quantity>92</g:quantity>
+      <g:quantity>100+</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -94484,7 +94412,7 @@ Herit Chair fra Normann Copenhagen er et gjennomtenkt valg innen sirkulært desi
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Konferansestoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>92</g:custom_label_3>
+      <g:custom_label_3>100+</g:custom_label_3>
       <g:custom_label_4>Herit Chair Grå</g:custom_label_4>
     </item>
     <item>
@@ -99396,7 +99324,7 @@ En innovativ stol som kombinerer ergonomi og moderne design – brukt er det nye
       <g:product_width>73 cm</g:product_width>
       <g:product_height>77 cm</g:product_height>
       <g:product_length>65 cm</g:product_length>
-      <g:quantity>1</g:quantity>
+      <g:quantity>3</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -99405,7 +99333,7 @@ En innovativ stol som kombinerer ergonomi og moderne design – brukt er det nye
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Lenestoler Og Loungestoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
+      <g:custom_label_3>3</g:custom_label_3>
       <g:custom_label_4>Innovation C Gråbrunt stoff</g:custom_label_4>
     </item>
     <item>
@@ -102444,46 +102372,6 @@ En komfortabel konferansestol med moderne og funksjonelt design – brukt er det
       <g:custom_label_2/>
       <g:custom_label_3>4</g:custom_label_3>
       <g:custom_label_4>Atrium, forsidepolstret, armlene</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>65692</g:id>
-      <g:title>Senso 1-seter med høy rygg  Grått stoff(Kvadrat Steelcut Trio 0153), sortlakkerte ben, Pent brukt - Alkovesofa</g:title>
-      <g:short_title>Senso 1-seter med høy rygg  Grått</g:short_title>
-      <g:description>Senso 1-seter med høy rygg fra Fora Form er en skjermende loungestol designet av Andersen &amp; Voll, utviklet for bruk i sosiale soner, kontorlandskap og resepsjonsområder. Den høye ryggen gir visuell og delvis akustisk avskjerming, noe som gjør stolen godt egnet for uformelle møter, telefonsamtaler eller stille arbeid i åpne miljøer.
-Stolen har et enkelt, stramt formspråk og et kompakt ytre, samtidig som sittekomforten er godt ivaretatt. Ryggens høyde gir brukeren en følelse av privathet uten å isolere helt fra omgivelsene. Løsningen egner seg godt i arealer som krever fleksibel og bevisst møblering.
-▪ Designet av Andersen &amp; Voll – nordisk formspråk med funksjonelt fokus
-▪ Høy rygg – gir skjerming og støtte i åpne rom
-▪ 1-seter – plassbesparende og egnet for fleksible soner
-Et bevisst valg for avgrenset sitteplass i fellesarealer – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/sofa/alkovesofa/senso-1-seter-med-hoy-rygg--gratt-stoff_kvadrat-steelcut-trio-0153_-sortlakkerte-ben-pent-brukt-65692.html</g:link>
-      <g:brand>ForaForm</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>2634</g:google_product_category>
-      <g:product_type>Sofa &gt; Alkovesofa</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/65692/big_ba4e13f3b81220deaf20281a46ceff45ec233150.jpg</g:image_link>
-      <g:price>12438 NOK</g:price>
-      <g:price_ex_vat>9950 NOK</g:price_ex_vat>
-      <g:current_price>12438 NOK</g:current_price>
-      <g:current_price_ex_vat>9950 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:color_secondary>Grå</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>70 cm</g:product_width>
-      <g:product_height>120 cm</g:product_height>
-      <g:product_length>66 cm</g:product_length>
-      <g:quantity>2</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>46 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Sofa</g:custom_label_0>
-      <g:custom_label_1>Alkovesofa</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>2</g:custom_label_3>
-      <g:custom_label_4>Senso 1-seter med høy rygg  Grått</g:custom_label_4>
     </item>
     <item>
       <g:id>65695</g:id>
@@ -128103,46 +127991,6 @@ En komfortabel loungestol som kombinerer moderne design, høy kvalitet og skandi
       <g:custom_label_4>Camp lav rygg Brunt skinn</g:custom_label_4>
     </item>
     <item>
-      <g:id>67234</g:id>
-      <g:title>Capisco 8106 standard høyde Mørkt grønt stoff (Kvadrat Steelcut Trio 966), sort fotkryss, Pent brukt - Kontorstol</g:title>
-      <g:short_title>Capisco 8106 standard høyde Mørkt</g:short_title>
-      <g:description>Capisco 8106 fra HÅG er en ikonisk og prisvinnende kontorstol, designet av Peter Opsvik med fokus på bevegelse og variasjon i arbeidsstillingen. Denne modellen leveres med standard gasslift, og er ideell for bruk ved vanlige skrivebordshøyder – enten hjemme eller på kontoret.
-Stolens karakteristiske sadelsete oppmuntrer til en mer oppreist sittestilling og naturlig bevegelse, og kan brukes både foroverlent, bakoverlent eller sidelengs. HÅGs Balanced Movement Mechanism™ gjør at stolen følger kroppens bevegelser og gir dynamisk støtte gjennom hele arbeidsdagen.
-✅ Designet av Peter Opsvik – Ergonomisk ikon med bevegelse i fokus
-✅ Standard gasslift – Passer til vanlige skrivebordshøyder
-✅ Sadelsete – Fremmer aktiv og variert sittestilling
-Capisco 8106 er et perfekt valg for deg som ønsker en kontorstol som støtter kroppens naturlige bevegelser, og som bidrar til en mer aktiv og ergonomisk arbeidshverdag.</g:description>
-      <g:link>https://www.movement.as/stoler/kontorstol/capisco-8106-standard-hoyde-morkt-gront-stoff-_kvadrat-steelcut-trio-966_-sort-fotkryss-pent-brukt-67234.html</g:link>
-      <g:brand>Håg</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>447</g:google_product_category>
-      <g:product_type>Stoler &gt; Kontorstol</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/67234/big_ac74e7bd0dd4f214856e2e6dbd8b4b549942be21.jpg</g:image_link>
-      <g:price>6188 NOK</g:price>
-      <g:price_ex_vat>4950 NOK</g:price_ex_vat>
-      <g:current_price>6188 NOK</g:current_price>
-      <g:current_price_ex_vat>4950 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:color_secondary>Grønn</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>60 cm</g:product_width>
-      <g:product_height>89 cm</g:product_height>
-      <g:product_length>70 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>69 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Kontorstol</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
-      <g:custom_label_4>Capisco 8106 standard høyde Mørkt</g:custom_label_4>
-    </item>
-    <item>
       <g:id>67237</g:id>
       <g:title>Kvart 180x80cm Eik laminat, sort understell, Pent brukt - Motebord</g:title>
       <g:short_title>Kvart 180x80cm Eik laminat</g:short_title>
@@ -132886,41 +132734,6 @@ En eksklusiv modulsofa som kombinerer høy komfort, skjerming og tidløst skandi
       <g:custom_label_4>Senso 2+3-seter</g:custom_label_4>
     </item>
     <item>
-      <g:id>67436</g:id>
-      <g:title>Colonnade 180x80cm Hvit laminat, polert aluminium, Pent brukt - Motebord</g:title>
-      <g:short_title>Colonnade 180x80cm Hvit laminat</g:short_title>
-      <g:description>Colonnade fra Fora Form er et stilrent og allsidig møtebord som også egner seg godt som kantinebord. Med en bordplate på 180 × 80 cm har bordet komfortabel plass til 6 personer, og det tidløse designet gjør det til et naturlig valg i møterom, pauserom, kantiner og prosjektmiljøer.
-Den karakteristiske søylekonstruksjonen gir god benplass og et lett, elegant uttrykk, samtidig som bordet er utviklet for stabilitet og lang levetid i profesjonelle miljøer. Colonnade kombinerer funksjonalitet med gjennomført design og passer like godt til møter som til uformelle samlingsplasser. Som brukt kvalitetsmøbel er dette et bærekraftig valg som bidrar til forlenget levetid og god ressursutnyttelse.
-Colonnade-serien er designet av Komplot Design, designstudioet til Poul Christiansen og Boris Berlin. Serien er kjent for sitt elegante søyleunderstell, tidløse formspråk og høye kvalitet, utviklet for fleksible møte- og spiseområder i profesjonelle miljøer.
-▪ Mål: 180 × 80 cm – komfortabel plass til 6 personer
-▪ Egner seg som møtebord eller kantinebord i profesjonelle miljøer
-▪ Designet av Komplot Design (Poul Christiansen og Boris Berlin) for Fora Form
-Et funksjonelt kvalitetsbord med tidløst design og mange år igjen i bruk – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/bord/motebord/colonnade-180x80cm-hvit-laminat-polert-aluminium-pent-brukt-67436.html</g:link>
-      <g:brand>ForaForm</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4316</g:google_product_category>
-      <g:product_type>Bord &gt; Motebord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/67436/big_4333c6433fa0fc82c43aed59c694cae9e06d7381.jpg</g:image_link>
-      <g:price>4938 NOK</g:price>
-      <g:price_ex_vat>3950 NOK</g:price_ex_vat>
-      <g:current_price>4938 NOK</g:current_price>
-      <g:current_price_ex_vat>3950 NOK</g:current_price_ex_vat>
-      <g:color>Hvit</g:color>
-      <g:material>Laminat</g:material>
-      <g:product_width>180 cm</g:product_width>
-      <g:product_height>75 cm</g:product_height>
-      <g:product_length>80 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Motebord</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
-      <g:custom_label_4>Colonnade 180x80cm Hvit laminat</g:custom_label_4>
-    </item>
-    <item>
       <g:id>67437</g:id>
       <g:title>Senso hjørnesofa, 3-seter (2 høy, 1 lav rygg), 3-seter lav rygg, 2+1-seter høy rygg Grågrønt stoff (Kvadrat Steelcut Trio), ben i sort, Pent brukt - Alkovesofa</g:title>
       <g:short_title>Senso hjørnesofa</g:short_title>
@@ -137192,11 +137005,11 @@ Et solid hevsenkbord som kombinerer ergonomi, driftssikkerhet og høy kvalitet �
       <g:material>Laminat</g:material>
       <g:product_width>180 cm</g:product_width>
       <g:product_length>90 cm</g:product_length>
-      <g:quantity>16</g:quantity>
+      <g:quantity>15</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Elektriske Hev Og Senk Skrivebord</g:custom_label_2>
-      <g:custom_label_3>16</g:custom_label_3>
+      <g:custom_label_3>15</g:custom_label_3>
       <g:custom_label_4>Hevsenk 180x90cm Bøk laminat</g:custom_label_4>
     </item>
     <item>
@@ -145516,46 +145329,6 @@ En fleksibel kvalitetsstol utviklet for bevegelse gjennom arbeidsdagen – brukt
       <g:custom_label_4>H05 5600 swingback-armlene</g:custom_label_4>
     </item>
     <item>
-      <g:id>68056</g:id>
-      <g:title>Plus 377 med armlene Sort stoff (Gabriel Fame), sort armlene, grått understell, Brukt - Konferansestoler</g:title>
-      <g:short_title>Plus 377 med armlene Sort stoff</g:short_title>
-      <g:description>Plus 377 konferansestol fra Kinnarps er en ergonomisk møteromsstol designet for komfort og fleksibilitet i arbeidsmiljøer. Den er utstyrt med armlener og har et dynamisk sete- og ryggbrekk som gir en lett gyngende sittestilling med innebygd komfort. Mekanikken gjør stolen ideell for lengre møter, og den gir et moderne preg uten at det går på bekostning av støtte.
-Moderne stålunderstell og slank rygg rammer stolen inn i et funksjonelt uttrykk som treffer godt i kontorlandskap eller kantiner. Materialvalg og konstruksjon understreker stolens slitestyrke, og samtidig bevarer den et lekkert utseende.
-▪ Plassbesparende konferansestol med armlener – enkel å plassere tett rundt bordet
-▪ Gyngemekanikk for mild bevegelse og økt komfort under samtaler
-▪ Stilrent og moderne formspråk fra Kinnarps, tilpasset profesjonelle miljøer
-Plus 377 konferansestol fra Kinnarps er et tydelig eksempel på at brukt er det nye – ergonomisk kvalitet med lang levetid.</g:description>
-      <g:link>https://www.movement.as/stoler/konferansestoler/plus-377-med-armlene-sort-stoff-_gabriel-fame_-sort-armlene-gratt-understell-brukt-68056.html</g:link>
-      <g:brand>Kinnarps</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>446</g:google_product_category>
-      <g:product_type>Stoler &gt; Konferansestoler</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/68056/big_301284c704da792770f537b6cfa8b994d9a62e2c.jpg</g:image_link>
-      <g:price>1295 NOK</g:price>
-      <g:price_ex_vat>1036 NOK</g:price_ex_vat>
-      <g:current_price>1295 NOK</g:current_price>
-      <g:current_price_ex_vat>1036 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:color_secondary>Grå</g:color_secondary>
-      <g:material>Stoff</g:material>
-      <g:product_width>57 cm</g:product_width>
-      <g:product_height>95 cm</g:product_height>
-      <g:product_length>52 cm</g:product_length>
-      <g:quantity>2</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>45 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Stoler</g:custom_label_0>
-      <g:custom_label_1>Konferansestoler</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>2</g:custom_label_3>
-      <g:custom_label_4>Plus 377 med armlene Sort stoff</g:custom_label_4>
-    </item>
-    <item>
       <g:id>68057</g:id>
       <g:title>B-Bitz Bob puff Ø=38cm Mørkt grønt stoff , Pent brukt - Puffer Og Krakker - Grønn</g:title>
       <g:short_title>B-Bitz Bob puff Ø=38cm Mørkt grønt</g:short_title>
@@ -148474,40 +148247,6 @@ En praktisk barstol som kan skape hyggelige møteplasser i mange år fremover �
       <g:custom_label_4>Kave barstol</g:custom_label_4>
     </item>
     <item>
-      <g:id>68196</g:id>
-      <g:title>ERF4162AOW Hvit, Pent brukt - Kjoleskap</g:title>
-      <g:short_title>ERF4162AOW Hvit</g:short_title>
-      <g:description>Electrolux ERF4162AOW er et romslig og funksjonelt frittstående kjøleskap, godt egnet til både private hjem, kontorer, kantiner og personalrom. Kjøleskapet har et klassisk hvitt design som gjør det enkelt å plassere i ulike kjøkkenmiljøer.
-Kjøleskapet er utviklet for praktisk oppbevaring av mat og drikke, med god plass til dagligvarer og andre kjølevarer. Innredningen gjør det enkelt å organisere innholdet, mens temperaturreguleringen bidrar til å holde matvarene ved ønsket temperatur. Dette er et godt alternativ for arbeidsplasser som trenger ekstra kjølekapasitet i felleskjøkken eller pauserom.
-Electrolux er en svensk produsent av hvitevarer med røtter tilbake til 1919. Selskapet er kjent for å utvikle funksjonelle og brukervennlige produkter til både private og profesjonelle miljøer. ERF4162AOW er et praktisk kjøleskap med et tidløst uttrykk, godt egnet for videre bruk der det er behov for pålitelig kjøleoppbevaring.
-▪ Frittstående kjøleskap med romslig oppbevaringsplass
-▪ Klassisk hvitt design fra Electrolux
-▪ Velegnet til kontorer, kantiner, personalrom og private hjem
-Et praktisk kjøleskap som kan dekke behovet for kjøleoppbevaring i mange år fremover – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/elektronikk/hvitevarer/kjoleskap/erf4162aow-hvit-pent-brukt-68196.html</g:link>
-      <g:brand>Electrolux</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4163</g:google_product_category>
-      <g:product_type>Elektronikk &gt; Hvitevarer &gt; Kjoleskap</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/68196/big_e93ee4bd60dc332122aea5dda486a7e01317689c.jpg</g:image_link>
-      <g:price>2438 NOK</g:price>
-      <g:price_ex_vat>1950 NOK</g:price_ex_vat>
-      <g:current_price>2438 NOK</g:current_price>
-      <g:current_price_ex_vat>1950 NOK</g:current_price_ex_vat>
-      <g:color>Hvit</g:color>
-      <g:product_width>61 cm</g:product_width>
-      <g:product_height>185 cm</g:product_height>
-      <g:product_length>62 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:custom_label_0>Elektronikk</g:custom_label_0>
-      <g:custom_label_1>Hvitevarer</g:custom_label_1>
-      <g:custom_label_2>Kjoleskap</g:custom_label_2>
-      <g:custom_label_3>1</g:custom_label_3>
-      <g:custom_label_4>ERF4162AOW Hvit</g:custom_label_4>
-    </item>
-    <item>
       <g:id>68198</g:id>
       <g:title>RL38T602FWW Hvit, Pent brukt - Kjoleskap</g:title>
       <g:short_title>RL38T602FWW Hvit</g:short_title>
@@ -151195,40 +150934,6 @@ Et praktisk og fleksibelt hjørneskrivebord som gir god arbeidsplass og legger t
       <g:custom_label_2>Elektriske Hev Og Senk Skrivebord</g:custom_label_2>
       <g:custom_label_3>1</g:custom_label_3>
       <g:custom_label_4>Opus hevsenk 160x120cm</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>68321</g:id>
-      <g:title>Lux møtebord Ø=120cm Sort linoleum, sort understell, Pent brukt - Motebord</g:title>
-      <g:short_title>Lux møtebord Ø=120cm Sort linoleum</g:short_title>
-      <g:description>Lux fra norske Aarsland er et stilrent og funksjonelt møtebord som kombinerer moderne design med praktiske løsninger. Med en rund bordplate på Ø=120 cm passer bordet perfekt til mindre møterom, samtalesoner, kantiner og sosiale møteplasser der man ønsker en innbydende atmosfære.
-Den runde bordformen gir god kontakt mellom deltakerne og gjør det enkelt å føre samtaler og samarbeide rundt bordet. Med en diameter på 120 cm har bordet komfortabel plass til 4–5 personer, samtidig som det er kompakt nok til å passe inn i mindre rom. Det tidløse formspråket gjør Lux enkelt å kombinere med ulike konferansestoler og øvrig kontorinnredning.
-Lux er en del av møbelsortimentet til Aarsland, en norsk produsent av kontormøbler og innredningsløsninger. Aarsland har lange tradisjoner innen møbelproduksjon og er kjent for funksjonelle produkter til profesjonelle arbeidsmiljøer. Lux kombinerer et enkelt, skandinavisk formspråk med praktisk funksjonalitet, og passer godt inn i moderne kontor- og møteromsmiljøer.
-▪ Rund bordplate med diameter på 120 cm
-▪ Plass til 4–5 personer, ideelt for mindre møter og samarbeid
-▪ Stilrent og tidløst design som passer i møterom, kantiner og sosiale soner
-Et praktisk og elegant møtebord som legger til rette for gode samtaler og effektivt samarbeid – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/bord/motebord/lux-motebord-o120cm-sort-linoleum-sort-understell-pent-brukt-68321.html</g:link>
-      <g:brand>Aarsland</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4317</g:google_product_category>
-      <g:product_type>Bord &gt; Motebord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/68321/big_44bf3066ece057a62099335e5c97030780265233.jpg</g:image_link>
-      <g:price>4938 NOK</g:price>
-      <g:price_ex_vat>3950 NOK</g:price_ex_vat>
-      <g:current_price>4938 NOK</g:current_price>
-      <g:current_price_ex_vat>3950 NOK</g:current_price_ex_vat>
-      <g:color>Sort</g:color>
-      <g:product_width>120 cm</g:product_width>
-      <g:product_height>75 cm</g:product_height>
-      <g:product_length>120 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Motebord</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
-      <g:custom_label_4>Lux møtebord Ø=120cm Sort linoleum</g:custom_label_4>
     </item>
     <item>
       <g:id>68322</g:id>
@@ -159007,11 +158712,11 @@ ScreenIT A30 gulvskjerm fra Götessons er et utmerket valg for deg som ønsker e
       <g:material>Stoff</g:material>
       <g:product_width>120 cm</g:product_width>
       <g:product_height>163 cm</g:product_height>
-      <g:quantity>2</g:quantity>
+      <g:quantity>6</g:quantity>
       <g:custom_label_0>Skillevegger</g:custom_label_0>
       <g:custom_label_1>Skillevegger</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>2</g:custom_label_3>
+      <g:custom_label_3>6</g:custom_label_3>
       <g:custom_label_4>ScreenIT A30 Gulvskjerm 120x163cm</g:custom_label_4>
     </item>
     <item>
@@ -159607,11 +159312,11 @@ Pinta EQC fra Martela er et utmerket valg for deg som ønsker et romslig og ergo
       <g:material>Laminat</g:material>
       <g:product_width>160 cm</g:product_width>
       <g:product_length>80 cm</g:product_length>
-      <g:quantity>3</g:quantity>
+      <g:quantity>2</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Elektriske Hev Og Senk Skrivebord</g:custom_label_2>
-      <g:custom_label_3>3</g:custom_label_3>
+      <g:custom_label_3>2</g:custom_label_3>
       <g:custom_label_4>Pinta EQC 160x80cm Hvit laminat</g:custom_label_4>
     </item>
     <item>
@@ -161540,46 +161245,6 @@ Pedrali er en italiensk møbelprodusent som kombinerer moderne design med høy k
       <g:custom_label_4>Bold kafebord 60x50cm Mørk brun</g:custom_label_4>
     </item>
     <item>
-      <g:id>63134</g:id>
-      <g:title>Plassbygd sofa 2 moduler 290x60cm(145cm pr modul) Rustfarget stoff (Kvadratm Mosaic 2)Ask laminat, Pent brukt - Spisesofa Og Kantinesofa - Brun</g:title>
-      <g:short_title>Plassbygd sofa 2 moduler</g:short_title>
-      <g:description>Plassbygd sofa i 2 moduler fra Treprosjekt AS er en fleksibel sittemøbelløsning med total lengde 290 × 60 cm (145 cm per modul).
-Modulene kan brukes samlet som én lang sofa, eller plasseres på hver sin side av et bord med kortsidene inn mot vegg. Modellen leveres med løse ryggputer som er laget for å henge på vegg – veggfeste medfølger ikke og må tilpasses på stedet. Sofaens bakside er ikke ferdigbehandlet og må derfor enten stå inntil vegg eller bygges inn på annen måte for å gi et pent resultat.
-Den plassbygde konstruksjonen gir et rent og funksjonelt uttrykk som fungerer godt i kantine, prosjektsoner og fellesområder.
-▪ To moduler à 145 × 60 cm – kan brukes samlet eller separat
-▪ Ryggputer skal henges på vegg (veggfeste medfølger ikke)
-▪ Baksiden må stå mot vegg eller bygges inn
-Plassbygd sofa fra Treprosjekt AS er et godt valg for deg som ønsker fleksibel og tilpasset sittemøblering med gjenbruk i fokus – brukt er det nye.</g:description>
-      <g:link>https://www.movement.as/sofa/spisesofa-og-kantinesofa/plassbygd-sofa-2-moduler-290x60cm_145cm-pr-modul_-rustfarget-stoff-_kvadratm-mosaic-2_ask-laminat-pent-brukt-63134.html</g:link>
-      <g:brand>Treprosjekt AS</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>2634</g:google_product_category>
-      <g:product_type>Sofa &gt; Spisesofa Og Kantinesofa</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/63134/big_c1e03ec70631c6f16ff894564d32bc0d74dab2ac.jpg</g:image_link>
-      <g:price>9938 NOK</g:price>
-      <g:price_ex_vat>7950 NOK</g:price_ex_vat>
-      <g:current_price>9938 NOK</g:current_price>
-      <g:current_price_ex_vat>7950 NOK</g:current_price_ex_vat>
-      <g:color>Brun</g:color>
-      <g:material>Laminat</g:material>
-      <g:product_width>290 cm</g:product_width>
-      <g:product_height>85 cm</g:product_height>
-      <g:product_length>60 cm</g:product_length>
-      <g:quantity>1</g:quantity>
-      <g:product_detail>
-        <g:section_name>Dimensjoner</g:section_name>
-        <g:attribute_name>Sittehøyde</g:attribute_name>
-        <g:attribute_value>47 cm</g:attribute_value>
-      </g:product_detail>
-      <g:custom_label_0>Sofa</g:custom_label_0>
-      <g:custom_label_1>Spisesofa Og Kantinesofa</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
-      <g:custom_label_4>Plassbygd sofa 2 moduler</g:custom_label_4>
-    </item>
-    <item>
       <g:id>68034</g:id>
       <g:title>Lux Møtebord 280x120cm Hvit laminat, kabelluke, sort understell , Pent brukt - Motebord</g:title>
       <g:short_title>Lux Møtebord 280x120cm Hvit</g:short_title>
@@ -161683,11 +161348,11 @@ Montana er en dansk møbelprodusent kjent for sine modulbaserte oppbevaringssyst
       <g:product_width>70 cm</g:product_width>
       <g:product_height>73 cm</g:product_height>
       <g:product_length>30 cm</g:product_length>
-      <g:quantity>21</g:quantity>
+      <g:quantity>12</g:quantity>
       <g:custom_label_0>Oppbevaring</g:custom_label_0>
       <g:custom_label_1>Skap</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>21</g:custom_label_3>
+      <g:custom_label_3>12</g:custom_label_3>
       <g:custom_label_4>Reol 4 skuffer og skapdør 70x70cm</g:custom_label_4>
     </item>
     <item>
@@ -169952,7 +169617,7 @@ Kinnarps 9000 er et ergonomisk og fleksibelt valg for deg som ønsker en komfort
       <g:product_width>45 cm</g:product_width>
       <g:product_height>118 cm</g:product_height>
       <g:product_length>48 cm</g:product_length>
-      <g:quantity>22</g:quantity>
+      <g:quantity>19</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -169966,7 +169631,7 @@ Kinnarps 9000 er et ergonomisk og fleksibelt valg for deg som ønsker en komfort
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Kontorstol</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>22</g:custom_label_3>
+      <g:custom_label_3>19</g:custom_label_3>
       <g:custom_label_4>9000-serie med nakkepute og armlene</g:custom_label_4>
     </item>
     <item>
@@ -171268,7 +170933,7 @@ City fra Fora Form er et godt valg for deg som ønsker funksjonell skandinavisk 
       <g:product_width>42 cm</g:product_width>
       <g:product_height>85 cm</g:product_height>
       <g:product_length>50 cm</g:product_length>
-      <g:quantity>5</g:quantity>
+      <g:quantity>6</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -171277,7 +170942,7 @@ City fra Fora Form er et godt valg for deg som ønsker funksjonell skandinavisk 
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Konferansestoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>5</g:custom_label_3>
+      <g:custom_label_3>6</g:custom_label_3>
       <g:custom_label_4>City finer</g:custom_label_4>
     </item>
     <item>
@@ -171552,7 +171217,7 @@ En robust og allsidig stol utviklet for mange års bruk – brukt er det nye.</g
       <g:product_width>47 cm</g:product_width>
       <g:product_height>74 cm</g:product_height>
       <g:product_length>47 cm</g:product_length>
-      <g:quantity>68</g:quantity>
+      <g:quantity>48</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -171561,7 +171226,7 @@ En robust og allsidig stol utviklet for mange års bruk – brukt er det nye.</g
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Kantinestoler Og Spisestoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>68</g:custom_label_3>
+      <g:custom_label_3>48</g:custom_label_3>
       <g:custom_label_4>Opus stol Burgunder</g:custom_label_4>
     </item>
     <item>
@@ -172177,7 +171842,7 @@ En konferansestol som kombinerer ergonomi, komfort og skandinavisk kvalitet – 
       <g:product_width>45 cm</g:product_width>
       <g:product_height>102 cm</g:product_height>
       <g:product_length>50 cm</g:product_length>
-      <g:quantity>36</g:quantity>
+      <g:quantity>21</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -172186,7 +171851,7 @@ En konferansestol som kombinerer ergonomi, komfort og skandinavisk kvalitet – 
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Konferansestoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>36</g:custom_label_3>
+      <g:custom_label_3>21</g:custom_label_3>
       <g:custom_label_4>Plus 376M Sort stoff (Gabriel</g:custom_label_4>
     </item>
     <item>
@@ -172590,7 +172255,7 @@ Vitra er en ledende produsent av kontormøbler og designmøbler, kjent for sitt 
       <g:product_width>50 cm</g:product_width>
       <g:product_height>96 cm</g:product_height>
       <g:product_length>45 cm</g:product_length>
-      <g:quantity>2</g:quantity>
+      <g:quantity>5</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -172604,7 +172269,7 @@ Vitra er en ledende produsent av kontormøbler og designmøbler, kjent for sitt 
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Kontorstol</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>2</g:custom_label_3>
+      <g:custom_label_3>5</g:custom_label_3>
       <g:custom_label_4>ID Mesh med armlene Sort stoff</g:custom_label_4>
     </item>
     <item>
@@ -172629,7 +172294,7 @@ HAY er et dansk designmerke som kombinerer estetikk, funksjonalitet og innovasjo
       <g:current_price_ex_vat>1390 NOK</g:current_price_ex_vat>
       <g:color>Sort</g:color>
       <g:product_height>65 cm</g:product_height>
-      <g:quantity>3</g:quantity>
+      <g:quantity>7</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Diameter</g:attribute_name>
@@ -172638,7 +172303,7 @@ HAY er et dansk designmerke som kombinerer estetikk, funksjonalitet og innovasjo
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Barstoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>3</g:custom_label_3>
+      <g:custom_label_3>7</g:custom_label_3>
       <g:custom_label_4>Revolver bar chair low 65cm Sort</g:custom_label_4>
     </item>
     <item>
@@ -174328,11 +173993,11 @@ Et praktisk valg for deg som ønsker funksjonelle kontormøbler med lang levetid
       <g:color>Sort</g:color>
       <g:product_width>140 cm</g:product_width>
       <g:product_length>80 cm</g:product_length>
-      <g:quantity>2</g:quantity>
+      <g:quantity>1</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Elektriske Hev Og Senk Skrivebord</g:custom_label_2>
-      <g:custom_label_3>2</g:custom_label_3>
+      <g:custom_label_3>1</g:custom_label_3>
       <g:custom_label_4>Opus hevsenk 140x80cm Sort</g:custom_label_4>
     </item>
     <item>
@@ -175362,42 +175027,6 @@ Pinta EQC hevsenkbord fra Martela er et godt eksempel på at brukt er det nye �
       <g:custom_label_4>Pinta EQC 120x80cm Hvit laminat</g:custom_label_4>
     </item>
     <item>
-      <g:id>60479</g:id>
-      <g:title>Edu-X klappbord 120x60cm Hvit laminat, grå ben, Pent brukt - Klappbord Og Kursbord</g:title>
-      <g:short_title>Edu-X klappbord 120x60cm Hvit</g:short_title>
-      <g:description>Edu-X klappbord fra Kinnarps er et tradisjonelt og robust sammenleggbart bord som passer godt til undervisning, kurs og kantineområder. Den enkle konstruksjonen gjør bordet lett å håndtere og raskt å sette opp eller felle sammen ved behov.
-Størrelsen på 120 × 80 cm gir plass til én eller to personer og gjør bordet egnet i både faste og fleksible oppsett.
-▪ Klassisk klappbord som er enkelt å slå opp og ned
-▪ Størrelse 120 × 80 cm – plass til én eller to personer
-▪ Passer til undervisning, kurs og arrangementer
-Edu-X klappbord fra Kinnarps er et solid og funksjonelt valg – brukt er det nye.
-Produsent: Kinnarps
-Kinnarps er en av Europas ledende produsenter av kontormøbler, grunnlagt i Sverige i 1942. Selskapet er kjent for å levere helhetlige, bærekraftige innredningsløsninger med fokus på ergonomi, funksjonalitet og skandinavisk design. Med egen produksjon i Sverige og kortreiste materialer setter Kinnarps miljø og kvalitet høyt på agendaen. Produktene deres brukes i alt fra kontorer og skoler til helseinstitusjoner og offentlige rom – alltid med menneskets behov og arbeidsflyt i sentrum.</g:description>
-      <g:link>https://www.movement.as/bord/klappbord-og-kursbord/edu-x-klappbord-120x60cm-hvit-laminat-gra-ben-pent-brukt-60479.html</g:link>
-      <g:brand>Kinnarps</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4316</g:google_product_category>
-      <g:product_type>Bord &gt; Klappbord Og Kursbord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/60479/big_fd4985f7b587729384c844e737ac920494236963.jpg</g:image_link>
-      <g:price>1869 NOK</g:price>
-      <g:price_ex_vat>1495 NOK</g:price_ex_vat>
-      <g:current_price>1869 NOK</g:current_price>
-      <g:current_price_ex_vat>1495 NOK</g:current_price_ex_vat>
-      <g:color>Hvit</g:color>
-      <g:color_secondary>Grå</g:color_secondary>
-      <g:material>Laminat</g:material>
-      <g:product_width>120 cm</g:product_width>
-      <g:product_length>60 cm</g:product_length>
-      <g:quantity>5</g:quantity>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Klappbord Og Kursbord</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>5</g:custom_label_3>
-      <g:custom_label_4>Edu-X klappbord 120x60cm Hvit</g:custom_label_4>
-    </item>
-    <item>
       <g:id>62857</g:id>
       <g:title>Metal side table L Sort, Pent brukt - Sofabord Og Loungebord - Stål</g:title>
       <g:short_title>Metal side table L Sort</g:short_title>
@@ -176371,7 +176000,7 @@ BuzziCube puff fra BuzziSpace er et godt valg for deg som ønsker en funksjonell
       <g:product_width>45 cm</g:product_width>
       <g:product_height>48 cm</g:product_height>
       <g:product_length>45 cm</g:product_length>
-      <g:quantity>1</g:quantity>
+      <g:quantity>5</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -176380,7 +176009,7 @@ BuzziCube puff fra BuzziSpace er et godt valg for deg som ønsker en funksjonell
       <g:custom_label_0>Sofa</g:custom_label_0>
       <g:custom_label_1>Puffer Og Krakker</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
+      <g:custom_label_3>5</g:custom_label_3>
       <g:custom_label_4>BuzziCube Lyst gråmelert stoff</g:custom_label_4>
     </item>
     <item>
@@ -176844,41 +176473,6 @@ En enkel oppgradering som gir bordet ny funksjon – brukt er det nye.</g:descri
       <g:custom_label_4>Trådløs mobillader for nedfelling</g:custom_label_4>
     </item>
     <item>
-      <g:id>60801</g:id>
-      <g:title>Delta 45 skap 3A4, 80cm bredde Hvit, Pent brukt</g:title>
-      <g:short_title>Delta 45 skap 3A4</g:short_title>
-      <g:description>Delta 45 skap med slagdører fra Dencon er et praktisk oppbevaringsmøbel for kontor og arbeidsmiljø. Med plass til 3A4 i høyden og en bredde på 80 cm, gir skapet god lagringskapasitet uten å ta for mye plass. Skapet er utstyrt med to slagdører og passer godt langs vegg eller som skille mellom soner i åpne kontorlandskap.
-Det kompakte formatet gjør det egnet både for individuelle arbeidsplasser og fellesområder.
-▪ Plass til 3A4 i høyden
-▪ To slagdører gir god oversikt og tilgjengelighet
-▪ Produsert av Dencon – kjent for funksjonelle kontormøbler
-Et smart valg for strukturert oppbevaring – brukt er det nye.
-Produsent: Dencon
-Dencon er en dansk produsent av kontormøbler, kjent for sine funksjonelle og fleksible løsninger for moderne arbeidsplasser. Med fokus på både design og praktisk bruk, skaper Dencon møbler som optimaliserer arbeidsmiljøer, enten det er i åpne kontorlandskap eller lukkede arbeidsstasjoner. Deres produkter er utviklet for å møte behovene til både små og store bedrifter, med løsninger som fremmer produktivitet, organisering og samarbeid. Dencon er et pålitelig valg for dem som ønsker møbler med høy kvalitet og design som forbedrer både funksjonalitet og estetikk på arbeidsplassen.</g:description>
-      <g:link>https://www.movement.as/oppbevaring/skap/delta-45-skap-3a4-80cm-bredde-hvit-pent-brukt-60801.html</g:link>
-      <g:brand>Dencon</g:brand>
-      <g:condition>refurbished</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>4318</g:google_product_category>
-      <g:product_type>Oppbevaring &gt; Skap</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/60801/big_84b20710b148dc8b9365cbd4fa81391a144b67ab.jpg</g:image_link>
-      <g:price>2238 NOK</g:price>
-      <g:price_ex_vat>1790 NOK</g:price_ex_vat>
-      <g:current_price>2238 NOK</g:current_price>
-      <g:current_price_ex_vat>1790 NOK</g:current_price_ex_vat>
-      <g:color>Hvit</g:color>
-      <g:product_width>80 cm</g:product_width>
-      <g:product_height>120 cm</g:product_height>
-      <g:product_length>40 cm</g:product_length>
-      <g:quantity>7</g:quantity>
-      <g:custom_label_0>Oppbevaring</g:custom_label_0>
-      <g:custom_label_1>Skap</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>7</g:custom_label_3>
-      <g:custom_label_4>Delta 45 skap 3A4</g:custom_label_4>
-    </item>
-    <item>
       <g:id>62542</g:id>
       <g:title>Eon 3 seter uten armlener Petrolblått stoff ( Nevotex Lido Trend 138 Pool) sorte stålben , Pent brukt - Sofa</g:title>
       <g:short_title>Eon 3 seter uten armlener</g:short_title>
@@ -177024,7 +176618,7 @@ Capisco Puls 8010 fra HÅG er et godt eksempel på at brukt er det nye – ergon
       <g:product_width>46 cm</g:product_width>
       <g:product_height>100 cm</g:product_height>
       <g:product_length>72 cm</g:product_length>
-      <g:quantity>1</g:quantity>
+      <g:quantity>2</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -177033,7 +176627,7 @@ Capisco Puls 8010 fra HÅG er et godt eksempel på at brukt er det nye – ergon
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Kontorstol</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
+      <g:custom_label_3>2</g:custom_label_3>
       <g:custom_label_4>Capisco Puls 8010</g:custom_label_4>
     </item>
     <item>
@@ -177064,7 +176658,7 @@ Noor 6070 fra Profim viser at brukt er det nye – en gjennomført og fleksibel 
       <g:product_width>44 cm</g:product_width>
       <g:product_height>87 cm</g:product_height>
       <g:product_length>65 cm</g:product_length>
-      <g:quantity>7</g:quantity>
+      <g:quantity>13</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -177073,7 +176667,7 @@ Noor 6070 fra Profim viser at brukt er det nye – en gjennomført og fleksibel 
       <g:custom_label_0>Stoler</g:custom_label_0>
       <g:custom_label_1>Konferansestoler</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>7</g:custom_label_3>
+      <g:custom_label_3>13</g:custom_label_3>
       <g:custom_label_4>Noor 6070 med hjul</g:custom_label_4>
     </item>
     <item>
@@ -177088,7 +176682,7 @@ Ideell for private samtaler eller møter</g:description>
       <g:link>https://www.movement.as/sofa/alkovesofa/senso-2-seter-med-hoy-rygg-lys-gra-innside-lys-bla-utside-_kvadrat-remix_-hvite-ben-pent-brukt-68756.html</g:link>
       <g:brand>ForaForm</g:brand>
       <g:condition>refurbished</g:condition>
-      <g:availability>out_of_stock</g:availability>
+      <g:availability>in_stock</g:availability>
       <g:identifier_exists>no</g:identifier_exists>
       <g:google_product_category>2634</g:google_product_category>
       <g:product_type>Sofa &gt; Alkovesofa</g:product_type>
@@ -177102,11 +176696,11 @@ Ideell for private samtaler eller møter</g:description>
       <g:product_width>132 cm</g:product_width>
       <g:product_height>120 cm</g:product_height>
       <g:product_length>66 cm</g:product_length>
-      <g:quantity>0</g:quantity>
+      <g:quantity>2</g:quantity>
       <g:custom_label_0>Sofa</g:custom_label_0>
       <g:custom_label_1>Alkovesofa</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>0</g:custom_label_3>
+      <g:custom_label_3>2</g:custom_label_3>
       <g:custom_label_4>Senso 2-seter med høy rygg Lys grå</g:custom_label_4>
     </item>
     <item>
@@ -177137,7 +176731,7 @@ BuzziCube puff fra BuzziSpace er et godt valg for deg som ønsker en funksjonell
       <g:product_width>45 cm</g:product_width>
       <g:product_height>48 cm</g:product_height>
       <g:product_length>45 cm</g:product_length>
-      <g:quantity>1</g:quantity>
+      <g:quantity>2</g:quantity>
       <g:product_detail>
         <g:section_name>Dimensjoner</g:section_name>
         <g:attribute_name>Sittehøyde</g:attribute_name>
@@ -177146,7 +176740,7 @@ BuzziCube puff fra BuzziSpace er et godt valg for deg som ønsker en funksjonell
       <g:custom_label_0>Sofa</g:custom_label_0>
       <g:custom_label_1>Puffer Og Krakker</g:custom_label_1>
       <g:custom_label_2/>
-      <g:custom_label_3>1</g:custom_label_3>
+      <g:custom_label_3>2</g:custom_label_3>
       <g:custom_label_4>BuzziCube Blålilla stoff</g:custom_label_4>
     </item>
     <item>
@@ -177506,11 +177100,11 @@ Explorer hevsenk skrivebord fra Svenheim er et solid valg for videre bruk – br
       <g:material>Finer</g:material>
       <g:product_width>160 cm</g:product_width>
       <g:product_length>80 cm</g:product_length>
-      <g:quantity>19</g:quantity>
+      <g:quantity>18</g:quantity>
       <g:custom_label_0>Bord</g:custom_label_0>
       <g:custom_label_1>Skrivebord</g:custom_label_1>
       <g:custom_label_2>Elektriske Hev Og Senk Skrivebord</g:custom_label_2>
-      <g:custom_label_3>19</g:custom_label_3>
+      <g:custom_label_3>18</g:custom_label_3>
       <g:custom_label_4>Explorer hevsenk 160x80cm Bjerk</g:custom_label_4>
     </item>
     <item>
@@ -178078,40 +177672,6 @@ En fleksibel løsning som gir rom for flere bruksområder og videre bruk – Bru
       <g:custom_label_2/>
       <g:custom_label_3>1</g:custom_label_3>
       <g:custom_label_4>Movie Puff 90x90cm Blått stoff</g:custom_label_4>
-    </item>
-    <item>
-      <g:id>65006</g:id>
-      <g:title>Root 34x51cm Chocolate valchromat, ben i stål, chocolate (RAL 8019), Ubrukt - Sofabord Og Loungebord - Brun</g:title>
-      <g:short_title>Root 34x51cm Chocolate valchromat</g:short_title>
-      <g:description>Root loungebord fra Fora Form er et kompakt og funksjonelt bord designet av Runa Klock. Med sine mål på 34 × 51 cm og høyde på 45 cm passer det perfekt i loungeområder, ventearealer og sosiale soner hvor plassutnyttelse er viktig.
-Bordets design er inspirert av naturens organiske former, spesielt røtters elegante kurver, noe som gir det et unikt og moderne uttrykk. Det kan brukes alene eller kombineres med andre bord i Root-serien for å skape dynamiske og fleksible løsninger. ￼
-▪ Designet av Runa Klock – Inspirert av naturens organiske former
-▪ Størrelse: 34 × 51 cm, høyde 45 cm – Kompakt og plasseringsvennlig
-▪ Modulært design – Kan kombineres med andre bord i Root-serien
-Root loungebord er et ideelt valg for deg som ønsker et stilrent og funksjonelt bord med et unikt designuttrykk.</g:description>
-      <g:link>https://www.movement.as/bord/sofabord-og-loungebord/root-34x51cm-chocolate-valchromat-ben-i-stal-chocolate-_ral-8019_-ubrukt-65006.html</g:link>
-      <g:brand>ForaForm</g:brand>
-      <g:condition>new</g:condition>
-      <g:availability>in_stock</g:availability>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>2634</g:google_product_category>
-      <g:product_type>Bord &gt; Sofabord Og Loungebord</g:product_type>
-      <g:image_link>https://www.movement.as/images/products/65006/big_4c3db7b90925484d71b010603a4734a96c15e9fc.jpg</g:image_link>
-      <g:price>4688 NOK</g:price>
-      <g:price_ex_vat>3750 NOK</g:price_ex_vat>
-      <g:current_price>4688 NOK</g:current_price>
-      <g:current_price_ex_vat>3750 NOK</g:current_price_ex_vat>
-      <g:color>Brun</g:color>
-      <g:material>Stål</g:material>
-      <g:product_width>34 cm</g:product_width>
-      <g:product_height>45 cm</g:product_height>
-      <g:product_length>51 cm</g:product_length>
-      <g:quantity>2</g:quantity>
-      <g:custom_label_0>Bord</g:custom_label_0>
-      <g:custom_label_1>Sofabord Og Loungebord</g:custom_label_1>
-      <g:custom_label_2/>
-      <g:custom_label_3>2</g:custom_label_3>
-      <g:custom_label_4>Root 34x51cm Chocolate valchromat</g:custom_label_4>
     </item>
     <item>
       <g:id>66909</g:id>
